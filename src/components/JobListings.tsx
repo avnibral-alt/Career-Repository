@@ -125,6 +125,31 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Freedom to experiment, innovate, and drive real impact',
           'Competitive compensation and strong growth opportunities'
         ]
+      },
+      {
+        id: 'intern-sales-operations',
+        title: 'Intern – Sales Operations',
+        location: 'Remote/India',
+        type: 'Internship',
+        salary: '₹12,000 + Performance Incentives',
+        shortDescription:
+          'Join our dynamic sales team and build strong relationships with parents while driving trial bookings for our global AI-coding programs.',
+        fullDescription:
+          'About Us: JetLearn is the world\'s top-rated AI-Coding Academy for children aged 5–16, dedicated to equipping the next generation with essential future-ready skills. Headquartered in Amsterdam, Netherlands, JetLearn is transforming education globally through innovative and impactful cutting-edge tech programs tailored for young learners.\n\nRole Overview: We are seeking dynamic and driven individuals to join our team as Intern – Sales Operations. This role offers a clear and exciting career trajectory, enabling rapid growth in a global, fast-paced environment with huge earning opportunities.\n\nKey Responsibilities – Associate (Sales):\n• Build strong relationships with parents, introducing them to JetLearn\'s global AI-coding programs\n• Actively engage in outbound calls, generating interest and enthusiasm for our courses\n• Successfully schedule calibration classes through effective communication and persuasion skills\n• Address parent inquiries, tailoring course recommendations to align with their child\'s learning goals\n• Work with a structured approach to meet daily and weekly targets\n• Make 100+ outbound calls daily to prospective leads and drive a targeted number of trial bookings\n\nGrowth Path: Intern (Sales) ➝ Academic Counselor (Consultant) ➝ Sr. Academic Counselor (Sr. Consultant) ➝ Team Lead ➝ Associate Director',
+        requirements: [
+          'Eligibility: pursuing Graduation',
+          'Strong communicator with exceptional interpersonal skills',
+          'Self-motivated, proactive, and comfortable working in a target-driven environment',
+          'Organized and capable of handling multiple tasks efficiently',
+          'Excited to learn, adapt, and grow within a global team'
+        ],
+        benefits: [
+          'Structured Career Growth Plan: Clear milestones leading to senior leadership roles',
+          'Comprehensive Training: Personalized mentoring programs to help you excel',
+          'Global exposure: Be part of an innovative team shaping the future of education',
+          'Competitive Stipend: ₹12,000 with attractive performance-based incentives',
+          'A chance to be part of a transformative journey, empowering children worldwide with future-ready skills'
+        ]
       }
     ],
     strategic: [
