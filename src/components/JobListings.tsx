@@ -49,7 +49,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         shortDescription:
           'Join our European EdTech startup as a Maths Tutor, teaching students aged 6–16 in a supportive, international environment.',
         fullDescription:
-          'About the Job: This is an opportunity to work directly with a European EdTech startup based in Amsterdam, Netherlands. The company provides after-school math classes to students aged 6–16 years. The heart of our business is a core team of amazing and excellent teachers. We hire only the top performers—so if you believe you are one of the top teachers and want to be part of the esteemed group of global educators, do apply! We look forward to speaking with you soon!\n\nResponsibilities:\n• Teach mathematics in a fun, engaging, and interactive way to school students via online classes\n• Instill problem-solving skills and logical reasoning in young learners\n• Assess students\' progress, evaluate assignments, and provide constructive feedback\n• Conduct regular feedback sessions with parents/guardians\n• Customize lessons to meet individual learning needs\n\nSkills Required:\n• A degree in Mathematics, Education, or a related field\n• Exceptional oral and written communication skills\n• Passion for teaching students\n• A curious mind and ability to simplify mathematical concepts for young learners\n• Prior experience of 1 year in the online EdTech industry is a plus\n• A laptop with a camera & microphone and a good internet connection\n\nPlatform/Knowledge:\n• Experience teaching topics like Algebra, Geometry, Calculus, and Statistics\n• Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)\n• Experience with gamified teaching platforms is a plus\n\nTiming:\n• Most classes are scheduled in the evenings on weekdays & throughout the day on weekends\n• Between 4 PM UKT–10 PM UKT - Weekdays\n• Between 9 AM UKT–10 PM UKT on weekends (Mandatory working on weekends)\n• Weekly off on weekdays only\n\nWhat You Get:\n• Opportunity to work with an excellent team on a mission to empower kids with math skills for the future\n• Experience working with an international company\n• A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe',
+          'About the Job: This is an opportunity to work directly with a European EdTech startup based in Amsterdam, Netherlands. The company provides after-school math classes to students aged 6–16 years. The heart of our business is a core team of amazing and excellent teachers. We hire only the top performers—so if you believe you are one of the top teachers and want to be part of the esteemed group of global educators, do apply! We look forward to speaking with you soon!\n\nResponsibilities:\n• Teach mathematics in a fun, engaging, and interactive way to school students via online classes\n• Instill problem-solving skills and logical reasoning in young learners\n• Assess students\' progress, evaluate assignments, and provide constructive feedback\n• Conduct regular feedback sessions with parents/guardians\n• Customize lessons to meet individual learning needs\n\nSkills Required:\n• A degree in Mathematics, Education, or a related field\n• Exceptional oral and written communication skills\n• Passion for teaching students\n• A curious mind and ability to simplify mathematical concepts for young learners\n• Prior experience of 1 year in the online EdTech industry is a plus\n• A laptop with a camera & microphone and a good internet connection\n\nPlatform/Knowledge:\n• Experience teaching topics like Algebra, Geometry, Calculus, and Statistics\n• Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)\n• Experience with gamified teaching platforms is a plus\n\nTime Requirement:\n• Most classes are scheduled in the evenings on weekdays & throughout the day on weekends\n• Between 4 PM UKT–10 PM UKT - Weekdays\n• Between 9 AM UKT–10 PM UKT on weekends (Mandatory working on weekends)\n• Weekly off on weekdays only\n\nWhat You Get:\n• Opportunity to work with an excellent team on a mission to empower kids with math skills for the future\n• Experience working with an international company\n• A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe',
         requirements: [
           'A degree in Mathematics, Education, or a related field',
           'Exceptional oral and written communication skills',
@@ -310,6 +310,50 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                               ))}
                           </ul>
                         </div>
+
+                        {job.id === 'international-maths-tutor' && (
+                          <>
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Skills Required</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">A degree in Mathematics, Education, or a related field</li>
+                                <li className="text-sm md:text-base">Exceptional oral and written communication skills</li>
+                                <li className="text-sm md:text-base">Passion for teaching students</li>
+                                <li className="text-sm md:text-base">A curious mind and ability to simplify mathematical concepts for young learners</li>
+                                <li className="text-sm md:text-base">Prior experience of 1 year in the online EdTech industry is a plus</li>
+                                <li className="text-sm md:text-base">A laptop with a camera & microphone and a good internet connection</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Platform/Knowledge</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Experience teaching topics like Algebra, Geometry, Calculus, and Statistics</li>
+                                <li className="text-sm md:text-base">Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)</li>
+                                <li className="text-sm md:text-base">Experience with gamified teaching platforms is a plus</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Time Requirement</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Most classes are scheduled in the evenings on weekdays & throughout the day on weekends</li>
+                                <li className="text-sm md:text-base">Between 4 PM UKT–10 PM UKT - Weekdays</li>
+                                <li className="text-sm md:text-base">Between 9 AM UKT–10 PM UKT on weekends (Mandatory working on weekends)</li>
+                                <li className="text-sm md:text-base">Weekly off on weekdays only</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">What You Get</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Opportunity to work with an excellent team on a mission to empower kids with math skills for the future</li>
+                                <li className="text-sm md:text-base">Experience working with an international company</li>
+                                <li className="text-sm md:text-base">A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe</li>
+                              </ul>
+                            </div>
+                          </>
+                        )}
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
