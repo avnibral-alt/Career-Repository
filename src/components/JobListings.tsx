@@ -96,7 +96,37 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         ]
       }
     ],
-    teachers: [singleJob],
+    teachers: [
+      singleJob,
+      {
+        id: 'eir-founders-office',
+        title: 'Founder\'s Office – EIR (Entrepreneur in Residence)',
+        location: 'Delhi (Nehru Place office)',
+        type: 'Full-time',
+        salary: '',
+        shortDescription:
+          'Work with the Founding team to drive growth initiatives and global expansion through data-driven, high-impact projects.',
+        fullDescription:
+          'About the Role: You\'d be working with the Founding team and focused on Growth initiatives. As EIR, you\'ll drive our growth initiatives and lead our global expansion efforts. As a core member of the team, you\'ll own high-impact projects, develop scalable strategies, and execute them with precision to achieve measurable results. Responsibilities include: Drive Revenue Growth by owning business targets; Build Deep Business Understanding of JetLearn\'s brand, customer behavior, competitive landscape, and growth opportunities; Lead Strategic Growth Initiatives by identifying, testing, and scaling marketing and partnership opportunities to drive acquisition and retention; Execute in a Data-Driven manner by defining success metrics, tracking performance, and optimizing based on KPIs; Collaborate Cross-Functionally with creative, product, and operations to align on high-impact activities; and drive Marketing Automation by designing cross-platform workflows for efficient lead generation and nurturing.',
+        requirements: [
+          'Proven success driving measurable business growth with clear revenue impact',
+          'Strong data skills: KPI definition, analysis, and insight-driven decisions',
+          'Engineering degree with 2–4 years in growth/marketing/business development (startup preferred)',
+          'Excellent project management; can manage complex, cross-functional initiatives',
+          'Creative problem solver with a growth mindset and experimentation bias',
+          'Strong marketing instinct: personas, journeys, and effective lead-gen strategies',
+          'Experience in fast-paced startup or high-growth environments (preferred)',
+          'Knowledge of E-commerce, B2B/B2C marketing, and growth strategies (preferred)',
+          'Solid understanding of marketing automation tools and workflows (preferred)'
+        ],
+        benefits: [
+          'Work with a high-performing, international team on a meaningful mission',
+          'Front-row seat in scaling a fast-growing European EdTech company',
+          'Freedom to experiment, innovate, and drive real impact',
+          'Competitive compensation and strong growth opportunities'
+        ]
+      }
+    ],
     strategic: [
       {
         id: 'strategic-1',
