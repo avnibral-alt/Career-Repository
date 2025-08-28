@@ -28,7 +28,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
     type: 'Full-time',
     shortDescription: 'Drive founder-led, cross-functional sales enablement programs, automation, and lead-generation initiatives.',
     fullDescription:
-      'Responsibilities: Sales Program Execution (lead gen, sales efficiency, acquisition) with sales leadership. Cross-Functional Collaboration across Sales, Marketing, Curriculum, and Tech to launch multi-source lead initiatives. Automation & Tools Ownership (HubSpot, Google Sheets, Zapier, etc.) for CRM, lead flows, and reporting. Process Implementation of founder-led initiatives into structured, measurable programs and playbooks. Lead Generation Strategy using student projects, testimonials, events, and educator networks. Data-Driven Insights via dashboards and reports to track project performance, productivity, and pipeline health.',
+      'Responsibilities:\n\nSales Program Execution:\n• Drive strategic programs focused on lead generation, sales efficiency, and customer acquisition in partnership with the sales leadership.\n\nCross-Functional Collaboration:\n• Act as the bridge between Sales, Marketing, Curriculum, and Tech teams to launch initiatives that bring in qualified leads from multiple internal and external sources.\n\nAutomation & Tools Ownership:\n• Identify and implement automation tools (e.g., HubSpot, Google Sheets, Zapier, etc.) to streamline lead flows, CRM operations, and reporting.\n\nProcess Implementation:\n• Translate founder-led initiatives into structured programs with measurable outcomes. Build and document repeatable sales playbooks and lead generation workflows.\n\nLead Generation Strategy:\n• Collaborate on designing creative lead funnels by leveraging student projects, parent testimonials, events, and educator networks.\n\nData-Driven Insights:\n• Support in building dashboards and reports to track project performance, team productivity, and lead pipeline health.\n\nWhat We\'re Looking For:\n• Experience: 1–2 years of experience in a high-growth startup, consulting firm, or sales ops/enablement role\n• Strong pedigree (Tier-1/2 college or equivalent work exposure preferred)\n• Highly analytical, process-oriented, and curious to build systems from scratch\n• Excellent communication and stakeholder management skills\n• Entrepreneurial mindset and ability to work closely with founders and senior leaders\n• Passion for EdTech and creating impact through scalable innovation\n\nLocation: Delhi NCR\nStart Date: ASAP',
     requirements: [
       '1–2 years in high-growth startup/consulting/sales ops or enablement',
       'Strong pedigree (Tier-1/2 or equivalent exposure preferred)',
@@ -353,6 +353,19 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                               </ul>
                             </div>
                           </>
+                        )}
+
+                        {job.id === 'apm-founders-office' && (
+                          <div>
+                            <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                              <li className="text-sm md:text-base">Work with a high-performing international team on a meaningful mission</li>
+                              <li className="text-sm md:text-base">Take charge of creating an industry-first sales automation engine in EdTech</li>
+                              <li className="text-sm md:text-base">Influence how tens of thousands of parents choose tech education for their kids</li>
+                              <li className="text-sm md:text-base">Competitive salary, creative freedom, and career advancement opportunities</li>
+                              <li className="text-sm md:text-base">Based in our Delhi office with global exposure</li>
+                            </ul>
+                          </div>
                         )}
                       </AccordionContent>
                     </AccordionItem>
