@@ -73,7 +73,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         shortDescription:
           'Work with the Founding team to drive growth initiatives and global expansion through data-driven, high-impact projects.',
         fullDescription:
-          'About the Role: You\'d be working with the Founding team and focused on Growth initiatives. As EIR, you\'ll drive our growth initiatives and lead our global expansion efforts. As a core member of the team, you\'ll own high-impact projects, develop scalable strategies, and execute them with precision to achieve measurable results. Responsibilities include: Drive Revenue Growth by owning business targets; Build Deep Business Understanding of JetLearn\'s brand, customer behavior, competitive landscape, and growth opportunities; Lead Strategic Growth Initiatives by identifying, testing, and scaling marketing and partnership opportunities to drive acquisition and retention; Execute in a Data-Driven manner by defining success metrics, tracking performance, and optimizing based on KPIs; Collaborate Cross-Functionally with creative, product, and operations to align on high-impact activities; and drive Marketing Automation by designing cross-platform workflows for efficient lead generation and nurturing.',
+          'About JetLearn: JetLearn is a European EdTech startup headquartered in Amsterdam, Netherlands. We specialize in delivering innovative, after-school coding and robotics classes for children aged 6–16 through live, one-on-one Zoom sessions. We\'re on a mission to empower children with personalized technology education, shaping a future where they thrive in a tech-driven world. With a rapidly growing presence across Europe (UK, Netherlands, and beyond), we\'re seeking ambitious, data-driven, and results-oriented professionals to join our dynamic team. If you\'re passionate about scaling businesses, embracing innovation, and making a difference—this is your opportunity.\n\nAbout the Role: You\'d be working with the Founding team and focused on Growth initiatives. As EIR, you\'ll drive our growth initiatives and lead our global expansion efforts. As a core member of the team, you\'ll own high-impact projects, develop scalable strategies, and execute them with precision to achieve measurable results.',
         requirements: [
           'Proven success driving measurable business growth with clear revenue impact',
           'Strong data skills: KPI definition, analysis, and insight-driven decisions',
@@ -350,6 +350,53 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                                 <li className="text-sm md:text-base">Opportunity to work with an excellent team on a mission to empower kids with math skills for the future</li>
                                 <li className="text-sm md:text-base">Experience working with an international company</li>
                                 <li className="text-sm md:text-base">A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe</li>
+                              </ul>
+                            </div>
+                          </>
+                        )}
+
+                        {job.id === 'eir-founders-office' && (
+                          <>
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Responsibilities</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Drive Revenue Growth: Own and deliver on key business targets</li>
+                                <li className="text-sm md:text-base">Deep Business Understanding: Build a comprehensive understanding of JetLearn's brand, customer behavior, competitive landscape, and growth opportunities</li>
+                                <li className="text-sm md:text-base">Strategic Growth Initiatives: Identify, test, and scale marketing and partnership opportunities to drive customer acquisition and retention</li>
+                                <li className="text-sm md:text-base">Data-Driven Execution: Define success metrics, track performance, and optimize initiatives based on KPIs and insights</li>
+                                <li className="text-sm md:text-base">Cross-Functional Collaboration: Work with creative, product, and operational teams to align on high-impact activities and ensure seamless execution</li>
+                                <li className="text-sm md:text-base">Marketing Automation: Design and optimize cross-platform workflows for efficient lead generation and nurturing</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">What We're Looking For</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Proven Growth Experience: Demonstrated success in driving measurable business growth, with clear revenue impact</li>
+                                <li className="text-sm md:text-base">Data-Driven & Results-Oriented: Expertise in analyzing data, defining KPIs, and making strategic decisions based on insights</li>
+                                <li className="text-sm md:text-base">Educational Background: Engineering degree with 2–4 years of experience in growth, marketing, or business development roles (startup experience preferred)</li>
+                                <li className="text-sm md:text-base">Project Management Skills: Exceptional organizational skills to manage complex projects and ensure timely delivery</li>
+                                <li className="text-sm md:text-base">Creative Problem Solver: A growth mindset and willingness to experiment with new ideas and channels</li>
+                                <li className="text-sm md:text-base">Marketing Instinct: Strong understanding of customer personas, decision-making journeys, and strategies for effective lead generation</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Preferred Qualifications</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Experience in a fast-paced startup environment or high-growth company</li>
+                                <li className="text-sm md:text-base">Expertise in E-commerce, B2B/B2C marketing, and growth strategies</li>
+                                <li className="text-sm md:text-base">Solid understanding of marketing automation tools and workflows</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Work with a high-performing, international team on a meaningful mission</li>
+                                <li className="text-sm md:text-base">Take a front-row seat in scaling one of Europe's fastest-growing EdTech companies</li>
+                                <li className="text-sm md:text-base">Enjoy the freedom to experiment, innovate, and drive real impact</li>
+                                <li className="text-sm md:text-base">Competitive salary and ample opportunities for career growth</li>
                               </ul>
                             </div>
                           </>
