@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
@@ -23,6 +23,30 @@ interface JobListingsProps {
 }
 
 export function JobListings({ selectedDepartment, onApplyClick }: JobListingsProps) {
+  const singleJob: Job = {
+    id: 'apm-founders-office',
+    title: 'Assistant Program Manager – Founder\'s Office',
+    location: 'Delhi NCR',
+    type: 'Full-time',
+    salary: '',
+    shortDescription: 'Drive founder-led, cross-functional sales enablement programs, automation, and lead-generation initiatives.',
+    fullDescription:
+      'Responsibilities: Sales Program Execution (lead gen, sales efficiency, acquisition) with sales leadership. Cross-Functional Collaboration across Sales, Marketing, Curriculum, and Tech to launch multi-source lead initiatives. Automation & Tools Ownership (HubSpot, Google Sheets, Zapier, etc.) for CRM, lead flows, and reporting. Process Implementation of founder-led initiatives into structured, measurable programs and playbooks. Lead Generation Strategy using student projects, testimonials, events, and educator networks. Data-Driven Insights via dashboards and reports to track project performance, productivity, and pipeline health.',
+    requirements: [
+      '1–2 years in high-growth startup/consulting/sales ops or enablement',
+      'Strong pedigree (Tier-1/2 or equivalent exposure preferred)',
+      'Highly analytical, process-oriented; eager to build systems from scratch',
+      'Excellent communication and stakeholder management',
+      'Entrepreneurial mindset; work closely with founders/senior leaders',
+      'Passion for EdTech and scalable impact'
+    ],
+    benefits: [
+      'Professional development opportunities',
+      'High-impact, founder-facing role',
+      'Fast-paced growth environment'
+    ]
+  };
+
   const jobs: Record<string, Job[]> = {
     management: [
       {
@@ -72,54 +96,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         ]
       }
     ],
-    teachers: [
-      {
-        id: 'teacher-1',
-        title: 'AI & Robotics Curriculum Developer',
-        location: 'Remote – Global Applicants Welcome',
-        type: 'Full-time',
-        salary: '$70,000 - $90,000',
-        shortDescription: 'Create engaging AI, robotics, and coding curriculum that makes complex concepts accessible to young learners worldwide.',
-        fullDescription: 'We\'re looking for an innovative educator to develop age-appropriate AI, robotics, and coding curriculum for children aged 8-16. You\'ll create interactive lessons, assessments, and projects that introduce artificial intelligence, robotics, blockchain, and programming concepts in fun and engaging ways for a global audience.',
-        requirements: [
-          'Teaching degree or equivalent experience in STEM',
-          'Knowledge of AI, robotics, coding, or Web3 technologies',
-          'Curriculum development experience',
-          'Understanding of child development and learning psychology',
-          'Creative and innovative teaching methods'
-        ],
-        benefits: [
-          'Competitive salary and benefits',
-          'Professional development in AI and emerging tech',
-          'Creative freedom in curriculum design',
-          'Work with cutting-edge AI technology',
-          'Global impact on next generation'
-        ]
-      },
-      {
-        id: 'teacher-2',
-        title: 'Online AI Learning Facilitator',
-        location: 'Remote – Global Applicants Welcome',
-        type: 'Part-time / Full-time',
-        salary: '$40,000 - $65,000',
-        shortDescription: 'Facilitate live online AI, coding, and robotics classes for students worldwide in our virtual environment.',
-        fullDescription: 'Join our team of dedicated educators delivering live online AI, coding, and robotics education to students worldwide. You\'ll facilitate interactive classes, provide individual support, and help create a positive learning community in our virtual classrooms across different time zones.',
-        requirements: [
-          'Teaching experience (online preferred)',
-          'Strong communication and presentation skills',
-          'Comfortable with technology and virtual platforms',
-          'Basic understanding of AI, coding, or robotics',
-          'Available for flexible international scheduling'
-        ],
-        benefits: [
-          'Flexible scheduling options across time zones',
-          'Training in AI, coding, and robotics concepts',
-          'Professional development opportunities',
-          'Supportive global teaching community',
-          'Health benefits (full-time)'
-        ]
-      }
-    ],
+    teachers: [singleJob],
     strategic: [
       {
         id: 'strategic-1',
