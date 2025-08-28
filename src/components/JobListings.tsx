@@ -42,36 +42,6 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
   const jobs: Record<string, Job[]> = {
     management: [
       {
-        id: 'mt-1',
-        title: 'Management Trainee - AI Product Development',
-        location: 'Remote – Global Applicants Welcome',
-        type: 'Full-time',
-        shortDescription: 'Join our AI-driven product team and help build the future of Web3 & AI-powered education for kids.',
-        fullDescription: 'As a Management Trainee in our AI Product team, you will work closely with senior leadership to develop innovative educational products that introduce children to Web3 and AI concepts. You will gain hands-on experience in AI product management, user research, and agile development methodologies in a global remote environment.',
-        requirements: [
-          'Bachelor\'s degree in Business, Technology, AI, or related field',
-          'Strong analytical and problem-solving skills',
-          'Interest in AI, education technology and Web3',
-          'Excellent communication skills across global teams',
-          'Previous internship or project experience in tech preferred'
-        ]
-      },
-      {
-        id: 'mt-2',
-        title: 'Management Trainee - Global Operations',
-        location: 'Remote – Global Applicants Welcome',
-        type: 'Full-time',
-        shortDescription: 'Drive operational excellence and help scale our innovative AI-powered education platform worldwide.',
-        fullDescription: 'Our Global Operations Management Trainee will work across multiple international departments to optimize processes, improve efficiency, and support our rapid global growth. You\'ll gain exposure to international business, AI operations, and strategic planning while making meaningful contributions to our mission.',
-        requirements: [
-          'Bachelor\'s degree in Business Administration or related field',
-          'Strong organizational and project management skills',
-          'Data analysis capabilities',
-          'Experience working in global/remote teams',
-          'Passion for AI, education and technology'
-        ]
-      },
-      {
         id: 'international-maths-tutor',
         title: 'International Teacher – Maths Tutor',
         location: 'Amsterdam, Netherlands (Remote/Online compatible)',
@@ -79,7 +49,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         shortDescription:
           'Join our European EdTech startup as a Maths Tutor, teaching students aged 6–16 in a supportive, international environment.',
         fullDescription:
-          'About the Job: This is an opportunity to work directly with a European EdTech startup based in Amsterdam, Netherlands. The company provides after-school math classes to students aged 6–16 years. The heart of our business is a core team of amazing and excellent teachers. We hire only the top performers—so if you believe you are one of the top teachers and want to be part of the esteemed group of global educators, do apply! We look forward to speaking with you soon!\n\nResponsibilities:\n• Teach mathematics in a fun, engaging, and interactive way to school students via online classes\n• Instill problem-solving skills and logical reasoning in young learners\n• Assess students\' progress, evaluate assignments, and provide constructive feedback\n• Conduct regular feedback sessions with parents/guardians\n• Customize lessons to meet individual learning needs\n\nTiming:\n• Most classes are scheduled in the evenings on weekdays & throughout the day on weekends\n• Between 4 PM UKT–10 PM UKT - Weekdays\n• Between 9 AM UKT–10 PM UKT on weekends (Mandatory working on weekends)\n• Weekly off on weekdays only\n\nWhat You Get:\n• Opportunity to work with an excellent team on a mission to empower kids with math skills for the future\n• Experience working with an international company\n• A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe',
+          'About the Job: This is an opportunity to work directly with a European EdTech startup based in Amsterdam, Netherlands. The company provides after-school math classes to students aged 6–16 years. The heart of our business is a core team of amazing and excellent teachers. We hire only the top performers—so if you believe you are one of the top teachers and want to be part of the esteemed group of global educators, do apply! We look forward to speaking with you soon!\n\nResponsibilities:\n• Teach mathematics in a fun, engaging, and interactive way to school students via online classes\n• Instill problem-solving skills and logical reasoning in young learners\n• Assess students\' progress, evaluate assignments, and provide constructive feedback\n• Conduct regular feedback sessions with parents/guardians\n• Customize lessons to meet individual learning needs\n\nSkills Required:\n• A degree in Mathematics, Education, or a related field\n• Exceptional oral and written communication skills\n• Passion for teaching students\n• A curious mind and ability to simplify mathematical concepts for young learners\n• Prior experience of 1 year in the online EdTech industry is a plus\n• A laptop with a camera & microphone and a good internet connection\n\nPlatform/Knowledge:\n• Experience teaching topics like Algebra, Geometry, Calculus, and Statistics\n• Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)\n• Experience with gamified teaching platforms is a plus\n\nTiming:\n• Most classes are scheduled in the evenings on weekdays & throughout the day on weekends\n• Between 4 PM UKT–10 PM UKT - Weekdays\n• Between 9 AM UKT–10 PM UKT on weekends (Mandatory working on weekends)\n• Weekly off on weekdays only\n\nWhat You Get:\n• Opportunity to work with an excellent team on a mission to empower kids with math skills for the future\n• Experience working with an international company\n• A very innovative and entrepreneurial environment in one of the rising EdTech companies in Europe',
         requirements: [
           'A degree in Mathematics, Education, or a related field',
           'Exceptional oral and written communication skills',
