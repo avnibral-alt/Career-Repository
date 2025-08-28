@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-import { MapPin, Clock } from 'lucide-react';
+import { MapPin, Clock, DollarSign } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface Job {
@@ -149,6 +149,33 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Global exposure: Be part of an innovative team shaping the future of education',
           'Competitive Stipend: ₹12,000 with attractive performance-based incentives',
           'A chance to be part of a transformative journey, empowering children worldwide with future-ready skills'
+        ]
+      },
+      {
+        id: 'international-maths-tutor',
+        title: 'International Teacher – Maths Tutor',
+        location: 'Amsterdam, Netherlands (Remote/Online compatible)',
+        type: 'Part-time',
+        salary: 'Competitive',
+        shortDescription:
+          'Join our European EdTech startup as a Maths Tutor, teaching students aged 6–16 in a supportive, international environment.',
+        fullDescription:
+          'About the Job: This role supports a European EdTech startup based in Amsterdam that provides after-school math classes to students aged 6–16. The core of the business is a team of excellent teachers. We hire top performers—if you are among the best and want to join a global group of educators, apply. You\'ll help young learners build strong math foundations in a supportive, international environment.\n\nResponsibilities:\n• Teach mathematics in a fun, engaging, and interactive way to school students via online classes\n• Instill problem-solving skills and logical reasoning in young learners\n• Assess progress, evaluate assignments, and provide constructive feedback\n• Conduct regular feedback sessions with parents/guardians\n• Customize lessons to individual learning needs\n\nTiming:\n• Most classes in evenings on weekdays & throughout the day on weekends\n• Weekdays: Between 4 PM UKT–10 PM UKT\n• Weekends (mandatory): Between 9 AM UKT–10 PM UKT\n• Weekly off: Weekdays only',
+        requirements: [
+          'A degree in Mathematics, Education, or a related field',
+          'Exceptional oral and written communication skills',
+          'Passion for teaching students',
+          'Curiosity and ability to simplify mathematical concepts for young learners',
+          'Prior experience (≥1 year) in the online EdTech industry is a plus',
+          'Laptop with camera & microphone and a good internet connection',
+          'Experience teaching Algebra, Geometry, Calculus, and Statistics',
+          'Strong understanding of Math curricula across IGCSE, IB, and CBSE (and similar boards)',
+          'Experience with gamified teaching platforms is a plus'
+        ],
+        benefits: [
+          'Work with an excellent team on a mission to empower kids with future-ready math skills',
+          'Experience with an international company',
+          'Innovative, entrepreneurial environment within a growing European EdTech'
         ]
       }
     ],
@@ -310,6 +337,9 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                         </div>
                         {job.salary && (
                           <div className="flex items-center gap-2">
+                            {job.id === 'intern-sales-operations' ? (
+                              <DollarSign className="w-4 h-4 md:w-5 md:h-5 text-yellow-600" />
+                            ) : null}
                             <span className="font-medium text-sm md:text-base">{job.salary}</span>
                           </div>
                         )}
