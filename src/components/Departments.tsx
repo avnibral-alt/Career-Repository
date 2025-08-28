@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Brain, Bot, Globe } from 'lucide-react';
@@ -11,21 +12,21 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
   const departments = [
     {
       id: 'management',
-      title: 'Management Trainees',
+      title: 'Global Teachers',
       description: 'Learn to lead in an AI-driven education company.',
       icon: Brain,
       image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     },
     {
       id: 'teachers',
-      title: 'Teachers',
+      title: 'JetLearn Career',
       description: 'Inspire kids by teaching coding, robotics & AI concepts.',
       icon: Bot,
       image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     },
     {
       id: 'strategic',
-      title: 'Strategic Roles',
+      title: 'Management Trainees',
       description: 'Help us expand AI-based learning solutions worldwide.',
       icon: Globe,
       image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"

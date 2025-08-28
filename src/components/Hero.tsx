@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
@@ -79,7 +80,7 @@ export function Hero() {
                 
                 {/* Button content */}
                 <span className="relative z-10 flex items-center gap-3">
-                  View Global Opportunities
+                  Explore Roles
                   <motion.svg 
                     className="w-5 h-5 sm:w-6 sm:h-6" 
                     fill="none" 
