@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot@1.1.2";
-import { VariantProps, cva } from "class-variance-authority@0.7.1";
-import { PanelLeftIcon } from "lucide-react@0.487.0";
+import { Slot } from "@radix-ui/react-slot";
+import { VariantProps, cva } from "class-variance-authority";
+import { PanelLeftIcon } from "lucide-react";
 
 import { useIsMobile } from "./use-mobile";
 import { cn } from "./utils";
@@ -69,9 +69,42 @@ function SidebarProvider({
   const isMobile = useIsMobile();
   const [openMobile, setOpenMobile] = React.useState(false);
 
+  // Helper function to safely read cookie
+  const getCookieValue = React.useCallback((name: string): string | null => {
+    try {
+      if (typeof document === 'undefined') return null;
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+      return null;
+    } catch (error) {
+      console.warn('Failed to read cookie:', error);
+      return null;
+    }
+  }, []);
+
+  // Helper function to safely set cookie
+  const setCookieValue = React.useCallback((name: string, value: string) => {
+    try {
+      if (typeof document === 'undefined') return;
+      document.cookie = `${name}=${value}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+    } catch (error) {
+      console.warn('Failed to set cookie:', error);
+    }
+  }, []);
+
+  // Initialize state from cookie or default
+  const getInitialState = React.useCallback(() => {
+    const savedState = getCookieValue(SIDEBAR_COOKIE_NAME);
+    if (savedState !== null) {
+      return savedState === 'true';
+    }
+    return defaultOpen;
+  }, [getCookieValue, defaultOpen]);
+
   // This is the internal state of the sidebar.
   // We use openProp and setOpenProp for control from outside the component.
-  const [_open, _setOpen] = React.useState(defaultOpen);
+  const [_open, _setOpen] = React.useState(getInitialState);
   const open = openProp ?? _open;
   const setOpen = React.useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
@@ -83,9 +116,9 @@ function SidebarProvider({
       }
 
       // This sets the cookie to keep the sidebar state.
-      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+      setCookieValue(SIDEBAR_COOKIE_NAME, openState.toString());
     },
-    [setOpenProp, open],
+    [setOpenProp, open, setCookieValue],
   );
 
   // Helper to toggle the sidebar.
@@ -95,13 +128,19 @@ function SidebarProvider({
 
   // Adds a keyboard shortcut to toggle the sidebar.
   React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
-        (event.metaKey || event.ctrlKey)
-      ) {
-        event.preventDefault();
-        toggleSidebar();
+      try {
+        if (
+          event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
+          (event.metaKey || event.ctrlKey)
+        ) {
+          event.preventDefault();
+          toggleSidebar();
+        }
+      } catch (error) {
+        console.warn('Failed to handle keyboard shortcut:', error);
       }
     };
 

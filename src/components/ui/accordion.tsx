@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-// @ts-ignore - type declarations are provided via ambient d.ts
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "lucide-react";
 

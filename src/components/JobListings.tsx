@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-import { MapPin, Clock, DollarSign } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface Job {
@@ -308,10 +308,11 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                           <Clock className="w-4 h-4 md:w-5 md:h-5 text-yellow-600" />
                           <span className="font-medium text-sm md:text-base">{job.type}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <DollarSign className="w-4 h-4 md:w-5 md:h-5 text-yellow-600" />
-                          <span className="font-medium text-sm md:text-base">{job.salary}</span>
-                        </div>
+                        {job.salary && (
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-sm md:text-base">{job.salary}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     

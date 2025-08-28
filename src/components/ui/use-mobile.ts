@@ -8,13 +8,29 @@ export function useIsMobile() {
   );
 
   React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
-    const onChange = () => {
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') {
+      setIsMobile(false);
+      return;
+    }
+
+    try {
+      const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+      const onChange = () => {
+        setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+      };
+      
+      // Set initial value
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    };
-    mql.addEventListener("change", onChange);
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    return () => mql.removeEventListener("change", onChange);
+      
+      // Add event listener
+      mql.addEventListener("change", onChange);
+      
+      return () => mql.removeEventListener("change", onChange);
+    } catch (error) {
+      console.warn('Failed to setup mobile detection:', error);
+      setIsMobile(false);
+    }
   }, []);
 
   return !!isMobile;
