@@ -28,7 +28,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
     type: 'Full-time',
     shortDescription: 'Drive founder-led, cross-functional sales enablement programs, automation, and lead-generation initiatives.',
     fullDescription:
-      'Responsibilities:\n\nSales Program Execution:\n• Drive strategic programs focused on lead generation, sales efficiency, and customer acquisition in partnership with the sales leadership.\n\nCross-Functional Collaboration:\n• Act as the bridge between Sales, Marketing, Curriculum, and Tech teams to launch initiatives that bring in qualified leads from multiple internal and external sources.\n\nAutomation & Tools Ownership:\n• Identify and implement automation tools (e.g., HubSpot, Google Sheets, Zapier, etc.) to streamline lead flows, CRM operations, and reporting.\n\nProcess Implementation:\n• Translate founder-led initiatives into structured programs with measurable outcomes. Build and document repeatable sales playbooks and lead generation workflows.\n\nLead Generation Strategy:\n• Collaborate on designing creative lead funnels by leveraging student projects, parent testimonials, events, and educator networks.\n\nData-Driven Insights:\n• Support in building dashboards and reports to track project performance, team productivity, and lead pipeline health.\n\nWhat We\'re Looking For:\n• Experience: 1–2 years of experience in a high-growth startup, consulting firm, or sales ops/enablement role\n• Strong pedigree (Tier-1/2 college or equivalent work exposure preferred)\n• Highly analytical, process-oriented, and curious to build systems from scratch\n• Excellent communication and stakeholder management skills\n• Entrepreneurial mindset and ability to work closely with founders and senior leaders\n• Passion for EdTech and creating impact through scalable innovation\n\nLocation: Delhi NCR\nStart Date: ASAP',
+      'About the Role: We are looking for a high-potential Assistant Program Manager to join the Founder\'s Office and support the sales in implementing high-impact initiatives, driving lead generation through cross-functional collaboration, and operationalising new strategic projects. This is not a conventional sales role. It\'s a systems and enablement role for someone who thrives on building scalable processes, aligning teams, and unlocking new opportunities through internal innovation.\n\nResponsibilities:\n\nSales Program Execution:\n• Drive strategic programs focused on lead generation, sales efficiency, and customer acquisition in partnership with the sales leadership.\n\nCross-Functional Collaboration:\n• Act as the bridge between Sales, Marketing, Curriculum, and Tech teams to launch initiatives that bring in qualified leads from multiple internal and external sources.\n\nAutomation & Tools Ownership:\n• Identify and implement automation tools (e.g., HubSpot, Google Sheets, Zapier, etc.) to streamline lead flows, CRM operations, and reporting.\n\nProcess Implementation:\n• Translate founder-led initiatives into structured programs with measurable outcomes. Build and document repeatable sales playbooks and lead generation workflows.\n\nLead Generation Strategy:\n• Collaborate on designing creative lead funnels by leveraging student projects, parent testimonials, events, and educator networks.\n\nData-Driven Insights:\n• Support in building dashboards and reports to track project performance, team productivity, and lead pipeline health.\n\nWhat We\'re Looking For:\n• Experience: 1–2 years of experience in a high-growth startup, consulting firm, or sales ops/enablement role\n• Strong pedigree (Tier-1/2 college or equivalent work exposure preferred)\n• Highly analytical, process-oriented, and curious to build systems from scratch\n• Excellent communication and stakeholder management skills\n• Entrepreneurial mindset and ability to work closely with founders and senior leaders\n• Passion for EdTech and creating impact through scalable innovation\n\nLocation: Delhi NCR\nStart Date: ASAP',
     requirements: [
       '1–2 years in high-growth startup/consulting/sales ops or enablement',
       'Strong pedigree (Tier-1/2 or equivalent exposure preferred)',
@@ -356,16 +356,42 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                         )}
 
                         {job.id === 'apm-founders-office' && (
-                          <div>
-                            <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                              <li className="text-sm md:text-base">Work with a high-performing international team on a meaningful mission</li>
-                              <li className="text-sm md:text-base">Take charge of creating an industry-first sales automation engine in EdTech</li>
-                              <li className="text-sm md:text-base">Influence how tens of thousands of parents choose tech education for their kids</li>
-                              <li className="text-sm md:text-base">Competitive salary, creative freedom, and career advancement opportunities</li>
-                              <li className="text-sm md:text-base">Based in our Delhi office with global exposure</li>
-                            </ul>
-                          </div>
+                          <>
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Responsibilities</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Sales Program Execution: Drive strategic programs focused on lead generation, sales efficiency, and customer acquisition in partnership with the sales leadership</li>
+                                <li className="text-sm md:text-base">Cross-Functional Collaboration: Act as the bridge between Sales, Marketing, Curriculum, and Tech teams to launch initiatives that bring in qualified leads from multiple internal and external sources</li>
+                                <li className="text-sm md:text-base">Automation & Tools Ownership: Identify and implement automation tools (e.g., HubSpot, Google Sheets, Zapier, etc.) to streamline lead flows, CRM operations, and reporting</li>
+                                <li className="text-sm md:text-base">Process Implementation: Translate founder-led initiatives into structured programs with measurable outcomes. Build and document repeatable sales playbooks and lead generation workflows</li>
+                                <li className="text-sm md:text-base">Lead Generation Strategy: Collaborate on designing creative lead funnels by leveraging student projects, parent testimonials, events, and educator networks</li>
+                                <li className="text-sm md:text-base">Data-Driven Insights: Support in building dashboards and reports to track project performance, team productivity, and lead pipeline health</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">What We're Looking For</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Experience: 1–2 years of experience in a high-growth startup, consulting firm, or sales ops/enablement role</li>
+                                <li className="text-sm md:text-base">Strong pedigree (Tier-1/2 college or equivalent work exposure preferred)</li>
+                                <li className="text-sm md:text-base">Highly analytical, process-oriented, and curious to build systems from scratch</li>
+                                <li className="text-sm md:text-base">Excellent communication and stakeholder management skills</li>
+                                <li className="text-sm md:text-base">Entrepreneurial mindset and ability to work closely with founders and senior leaders</li>
+                                <li className="text-sm md:text-base">Passion for EdTech and creating impact through scalable innovation</li>
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
+                              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li className="text-sm md:text-base">Work with a high-performing international team on a meaningful mission</li>
+                                <li className="text-sm md:text-base">Take charge of creating an industry-first sales automation engine in EdTech</li>
+                                <li className="text-sm md:text-base">Influence how tens of thousands of parents choose tech education for their kids</li>
+                                <li className="text-sm md:text-base">Competitive salary, creative freedom, and career advancement opportunities</li>
+                                <li className="text-sm md:text-base">Based in our Delhi office with global exposure</li>
+                              </ul>
+                            </div>
+                          </>
                         )}
                       </AccordionContent>
                     </AccordionItem>
