@@ -78,7 +78,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
-            We're hiring worldwide
+            Explore global opportunities
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             From AI educators to strategists shaping the next era of learning, join us wherever you are.
