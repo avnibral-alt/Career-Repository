@@ -37,7 +37,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       title: 'Management Trainees',
       subtitle: 'India-Based Roles',
       description: 'Develop strategic leadership skills and help expand our AI-based learning solutions across India.',
-      icon: Globe,
+      icon: Star,
       image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false,
       locations: ['Delhi NCR', 'Remote'],
@@ -232,18 +232,18 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
 
                     {/* Stats */}
                     <div className="flex items-center gap-4 mb-5">
-                                             {dept.isInternational ? (
-                         <>
-                           <div className="flex items-center gap-1">
-                             <Sparkles className="w-4 h-4 text-blue-500" />
-                             <span className="text-sm text-gray-600">International Role</span>
-                           </div>
-                           <div className="flex items-center gap-1">
-                             <Users className="w-4 h-4 text-indigo-500" />
-                             <span className="text-sm text-gray-600">Remote Available</span>
-                           </div>
-                         </>
-                       ) : (
+                      {dept.isInternational ? (
+                        <>
+                          <div className="flex items-center gap-1">
+                            <Sparkles className="w-4 h-4 text-blue-500" />
+                            <span className="text-sm text-gray-600">International Role</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Users className="w-4 h-4 text-indigo-500" />
+                            <span className="text-sm text-gray-600">Remote Available</span>
+                          </div>
+                        </>
+                      ) : (
                         <>
                           <div className="flex items-center gap-1">
                             <Users className="w-4 h-4 text-gray-500" />
@@ -302,8 +302,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           viewport={{ once: true }}
         >
           <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-            <strong className="text-blue-600">Global Teachers</strong> is our only international role, open to candidates worldwide. 
-            Other positions are based in India with opportunities for global collaboration.
+            <strong style={{ color: '#ffcf00' }}>Global Teachers</strong> offers international opportunities, while other roles provide local impact with global collaboration.
           </p>
         </motion.div>
       </div>
