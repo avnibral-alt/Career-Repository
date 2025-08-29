@@ -91,13 +91,6 @@ export function Hero() {
                   </motion.svg>
                 </span>
               </Button>
-              
-              <Button 
-                variant="outline"
-                className="px-8 py-5 text-lg rounded-2xl font-medium transition-all duration-500 hover:bg-gray-50 border-2 border-gray-200 text-gray-700"
-              >
-                View Open Roles
-              </Button>
             </motion.div>
           </motion.div>
 

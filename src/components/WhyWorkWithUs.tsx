@@ -8,7 +8,13 @@ import {
   RefreshCw, 
   Heart,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Globe,
+  TrendingUp,
+  Lightbulb,
+  Award,
+  Rocket,
+  Star
 } from 'lucide-react';
 
 export function WhyWorkWithUs() {
@@ -19,7 +25,9 @@ export function WhyWorkWithUs() {
       description: 'Where brilliant minds unite across borders to create magic.',
       icon: Users,
       color: 'from-blue-500 to-blue-600',
-      bgColor: 'from-blue-50 to-blue-100'
+      bgColor: 'from-blue-50 to-blue-100',
+      interactiveIcon: Globe,
+      interactiveText: 'Global Team'
     },
     {
       letter: 'A',
@@ -27,7 +35,9 @@ export function WhyWorkWithUs() {
       description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
       icon: Zap,
       color: 'from-yellow-500 to-orange-500',
-      bgColor: 'from-yellow-50 to-orange-50'
+      bgColor: 'from-yellow-50 to-orange-50',
+      interactiveIcon: Rocket,
+      interactiveText: 'Fast Execution'
     },
     {
       letter: 'R',
@@ -35,7 +45,9 @@ export function WhyWorkWithUs() {
       description: 'Take the wheel, own the outcome, and make it happen.',
       icon: Target,
       color: 'from-green-500 to-green-600',
-      bgColor: 'from-green-50 to-green-100'
+      bgColor: 'from-green-50 to-green-100',
+      interactiveIcon: Award,
+      interactiveText: 'Excellence'
     },
     {
       letter: 'D',
@@ -43,7 +55,9 @@ export function WhyWorkWithUs() {
       description: 'Let the numbers tell the story, not just your gut feeling.',
       icon: BarChart3,
       color: 'from-purple-500 to-purple-600',
-      bgColor: 'from-purple-50 to-purple-100'
+      bgColor: 'from-purple-50 to-purple-100',
+      interactiveIcon: TrendingUp,
+      interactiveText: 'Analytics'
     },
     {
       letter: 'I',
@@ -51,7 +65,9 @@ export function WhyWorkWithUs() {
       description: 'Fail fast, learn faster, and keep the innovation engine running.',
       icon: RefreshCw,
       color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'from-indigo-50 to-indigo-100'
+      bgColor: 'from-indigo-50 to-indigo-100',
+      interactiveIcon: Lightbulb,
+      interactiveText: 'Innovation'
     },
     {
       letter: 'O',
@@ -59,7 +75,9 @@ export function WhyWorkWithUs() {
       description: 'Put students first, because they\'re the future we\'re building.',
       icon: Heart,
       color: 'from-red-500 to-pink-500',
-      bgColor: 'from-red-50 to-pink-50'
+      bgColor: 'from-red-50 to-pink-50',
+      interactiveIcon: Star,
+      interactiveText: 'Excellence'
     }
   ];
 
@@ -155,6 +173,7 @@ export function WhyWorkWithUs() {
           <div className="space-y-6">
             {values.map((value, index) => {
               const IconComponent = value.icon;
+              const InteractiveIconComponent = value.interactiveIcon;
               
               return (
                 <motion.div
@@ -196,6 +215,24 @@ export function WhyWorkWithUs() {
                           {value.description}
                         </p>
                       </div>
+
+                      {/* Interactive element on the right */}
+                      <motion.div 
+                        className="flex flex-col items-center gap-2 flex-shrink-0"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <motion.div 
+                          className={`w-10 h-10 rounded-full bg-gradient-to-r ${value.color} flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.6, ease: "easeInOut" }}
+                        >
+                          <InteractiveIconComponent className="w-5 h-5 text-white" />
+                        </motion.div>
+                        <span className="text-xs font-medium text-gray-500 group-hover:text-gray-700 transition-colors">
+                          {value.interactiveText}
+                        </span>
+                      </motion.div>
                     </div>
 
                     {/* Subtle glow effect */}

@@ -20,11 +20,7 @@ export function Footer() {
     }
   ];
 
-  const innovationStats = [
-    { icon: Sparkles, label: 'Innovation', value: 'AI-First' },
-    { icon: TrendingUp, label: 'Growth', value: '200% YoY' },
-    { icon: Target, label: 'Impact', value: 'Global' }
-  ];
+
 
   return (
     <motion.footer 
@@ -42,32 +38,7 @@ export function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Innovation stats section */}
-        <motion.div 
-          className="grid grid-cols-3 gap-6 mb-12 lg:mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          {innovationStats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              className="text-center p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center"
-                   style={{ backgroundColor: '#ffcf00' }}>
-                <stat.icon className="w-6 h-6 text-black" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           {/* Logo and description */}
@@ -167,15 +138,7 @@ export function Footer() {
                 </a>
               </motion.div>
               
-              {/* Innovation focus */}
-              <div className="mt-6">
-                <h4 className="font-medium text-gray-900 mb-3">Innovation Focus</h4>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div>🤖 AI-Powered Learning</div>
-                  <div>🌍 Global Impact</div>
-                  <div>⚡ Rapid Innovation</div>
-                </div>
-              </div>
+
             </div>
           </motion.div>
         </div>
