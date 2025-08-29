@@ -31,21 +31,6 @@ export function Hero() {
 
   return (
     <section id="home" className="pt-14 sm:pt-16 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden relative">
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Abstract geometric patterns */}
-        <div className="absolute top-20 right-10 w-96 h-96 opacity-3">
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 lg:py-32 relative">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left content */}
@@ -84,7 +69,7 @@ export function Hero() {
             >
               <Button 
                 onClick={() => scrollToSection('why-work-with-us')}
-                className="group relative w-full sm:w-auto px-8 sm:px-10 py-5 sm:py-6 text-lg sm:text-xl rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden touch-manipulation"
+                className="group relative px-8 py-5 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden touch-manipulation"
                 style={{ backgroundColor: '#ffcf00', color: '#000' }}
               >
                 {/* Gradient overlay for hover effect */}
@@ -94,7 +79,7 @@ export function Hero() {
                 <span className="relative z-10 flex items-center gap-3">
                   Why JetLearn
                   <motion.svg 
-                    className="w-5 h-5 sm:w-6 sm:h-6" 
+                    className="w-5 h-5" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -109,7 +94,7 @@ export function Hero() {
               
               <Button 
                 variant="outline"
-                className="w-full sm:w-auto px-8 sm:px-10 py-5 sm:py-6 text-lg sm:text-xl rounded-2xl font-medium transition-all duration-500 hover:bg-gray-50 border-2 border-gray-200 text-gray-700"
+                className="px-8 py-5 text-lg rounded-2xl font-medium transition-all duration-500 hover:bg-gray-50 border-2 border-gray-200 text-gray-700"
               >
                 View Open Roles
               </Button>
@@ -170,18 +155,6 @@ export function Hero() {
                 delay: 1
               }}
             />
-            
-            {/* Abstract pattern overlay */}
-            <div className="absolute top-4 right-4 w-16 h-16 opacity-10">
-              <svg viewBox="0 0 40 40" className="w-full h-full">
-                <defs>
-                  <pattern id="innovation-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="1"/>
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#innovation-grid)" />
-              </svg>
-            </div>
           </motion.div>
         </div>
       </div>

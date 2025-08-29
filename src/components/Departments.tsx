@@ -258,9 +258,8 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                     </div>
                     
                     <motion.div 
-                      className={`flex items-center text-sm lg:text-base font-medium ${
-                        dept.isInternational ? 'text-blue-600' : 'text-gray-600'
-                      }`}
+                      className="flex items-center text-sm lg:text-base font-medium"
+                      style={{ color: '#ffcf00' }}
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
@@ -295,7 +294,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
 
         {/* Call to action */}
         <motion.div 
-          className="text-center mt-16"
+          className="text-center mt-16 mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}

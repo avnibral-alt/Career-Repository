@@ -74,11 +74,11 @@ export function WhyWorkWithUs() {
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         duration: 0.5,
         ease: "easeOut"
@@ -124,94 +124,94 @@ export function WhyWorkWithUs() {
           </p>
         </motion.div>
 
-        {/* CARDIO Highlight */}
+        {/* CARDIO Vertical Layout */}
         <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border-2 border-gray-200 shadow-lg">
-            <span className="text-2xl font-bold text-gray-900">C</span>
-            <span className="text-2xl font-bold text-gray-900">A</span>
-            <span className="text-2xl font-bold text-gray-900">R</span>
-            <span className="text-2xl font-bold text-gray-900">D</span>
-            <span className="text-2xl font-bold text-gray-900">I</span>
-            <span className="text-2xl font-bold text-gray-900">O</span>
-            <span className="text-sm text-gray-600 ml-2">— Our Core Values</span>
-          </div>
-        </motion.div>
-
-        {/* Values Grid - Compact Design */}
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+          className="max-w-4xl mx-auto mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {values.map((value, index) => {
-            const IconComponent = value.icon;
-            
-            return (
-              <motion.div
-                key={value.letter}
-                variants={cardVariants}
-                whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group relative"
-              >
-                <div className="relative p-5 md:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-                  {/* Background gradient */}
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${value.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  
-                  <div className="relative z-10 flex items-start gap-4">
-                    {/* Letter badge */}
-                    <motion.div 
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-r ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
-                      whileHover={{ rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <span className="text-lg font-bold text-white">{value.letter}</span>
-                    </motion.div>
+          {/* CARDIO Header */}
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border-2 border-gray-200 shadow-lg">
+              <span className="text-2xl font-bold text-gray-900">C</span>
+              <span className="text-2xl font-bold text-gray-900">A</span>
+              <span className="text-2xl font-bold text-gray-900">R</span>
+              <span className="text-2xl font-bold text-gray-900">D</span>
+              <span className="text-2xl font-bold text-gray-900">I</span>
+              <span className="text-2xl font-bold text-gray-900">O</span>
+              <span className="text-sm text-gray-600 ml-2">— Our Core Values</span>
+            </div>
+          </motion.div>
 
-                    <div className="flex-1 min-w-0">
-                      {/* Icon and title row */}
-                      <div className="flex items-center gap-2 mb-2">
-                        <motion.div 
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          <div className={`w-6 h-6 rounded-lg bg-gradient-to-r ${value.color} flex items-center justify-center`}>
-                            <IconComponent className="w-3 h-3 text-white" />
-                          </div>
-                        </motion.div>
-                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-800 transition-colors">
+          {/* Values List - Vertical Layout */}
+          <div className="space-y-6">
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              
+              return (
+                <motion.div
+                  key={value.letter}
+                  variants={itemVariants}
+                  whileHover={{ x: 10 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="group relative"
+                >
+                  <div className="relative p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                    {/* Background gradient */}
+                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${value.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                    
+                    <div className="relative z-10 flex items-center gap-6">
+                      {/* Letter badge */}
+                      <motion.div 
+                        className={`w-16 h-16 rounded-xl bg-gradient-to-r ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                        whileHover={{ rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <span className="text-xl font-bold text-white">{value.letter}</span>
+                      </motion.div>
+
+                      {/* Icon */}
+                      <motion.div 
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${value.color} flex items-center justify-center`}>
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                      </motion.div>
+
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors mb-2">
                           {value.title}
                         </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {value.description}
+                        </p>
                       </div>
+                    </div>
 
-                      {/* Description */}
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {value.description}
-                      </p>
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${value.color} blur-xl opacity-10`} />
                     </div>
                   </div>
-
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${value.color} blur-xl opacity-10`} />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
 
         {/* Call to Action */}
         <motion.div 
-          className="text-center mt-12 lg:mt-16"
+          className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}

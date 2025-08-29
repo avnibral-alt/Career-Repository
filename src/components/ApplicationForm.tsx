@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Card } from './ui/card';
 import { motion } from 'motion/react';
 
@@ -60,7 +60,7 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
         >
           <motion.div 
             className="inline-flex items-center px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: '#fede00', color: '#000' }}
+            style={{ backgroundColor: '#ffcf00', color: '#000' }}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
@@ -76,7 +76,7 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
           {selectedJob && (
             <motion.p 
               className="text-base md:text-xl font-medium mb-4 px-5 md:px-6 py-2.5 md:py-3 rounded-2xl inline-block" 
-              style={{ backgroundColor: '#fede00', color: '#000' }}
+              style={{ backgroundColor: '#ffcf00', color: '#000' }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, type: "spring", stiffness: 200 }}

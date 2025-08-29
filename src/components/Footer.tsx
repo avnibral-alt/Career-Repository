@@ -144,7 +144,8 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-blue-600" />
                 <a 
                   href="mailto:hello@jet-learn.com"
-                  className="hover:text-gray-900 transition-colors cursor-pointer"
+                  className="hover:text-yellow-600 transition-colors cursor-pointer"
+                  style={{ '--tw-text-opacity': '1', '--hover-color': '#ffcf00' } as any}
                 >
                   hello@jet-learn.com
                 </a>
@@ -159,7 +160,8 @@ export function Footer() {
                   href="https://wa.me/3197010286071" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-gray-900 transition-colors cursor-pointer"
+                  className="hover:text-yellow-600 transition-colors cursor-pointer"
+                  style={{ '--tw-text-opacity': '1', '--hover-color': '#ffcf00' } as any}
                 >
                   +31 97010286071 (WhatsApp)
                 </a>
@@ -202,7 +204,8 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900 text-base transition-all duration-300 inline-block"
+                  className="text-gray-600 hover:text-yellow-600 text-base transition-all duration-300 inline-block"
+                  style={{ '--tw-text-opacity': '1', '--hover-color': '#ffcf00' } as any}
                 >
                   <motion.span
                     whileHover={{ y: -2 }}

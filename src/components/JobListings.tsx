@@ -339,7 +339,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                       <AccordionTrigger className="text-left hover:no-underline py-3 md:py-4 text-base md:text-lg">
                         <motion.span 
                           className="font-medium flex items-center gap-2" 
-                          style={{ color: job.isInternational ? '#3b82f6' : '#6b7280' }}
+                          style={{ color: '#ffcf00' }}
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
