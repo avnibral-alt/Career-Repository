@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -44,23 +44,6 @@ export function Hero() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        
-        {/* Floating innovation elements */}
-        <motion.div 
-          className="absolute top-32 left-10 w-16 h-16 opacity-10"
-          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Sparkles className="w-full h-full text-blue-600" />
-        </motion.div>
-        
-        <motion.div 
-          className="absolute bottom-32 right-20 w-12 h-12 opacity-10"
-          animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        >
-          <TrendingUp className="w-full h-full text-indigo-600" />
-        </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 lg:py-32 relative">
@@ -72,36 +55,16 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {/* Innovation badge */}
-            <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium"
-              style={{ backgroundColor: '#ffcf00', color: '#000', borderColor: '#e5b800' }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>Innovation-Driven</span>
-            </motion.div>
-
             <motion.h1 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              INNOVATORS WANTED:
+              <span className="block">INNOVATORS WANTED:</span>
               <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Join the JetLearn Revolution
+                Join the JetLearn Revolution ⚡
               </span>
-              <motion.span 
-                className="ml-2 inline-block"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5, delay: 1, type: "spring", stiffness: 200 }}
-              >
-                ⚡
-              </motion.span>
             </motion.h1>
             
             <motion.p 
@@ -112,42 +75,6 @@ export function Hero() {
             >
               Shape the future of AI-powered education. We're building the world's most innovative learning platform and need exceptional talent to join our mission.
             </motion.p>
-
-            {/* Key highlights */}
-            <motion.div 
-              className="flex flex-wrap gap-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                  <TrendingUp className="w-4 h-4 text-blue-600" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Growth</div>
-                  <div className="font-semibold text-gray-900">200% YoY</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-indigo-600" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Innovation</div>
-                  <div className="font-semibold text-gray-900">AI-First</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-purple-600" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500">Impact</div>
-                  <div className="font-semibold text-gray-900">Global</div>
-                </div>
-              </div>
-            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -165,7 +92,7 @@ export function Hero() {
                 
                 {/* Button content */}
                 <span className="relative z-10 flex items-center gap-3">
-                  Discover Our Culture
+                  Why JetLearn
                   <motion.svg 
                     className="w-5 h-5 sm:w-6 sm:h-6" 
                     fill="none" 
@@ -189,7 +116,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right content - Professional imagery */}
+          {/* Right content - Professional globally appealing image */}
           <motion.div 
             className="relative"
             initial={{ opacity: 0, x: 50 }}
@@ -198,24 +125,21 @@ export function Hero() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hdGlvbmFsJTIwdGVhbSUyMHdvcmtpbmclMjBnbG9iYWwlMjBidXNpbmVzc3xlbnwxfHx8fDE3NTYxMTkwNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Professional team collaboration and innovation"
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hdGlvbmFsJTIwdGVhbSUyMHdvcmtpbmclMjBjb2xsYWJvcmF0aW9uJTIwbW9kZXJuJTIwb2ZmaWNlfGVufDF8fHx8MTc1NjExOTI1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Professional international team collaboration in modern workspace"
                 className="w-full h-72 sm:h-80 md:h-96 lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               
               {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               
-              {/* Innovation indicators */}
+              {/* Subtle decorative elements */}
               <div className="absolute top-6 right-6 flex gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  <span className="text-lg">⚡</span>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                  <TrendingUp className="w-4 h-4 text-indigo-600" />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-4 h-4 text-purple-600" />
+                  <ArrowRight className="w-4 h-4 text-indigo-600" />
                 </div>
               </div>
             </div>

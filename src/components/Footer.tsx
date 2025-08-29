@@ -91,8 +91,8 @@ export function Footer() {
               </span>
             </motion.div>
             <p className="text-gray-600 mb-8 max-w-md text-lg leading-relaxed">
-              Building the world's first Web3 & AI-powered online academy for kids. 
-              Join our global team in revolutionizing education for the next generation across 15+ countries.
+              Building the world's most innovative AI-powered learning platform. 
+              Join our global team in revolutionizing education for the next generation.
             </p>
             
             {/* Social Media Icons */}

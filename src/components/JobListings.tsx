@@ -230,8 +230,8 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             {selectedDepartment === 'management' 
-              ? 'Join our international teaching team and inspire students worldwide with cutting-edge AI and coding education.'
-              : 'JetLearn is AI-first and global-first. Our roles are remote-friendly and open to international applicants unless specified.'
+              ? 'Join our international teaching team and inspire the next generation of innovators.'
+              : 'Ready to make your mark? These roles are your ticket to the revolution.'
             }
           </p>
         </motion.div>

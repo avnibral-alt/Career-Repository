@@ -14,7 +14,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       id: 'management',
       title: 'Global Teachers',
       subtitle: 'International Opportunities',
-      description: 'Join our global teaching team and inspire students worldwide with cutting-edge AI and coding education.',
+      description: 'Teach the future. Inspire the next generation of innovators across the globe.',
       icon: Brain,
       image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: true,
@@ -25,7 +25,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       id: 'teachers',
       title: 'JetLearn Career',
       subtitle: 'India-Based Roles',
-      description: 'Build your career with our core team in India, driving innovation in AI-powered education technology.',
+      description: 'Build the engine that powers the future. Code, create, and innovate from the heart of India.',
       icon: Bot,
       image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false,
@@ -36,7 +36,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       id: 'strategic',
       title: 'Management Trainees',
       subtitle: 'India-Based Roles',
-      description: 'Develop strategic leadership skills and help expand our AI-based learning solutions across India.',
+      description: 'Lead the charge. Develop strategies that will change how the world learns.',
       icon: Star,
       image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false,
@@ -117,10 +117,10 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
-            Choose Your Path to Global Impact
+            Why Choose JetLearn
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            From international teaching roles to India-based career opportunities, find your perfect fit in our growing global team.
+            Ready to join the revolution? Pick your battlefield and let's build the future of education together.
           </p>
         </motion.div>
 
@@ -302,7 +302,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           viewport={{ once: true }}
         >
           <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-            <strong style={{ color: '#ffcf00' }}>Global Teachers</strong> offers international opportunities, while other roles provide local impact with global collaboration.
+            <strong style={{ color: '#ffcf00' }}>Global Teachers</strong> is our international role, while other positions offer local impact with global reach.
           </p>
         </motion.div>
       </div>

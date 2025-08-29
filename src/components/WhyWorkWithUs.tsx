@@ -16,15 +16,15 @@ export function WhyWorkWithUs() {
     {
       letter: 'C',
       title: 'Collaborate',
-      description: 'Work together across borders and cultures to achieve extraordinary results.',
+      description: 'Where brilliant minds unite across borders to create magic.',
       icon: Users,
       color: 'from-blue-500 to-blue-600',
       bgColor: 'from-blue-50 to-blue-100'
     },
     {
-      letter: 'B',
+      letter: 'A',
       title: 'Bias for Action',
-      description: 'Move fast, take calculated risks, and turn ideas into reality quickly.',
+      description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
       icon: Zap,
       color: 'from-yellow-500 to-orange-500',
       bgColor: 'from-yellow-50 to-orange-50'
@@ -32,7 +32,7 @@ export function WhyWorkWithUs() {
     {
       letter: 'R',
       title: 'Own and Deliver Results',
-      description: 'Take full ownership of your work and consistently deliver exceptional outcomes.',
+      description: 'Take the wheel, own the outcome, and make it happen.',
       icon: Target,
       color: 'from-green-500 to-green-600',
       bgColor: 'from-green-50 to-green-100'
@@ -40,7 +40,7 @@ export function WhyWorkWithUs() {
     {
       letter: 'D',
       title: 'Be Data-Driven',
-      description: 'Make informed decisions based on data, metrics, and measurable insights.',
+      description: 'Let the numbers tell the story, not just your gut feeling.',
       icon: BarChart3,
       color: 'from-purple-500 to-purple-600',
       bgColor: 'from-purple-50 to-purple-100'
@@ -48,7 +48,7 @@ export function WhyWorkWithUs() {
     {
       letter: 'I',
       title: 'Iterate and Learn',
-      description: 'Embrace continuous improvement and learn from every experience.',
+      description: 'Fail fast, learn faster, and keep the innovation engine running.',
       icon: RefreshCw,
       color: 'from-indigo-500 to-indigo-600',
       bgColor: 'from-indigo-50 to-indigo-100'
@@ -56,7 +56,7 @@ export function WhyWorkWithUs() {
     {
       letter: 'O',
       title: 'Learner Obsession',
-      description: 'Put our students first and create exceptional learning experiences.',
+      description: 'Put students first, because they\'re the future we\'re building.',
       icon: Heart,
       color: 'from-red-500 to-pink-500',
       bgColor: 'from-red-50 to-pink-50'
@@ -113,15 +113,34 @@ export function WhyWorkWithUs() {
             viewport={{ once: true }}
           >
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Our Core Values</span>
+            <span className="text-sm font-medium">Our DNA</span>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Why Work With Us
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join a team that values collaboration, innovation, and making a real impact in global education.
+            We're not just another EdTech company. We're a revolution in the making, and we need rebels with a cause.
           </p>
+        </motion.div>
+
+        {/* CARDIO Highlight */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border-2 border-gray-200 shadow-lg">
+            <span className="text-2xl font-bold text-gray-900">C</span>
+            <span className="text-2xl font-bold text-gray-900">A</span>
+            <span className="text-2xl font-bold text-gray-900">R</span>
+            <span className="text-2xl font-bold text-gray-900">D</span>
+            <span className="text-2xl font-bold text-gray-900">I</span>
+            <span className="text-2xl font-bold text-gray-900">O</span>
+            <span className="text-sm text-gray-600 ml-2">— Our Core Values</span>
+          </div>
         </motion.div>
 
         {/* Values Grid - Compact Design */}
