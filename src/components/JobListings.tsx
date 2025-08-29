@@ -205,11 +205,8 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           </motion.div>
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
-            {departmentTitles[selectedDepartment as keyof typeof departmentTitles]}
+            Explore global opportunities
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            JetLearn is AI-first and global-first. Our roles are remote-friendly and open to international applicants unless specified.
-          </p>
         </motion.div>
 
         <motion.div 
