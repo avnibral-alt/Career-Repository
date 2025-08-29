@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
+import { Sparkles } from 'lucide-react';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +26,7 @@ export function Header() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${
         isScrolled ? 'shadow-lg border-b border-gray-100' : ''
       }`}
       initial={{ y: -100 }}
@@ -36,19 +37,32 @@ export function Header() {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <motion.div 
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <span className="text-2xl lg:text-3xl font-bold text-black cursor-pointer">
-              Jet<span style={{ color: '#fede00' }}>Learn</span>
-            </span>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center"
+                   style={{ backgroundColor: '#ffcf00' }}>
+                <Sparkles className="w-4 h-4 text-black" />
+              </div>
+              <span className="text-2xl lg:text-3xl font-bold text-gray-900 cursor-pointer">
+                Jet<span style={{ color: '#ffcf00' }}>Learn</span>
+              </span>
+            </div>
+            
+            {/* Innovation indicator */}
+            <div className="hidden sm:flex items-center gap-1 px-2 py-1 rounded-full border"
+                 style={{ backgroundColor: '#ffcf00', color: '#000', borderColor: '#e5b800' }}>
+              <Sparkles className="w-3 h-3" />
+              <span className="text-xs font-medium">Innovation</span>
+            </div>
           </motion.div>
 
           {/* Navigation */}
           <nav className="hidden md:flex space-x-2 lg:space-x-4">
             {[
-              { name: 'Careers', id: 'departments' },
+              { name: 'Global Careers', id: 'departments' },
               { name: 'Contact', id: 'contact' }
             ].map((item, index) => (
               <motion.div
@@ -60,7 +74,7 @@ export function Header() {
                 <Button 
                   variant="ghost" 
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-700 hover:text-black hover:bg-yellow-50 px-4 py-2 rounded-xl transition-all duration-300 font-medium"
+                  className="text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 px-4 py-2 rounded-xl transition-all duration-300 font-medium"
                 >
                   {item.name}
                 </Button>
@@ -76,7 +90,7 @@ export function Header() {
           >
             <Button 
               variant="ghost" 
-              className="text-gray-700 hover:text-black hover:bg-yellow-50 p-2 rounded-xl"
+              className="text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 p-2 rounded-xl"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-nav"
               onClick={() => setIsMenuOpen((v) => !v)}
@@ -100,14 +114,14 @@ export function Header() {
             <div className="mt-2 grid gap-2 border-t border-gray-100 pt-3">
               <Button 
                 variant="ghost" 
-                className="justify-start text-gray-700 hover:text-black hover:bg-yellow-50 px-4 py-2 rounded-xl"
+                className="justify-start text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 px-4 py-2 rounded-xl"
                 onClick={() => scrollToSection('departments')}
               >
-                Careers
+                Global Careers
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start text-gray-700 hover:text-black hover:bg-yellow-50 px-4 py-2 rounded-xl"
+                className="justify-start text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 px-4 py-2 rounded-xl"
                 onClick={() => scrollToSection('contact')}
               >
                 Contact

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-import { MapPin, Clock, DollarSign } from 'lucide-react';
+import { MapPin, Clock, DollarSign, Globe, Users, Star, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface Job {
@@ -13,6 +13,9 @@ interface Job {
   shortDescription: string;
   fullDescription: string;
   requirements: string[];
+  isInternational?: boolean;
+  locations?: string[];
+  stats?: Record<string, string>;
 }
 
 interface JobListingsProps {
@@ -36,7 +39,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
       'Excellent communication and stakeholder management',
       'Entrepreneurial mindset; work closely with founders/senior leaders',
       'Passion for EdTech and scalable impact'
-    ]
+    ],
+    isInternational: false,
+    locations: ['Delhi NCR'],
+    stats: { team: 'Core Team', growth: 'High Impact' }
   };
 
   const jobs: Record<string, Job[]> = {
@@ -60,7 +66,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Experience teaching topics like Algebra, Geometry, Calculus, and Statistics',
           'Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)',
           'Experience with gamified teaching platforms is a plus'
-        ]
+        ],
+        isInternational: true,
+        locations: ['Amsterdam', 'London', 'New York', 'Remote'],
+        stats: { countries: '15+', students: '10K+' }
       }
     ],
     teachers: [
@@ -84,7 +93,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Experience in fast-paced startup or high-growth environments (preferred)',
           'Knowledge of E-commerce, B2B/B2C marketing, and growth strategies (preferred)',
           'Solid understanding of marketing automation tools and workflows (preferred)'
-        ]
+        ],
+        isInternational: false,
+        locations: ['Delhi NCR'],
+        stats: { team: 'Core Team', impact: 'High' }
       },
       {
         id: 'intern-sales-operations',
@@ -101,7 +113,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Self-motivated, proactive, and comfortable working in a target-driven environment',
           'Organized and capable of handling multiple tasks efficiently',
           'Excited to learn, adapt, and grow within a global team'
-        ]
+        ],
+        isInternational: false,
+        locations: ['Remote', 'India'],
+        stats: { team: 'Sales Team', growth: 'Fast Track' }
       }
     ],
     strategic: [
@@ -118,7 +133,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Strong negotiation and relationship-building skills',
           'Understanding of global education technology markets',
           'Track record of successful international partnerships'
-        ]
+        ],
+        isInternational: false,
+        locations: ['Remote'],
+        stats: { team: 'Strategy Team', impact: 'Global' }
       },
       {
         id: 'strategic-2',
@@ -133,7 +151,10 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           'Understanding of global education and/or AI markets',
           'Strong presentation and communication skills',
           'Strategic thinking and problem-solving abilities'
-        ]
+        ],
+        isInternational: false,
+        locations: ['Remote'],
+        stats: { team: 'Strategy Team', impact: 'Analytical' }
       }
     ]
   };
@@ -182,8 +203,8 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400 rounded-full blur-3xl" />
       </div>
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -196,19 +217,22 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           {/* Highlighted section indicator */}
           <motion.div 
             className="inline-flex items-center px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: '#fede00', color: '#000' }}
+            style={{ backgroundColor: '#ffcf00', color: '#000' }}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
           >
-            <span className="text-sm font-medium">🔥 Open Positions</span>
+            <span className="text-sm font-medium">🌍 Open Positions</span>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             {departmentTitles[selectedDepartment as keyof typeof departmentTitles]}
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            JetLearn is AI-first and global-first. Our roles are remote-friendly and open to international applicants unless specified.
+            {selectedDepartment === 'management' 
+              ? 'Join our international teaching team and inspire students worldwide with cutting-edge AI and coding education.'
+              : 'JetLearn is AI-first and global-first. Our roles are remote-friendly and open to international applicants unless specified.'
+            }
           </p>
         </motion.div>
 
@@ -220,31 +244,68 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         >
           {departmentJobs.map((job, index) => (
             <motion.div key={job.id} variants={jobVariants}>
-              <Card className="group p-5 md:p-6 lg:p-8 border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-yellow-200 rounded-3xl bg-white/80 backdrop-blur-sm relative overflow-hidden">
+              <Card className={`group p-5 md:p-6 lg:p-8 border-2 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl bg-white/80 backdrop-blur-sm relative overflow-hidden ${
+                job.isInternational 
+                  ? 'border-blue-200 hover:border-blue-300' 
+                  : 'border-gray-100 hover:border-gray-200'
+              }`}>
                 {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  job.isInternational 
+                    ? 'bg-gradient-to-br from-blue-50/50 to-indigo-50/50' 
+                    : 'bg-gradient-to-br from-gray-50/50 to-transparent'
+                }`} />
                 
                 <div className="space-y-5 md:space-y-6 relative">
                   {/* Job header */}
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 md:gap-6">
                     <div className="flex-1">
+                      {/* International badge */}
+                      {job.isInternational && (
+                        <motion.div 
+                          className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-3"
+                          style={{ backgroundColor: '#ffcf00', color: '#000' }}
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <Globe className="w-3 h-3" />
+                          <span>International Role</span>
+                        </motion.div>
+                      )}
+                      
                       <motion.h3 
-                        className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 group-hover:text-gray-800 transition-colors"
+                        className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-gray-800 transition-colors"
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >
                         {job.title}
                       </motion.h3>
+                      
                       <div className="flex flex-wrap gap-4 md:gap-6 text-gray-600">
                         <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 md:w-5 md:h-5 text-yellow-600" />
+                          <MapPin className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                           <span className="font-medium text-sm md:text-base">{job.location}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4 md:w-5 md:h-5 text-yellow-600" />
+                          <Clock className="w-4 h-4 md:w-5 md:h-5 text-indigo-600" />
                           <span className="font-medium text-sm md:text-base">{job.type}</span>
                         </div>
                       </div>
+
+                      {/* Stats for international roles */}
+                      {job.isInternational && job.stats && (
+                        <div className="flex items-center gap-4 mt-3">
+                          <div className="flex items-center gap-1">
+                            <Globe className="w-4 h-4 text-blue-500" />
+                            <span className="text-sm text-gray-600">{job.stats.countries} Countries</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Users className="w-4 h-4 text-indigo-500" />
+                            <span className="text-sm text-gray-600">{job.stats.students} Students</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     
                     <motion.div
@@ -254,20 +315,14 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                       <Button
                         onClick={() => onApplyClick(job.title)}
                         className="w-full sm:w-auto px-7 md:px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:shadow-lg group touch-manipulation"
-                        style={{ backgroundColor: '#fede00', color: '#000', touchAction: 'manipulation' }}
+                        style={{ 
+                          backgroundColor: job.isInternational ? '#ffcf00' : '#6b7280', 
+                          color: job.isInternational ? '#000' : '#fff' 
+                        }}
                       >
                         <span className="flex items-center gap-2">
                           Apply Now
-                          <motion.svg 
-                            className="w-4 h-4 md:w-5 md:h-5" 
-                            fill="none" 
-                            viewBox="0 0 24 24" 
-                            stroke="currentColor"
-                            whileHover={{ x: 3 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </motion.svg>
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                         </span>
                       </Button>
                     </motion.div>
@@ -284,7 +339,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                       <AccordionTrigger className="text-left hover:no-underline py-3 md:py-4 text-base md:text-lg">
                         <motion.span 
                           className="font-medium flex items-center gap-2" 
-                          style={{ color: '#fede00' }}
+                          style={{ color: job.isInternational ? '#3b82f6' : '#6b7280' }}
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
@@ -296,14 +351,14 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                       </AccordionTrigger>
                       <AccordionContent className="pt-6 space-y-8">
                         <div>
-                          <h4 className="font-medium text-black mb-3 text-lg">About the Role</h4>
+                          <h4 className="font-medium text-gray-900 mb-3 text-lg">About the Role</h4>
                           <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                             {job.fullDescription}
                           </p>
                         </div>
                         
                         <div>
-                          <h4 className="font-medium text-black mb-3 text-lg">Requirements</h4>
+                          <h4 className="font-medium text-gray-900 mb-3 text-lg">Requirements</h4>
                           <ul className="list-disc list-inside text-gray-700 space-y-2">
                             {job.requirements.map((req, index) => (
                               <li key={index} className="text-sm md:text-base">{req}</li>
@@ -314,7 +369,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                         {job.id === 'international-maths-tutor' && (
                           <>
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Skills Required</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Skills Required</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">A degree in Mathematics, Education, or a related field</li>
                                 <li className="text-sm md:text-base">Exceptional oral and written communication skills</li>
@@ -326,7 +381,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Platform/Knowledge</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Platform/Knowledge</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Experience teaching topics like Algebra, Geometry, Calculus, and Statistics</li>
                                 <li className="text-sm md:text-base">Strong understanding of Math curriculum across various boards (e.g., IGCSE, IB, CBSE)</li>
@@ -335,7 +390,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Time Requirement</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Time Requirement</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Most classes are scheduled in the evenings on weekdays & throughout the day on weekends</li>
                                 <li className="text-sm md:text-base">Between 4 PM UKT–10 PM UKT - Weekdays</li>
@@ -345,7 +400,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">What You Get</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">What You Get</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Opportunity to work with an excellent team on a mission to empower kids with math skills for the future</li>
                                 <li className="text-sm md:text-base">Experience working with an international company</li>
@@ -358,7 +413,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                         {job.id === 'eir-founders-office' && (
                           <>
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Responsibilities</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Responsibilities</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Drive Revenue Growth: Own and deliver on key business targets</li>
                                 <li className="text-sm md:text-base">Deep Business Understanding: Build a comprehensive understanding of JetLearn's brand, customer behavior, competitive landscape, and growth opportunities</li>
@@ -370,7 +425,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">What We're Looking For</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">What We're Looking For</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Proven Growth Experience: Demonstrated success in driving measurable business growth, with clear revenue impact</li>
                                 <li className="text-sm md:text-base">Data-Driven & Results-Oriented: Expertise in analyzing data, defining KPIs, and making strategic decisions based on insights</li>
@@ -382,7 +437,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Preferred Qualifications</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Preferred Qualifications</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Experience in a fast-paced startup environment or high-growth company</li>
                                 <li className="text-sm md:text-base">Expertise in E-commerce, B2B/B2C marketing, and growth strategies</li>
@@ -391,7 +446,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Why Join Us?</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Work with a high-performing, international team on a meaningful mission</li>
                                 <li className="text-sm md:text-base">Take a front-row seat in scaling one of Europe's fastest-growing EdTech companies</li>
@@ -405,7 +460,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                         {job.id === 'apm-founders-office' && (
                           <>
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Responsibilities</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Responsibilities</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Sales Program Execution: Drive strategic programs focused on lead generation, sales efficiency, and customer acquisition in partnership with the sales leadership</li>
                                 <li className="text-sm md:text-base">Cross-Functional Collaboration: Act as the bridge between Sales, Marketing, Curriculum, and Tech teams to launch initiatives that bring in qualified leads from multiple internal and external sources</li>
@@ -417,7 +472,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">What We're Looking For</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">What We're Looking For</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Experience: 1–2 years of experience in a high-growth startup, consulting firm, or sales ops/enablement role</li>
                                 <li className="text-sm md:text-base">Strong pedigree (Tier-1/2 college or equivalent work exposure preferred)</li>
@@ -429,7 +484,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                             </div>
 
                             <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Why Join Us?</h4>
+                              <h4 className="font-medium text-gray-900 mb-3 text-lg">Why Join Us?</h4>
                               <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li className="text-sm md:text-base">Work with a high-performing international team on a meaningful mission</li>
                                 <li className="text-sm md:text-base">Take charge of creating an industry-first sales automation engine in EdTech</li>

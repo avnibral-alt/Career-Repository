@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Brain, Bot, Globe } from 'lucide-react';
+import { Brain, Bot, Sparkles, MapPin, Users, Star } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface DepartmentsProps {
@@ -13,23 +13,35 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
     {
       id: 'management',
       title: 'Global Teachers',
-      description: 'Learn to lead in an AI-driven education company.',
+      subtitle: 'International Opportunities',
+      description: 'Join our global teaching team and inspire students worldwide with cutting-edge AI and coding education.',
       icon: Brain,
-      image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      isInternational: true,
+      locations: ['Amsterdam', 'London', 'New York', 'Remote'],
+      stats: { countries: '15+', students: '10K+' }
     },
     {
       id: 'teachers',
       title: 'JetLearn Career',
-      description: 'Inspire kids by teaching coding, robotics & AI concepts.',
+      subtitle: 'India-Based Roles',
+      description: 'Build your career with our core team in India, driving innovation in AI-powered education technology.',
       icon: Bot,
-      image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      isInternational: false,
+      locations: ['Delhi NCR', 'Mumbai', 'Bangalore'],
+      stats: { team: '50+', growth: '200%' }
     },
     {
       id: 'strategic',
       title: 'Management Trainees',
-      description: 'Help us expand AI-based learning solutions worldwide.',
+      subtitle: 'India-Based Roles',
+      description: 'Develop strategic leadership skills and help expand our AI-based learning solutions across India.',
       icon: Globe,
-      image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      isInternational: false,
+      locations: ['Delhi NCR', 'Remote'],
+      stats: { projects: '25+', impact: 'High' }
     }
   ];
 
@@ -68,8 +80,22 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
   };
 
   return (
-    <section id="departments" className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="departments" className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Global background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 opacity-5">
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <path d="M20,30 Q30,25 40,30 T60,30 T80,30" stroke="currentColor" fill="none" strokeWidth="0.5"/>
+            <path d="M15,50 Q25,45 35,50 T55,50 T75,50" stroke="currentColor" fill="none" strokeWidth="0.5"/>
+            <path d="M25,70 Q35,65 45,70 T65,70 T85,70" stroke="currentColor" fill="none" strokeWidth="0.5"/>
+            <circle cx="30" cy="40" r="1" fill="currentColor"/>
+            <circle cx="60" cy="60" r="1" fill="currentColor"/>
+            <circle cx="70" cy="35" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div 
           className="text-center mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -77,11 +103,24 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
-            Explore global opportunities
+          {/* International badge */}
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-6"
+            style={{ backgroundColor: '#ffcf00', color: '#000', borderColor: '#e5b800' }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>Innovation Opportunities</span>
+          </motion.div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+            Choose Your Path to Global Impact
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            From AI educators to strategists shaping the next era of learning, join us wherever you are.
+            From international teaching roles to India-based career opportunities, find your perfect fit in our growing global team.
           </p>
         </motion.div>
 
@@ -104,7 +143,11 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Card 
-                  className="group cursor-pointer overflow-hidden bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-yellow-200 rounded-3xl h-full touch-manipulation"
+                  className={`group cursor-pointer overflow-hidden bg-white border-2 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl h-full touch-manipulation ${
+                    dept.isInternational 
+                      ? 'border-blue-200 hover:border-blue-300' 
+                      : 'border-gray-100 hover:border-gray-200'
+                  }`}
                   onClick={() => handleCardClick(dept.id)}
                   style={{ touchAction: 'manipulation' }}
                 >
@@ -116,6 +159,20 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     
+                    {/* International badge */}
+                    {dept.isInternational && (
+                      <motion.div 
+                        className="absolute top-4 left-4 px-3 py-1 rounded-full text-white text-xs font-medium shadow-lg"
+                        style={{ backgroundColor: '#ffcf00', color: '#000' }}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                        viewport={{ once: true }}
+                      >
+                        🌍 International
+                      </motion.div>
+                    )}
+                    
                     {/* Icon container */}
                     <motion.div 
                       className="absolute bottom-6 left-6"
@@ -123,32 +180,93 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                       <div 
-                        className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg backdrop-blur-sm"
-                        style={{ backgroundColor: '#fede00' }}
+                        className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg backdrop-blur-sm ${
+                          dept.isInternational 
+                            ? 'bg-gradient-to-r from-blue-500 to-indigo-500' 
+                            : 'bg-gradient-to-r from-gray-600 to-gray-700'
+                        }`}
                       >
-                        <IconComponent className="w-7 h-7 lg:w-8 lg:h-8 text-black" />
+                        <IconComponent className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
                       </div>
                     </motion.div>
                     
-                    {/* Hover overlay with pulse effect */}
-                    <div className="absolute inset-0 bg-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Hover overlay */}
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                      dept.isInternational ? 'bg-blue-400/10' : 'bg-gray-400/10'
+                    }`} />
                   </div>
                   
                   <div className="p-5 md:p-6 lg:p-8">
-                    <h3 className="text-xl lg:text-2xl font-bold text-black mb-3 group-hover:text-gray-800 transition-colors">
-                      {dept.title}
-                    </h3>
+                    <div className="mb-3">
+                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1 group-hover:text-gray-800 transition-colors">
+                        {dept.title}
+                      </h3>
+                      <p className={`text-sm font-medium ${
+                        dept.isInternational ? 'text-blue-600' : 'text-gray-500'
+                      }`}>
+                        {dept.subtitle}
+                      </p>
+                    </div>
+                    
                     <p className="text-gray-600 leading-relaxed mb-5 md:mb-6 text-base lg:text-lg">
                       {dept.description}
                     </p>
+
+                    {/* Locations */}
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span className="text-sm font-medium text-gray-700">Locations:</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {dept.locations.map((location, idx) => (
+                          <span 
+                            key={idx}
+                            className="px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-600"
+                          >
+                            {location}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Stats */}
+                    <div className="flex items-center gap-4 mb-5">
+                                             {dept.isInternational ? (
+                         <>
+                           <div className="flex items-center gap-1">
+                             <Sparkles className="w-4 h-4 text-blue-500" />
+                             <span className="text-sm text-gray-600">International Role</span>
+                           </div>
+                           <div className="flex items-center gap-1">
+                             <Users className="w-4 h-4 text-indigo-500" />
+                             <span className="text-sm text-gray-600">Remote Available</span>
+                           </div>
+                         </>
+                       ) : (
+                        <>
+                          <div className="flex items-center gap-1">
+                            <Users className="w-4 h-4 text-gray-500" />
+                            <span className="text-sm text-gray-600">{dept.stats.team} Team</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Star className="w-4 h-4 text-gray-500" />
+                            <span className="text-sm text-gray-600">{dept.stats.growth} Growth</span>
+                          </div>
+                        </>
+                      )}
+                    </div>
                     
                     <motion.div 
-                      className="flex items-center text-sm lg:text-base font-medium" 
-                      style={{ color: '#fede00' }}
+                      className={`flex items-center text-sm lg:text-base font-medium ${
+                        dept.isInternational ? 'text-blue-600' : 'text-gray-600'
+                      }`}
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <span>View Global Opportunities</span>
+                      <span>
+                        {dept.isInternational ? 'View Global Opportunities' : 'View Local Opportunities'}
+                      </span>
                       <motion.svg 
                         className="w-4 h-4 md:w-5 md:h-5 ml-2" 
                         fill="currentColor" 
@@ -163,12 +281,30 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                   
                   {/* Subtle glow effect on hover */}
                   <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-200/20 to-yellow-400/20 blur-xl" />
+                    <div className={`absolute inset-0 rounded-3xl blur-xl ${
+                      dept.isInternational 
+                        ? 'bg-gradient-to-r from-blue-200/20 to-indigo-400/20' 
+                        : 'bg-gradient-to-r from-gray-200/20 to-gray-400/20'
+                    }`} />
                   </div>
                 </Card>
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Call to action */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+            <strong className="text-blue-600">Global Teachers</strong> is our only international role, open to candidates worldwide. 
+            Other positions are based in India with opportunities for global collaboration.
+          </p>
         </motion.div>
       </div>
     </section>
