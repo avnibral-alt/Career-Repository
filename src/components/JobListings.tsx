@@ -94,24 +94,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
         shortDescription:
           'Join our dynamic sales team and build strong relationships with parents while driving trial bookings for our global AI-coding programs.',
         fullDescription:
-          'About Us: JetLearn is the world\'s top-rated AI-Coding Academy for children aged 5–16, dedicated to equipping the next generation with essential future-ready skills. Headquartered in Amsterdam, Netherlands, JetLearn is transforming education globally through innovative and impactful cutting-edge tech programs tailored for young learners.\n\nRole Overview: We are seeking dynamic and driven individuals to join our team as Sales Operations Intern. This role offers a clear and exciting career trajectory, enabling rapid growth in a global, fast-paced environment with huge earning opportunities.\n\nKey Responsibilities – Associate (Sales):\n• Build strong relationships with parents, introducing them to JetLearn\'s global AI-coding programs\n• Actively engage in outbound calls, generating interest and enthusiasm for our courses\n• Successfully schedule calibration classes through effective communication and persuasion skills\n• Address parent inquiries, tailoring course recommendations to align with their child\'s learning goals\n• Work with a structured approach to meet daily and weekly targets\n• Make 100+ outbound calls daily to prospective leads and drive a targeted number of trial bookings\n\nGrowth Path: Intern (Sales) ➝ Academic Counselor (Consultant) ➝ Sr. Academic Counselor (Sr. Consultant) ➝ Team Lead ➝ Associate Director',
-        requirements: [
-          'Eligibility: pursuing Graduation',
-          'Strong communicator with exceptional interpersonal skills',
-          'Self-motivated, proactive, and comfortable working in a target-driven environment',
-          'Organized and capable of handling multiple tasks efficiently',
-          'Excited to learn, adapt, and grow within a global team'
-        ]
-      },
-      {
-        id: 'associate-sales',
-        title: 'Associate – Sales',
-        location: 'Remote/India',
-        type: 'Full-time',
-        shortDescription:
-          'Join our dynamic sales team and build strong relationships with parents while driving trial bookings for our global AI-coding programs.',
-        fullDescription:
-          'About Us: JetLearn is the world\'s top-rated AI-Coding Academy for children aged 5–16, dedicated to equipping the next generation with essential future-ready skills. Headquartered in Amsterdam, Netherlands, JetLearn is transforming education globally through innovative and impactful cutting-edge tech programs tailored for young learners.\n\nRole Overview: We are seeking dynamic and driven individuals to join our team as Associate – Sales. This role offers a clear and exciting career trajectory, enabling rapid growth in a global, fast-paced environment with huge earning opportunities.\n\nKey Responsibilities:\n• Build strong relationships with parents, introducing them to JetLearn\'s global AI-coding programs\n• Actively engage in outbound calls, generating interest and enthusiasm for our courses\n• Successfully schedule calibration classes through effective communication and persuasion skills\n• Address parent inquiries, tailoring course recommendations to align with their child\'s learning goals\n• Work with a structured approach to meet daily and weekly targets\n• Make 100+ outbound calls daily to prospective leads and drive a targeted number of trial bookings\n\nGrowth Path: Your performance as an Associate will determine your promotion to the role of Academic Counselor (Consultant).\n\nCareer Growth Trajectory: Intern (Sales) ➝ Academic Counselor (Consultant) ➝ Sr. Academic Counselor (Sr. Consultant) ➝ Team Lead ➝ Associate Director',
+          'Role Overview\n\nWe are seeking dynamic and driven individuals to join our team as Associate – Sales. This role offers a clear and exciting career trajectory, enabling rapid growth in a global, fast-paced environment with huge earning opportunities.\n\nKey Responsibilities\n\nAssociate (Sales)\n\n• Build strong relationships with parents, introducing them to JetLearn\'s global AI-coding programs.\n• Actively engage in outbound calls, generating interest and enthusiasm for our courses.\n• Successfully schedule calibration classes through effective communication and persuasion skills.\n• Address parent inquiries, tailoring course recommendations to align with their child\'s learning goals.\n• Work with a structured approach to meet daily and weekly targets.\n• Make 100+ outbound calls daily to prospective leads and drive a targeted number of trial bookings.\n\nGrowth Path: Your performance as an Associate will determine your promotion to the role of Academic Counselor (Consultant).\n\nCareer Growth Trajectory\n\nIntern (Sales) ➝ Academic Counselor (Consultant) ➝ Sr. Academic Counselor (Sr. Consultant) ➝ Team Lead ➝ Associate Director\n\nWho You Are\n\n• Eligibility: pursuing Graduation\n• Strong communicator with exceptional interpersonal skills.\n• Self-motivated, proactive, and comfortable working in a target-driven environment.\n• Organized and capable of handling multiple tasks efficiently.\n• Excited to learn, adapt, and grow within a global team.\n\nWhat We Offer\n\n• Structured Career Growth Plan: Clear milestones leading to senior leadership roles.\n• Comprehensive Training: Personalized mentoring programs to help you excel.\n• The opportunity to work in a global, innovative environment shaping the future of education.\n• Competitive Salary: 12k with attractive performance-based incentives.\n• A chance to be part of a transformative journey, empowering children worldwide with future-ready skills.',
         requirements: [
           'Eligibility: pursuing Graduation',
           'Strong communicator with exceptional interpersonal skills',
@@ -458,31 +441,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                           </>
                         )}
 
-                        {job.id === 'associate-sales' && (
-                          <>
-                            <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">Who You Are</h4>
-                              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li className="text-sm md:text-base">Eligibility: pursuing Graduation</li>
-                                <li className="text-sm md:text-base">Strong communicator with exceptional interpersonal skills</li>
-                                <li className="text-sm md:text-base">Self-motivated, proactive, and comfortable working in a target-driven environment</li>
-                                <li className="text-sm md:text-base">Organized and capable of handling multiple tasks efficiently</li>
-                                <li className="text-sm md:text-base">Excited to learn, adapt, and grow within a global team</li>
-                              </ul>
-                            </div>
 
-                            <div>
-                              <h4 className="font-medium text-black mb-3 text-lg">What We Offer</h4>
-                              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li className="text-sm md:text-base">Structured Career Growth Plan: Clear milestones leading to senior leadership roles</li>
-                                <li className="text-sm md:text-base">Comprehensive Training: Personalized mentoring programs to help you excel</li>
-                                <li className="text-sm md:text-base">The opportunity to work in a global, innovative environment shaping the future of education</li>
-                                <li className="text-sm md:text-base">Competitive Salary: 12k with attractive performance-based incentives</li>
-                                <li className="text-sm md:text-base">A chance to be part of a transformative journey, empowering children worldwide with future-ready skills</li>
-                              </ul>
-                            </div>
-                          </>
-                        )}
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
