@@ -27,67 +27,55 @@ export function WhyWorkWithUs() {
       letter: 'C',
       title: 'Collaborate',
       description: 'Where brilliant minds unite across borders to create magic.',
-      emoji: '🤝',
       icon: Users,
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50/30',
-      borderColor: 'border-blue-200/40',
-      letterColor: 'text-blue-200/20'
+      bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
+      borderColor: 'border-blue-200/60',
+      letterColor: 'text-blue-300/30'
     },
     {
       letter: 'A',
       title: 'Bias for Action',
       description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
-      emoji: '⚡',
       icon: Zap,
-      color: 'from-yellow-500 to-orange-500',
-      bgColor: 'bg-orange-50/30',
-      borderColor: 'border-orange-200/40',
-      letterColor: 'text-orange-200/20'
+      bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
+      borderColor: 'border-orange-200/60',
+      letterColor: 'text-orange-300/30'
     },
     {
       letter: 'R',
       title: 'Own & Deliver Results',
       description: 'Take the wheel, own the outcome, and make it happen.',
-      emoji: '🎯',
       icon: Target,
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50/30',
-      borderColor: 'border-green-200/40',
-      letterColor: 'text-green-200/20'
+      bgColor: 'bg-gradient-to-br from-green-50 to-green-100/50',
+      borderColor: 'border-green-200/60',
+      letterColor: 'text-green-300/30'
     },
     {
       letter: 'D',
       title: 'Be Data-Driven',
       description: 'Let the numbers tell the story, not just your gut feeling.',
-      emoji: '📊',
       icon: BarChart3,
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50/30',
-      borderColor: 'border-purple-200/40',
-      letterColor: 'text-purple-200/20'
+      bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
+      borderColor: 'border-purple-200/60',
+      letterColor: 'text-purple-300/30'
     },
     {
       letter: 'I',
       title: 'Iterate & Learn',
       description: 'Fail fast, learn faster, and keep the innovation engine running.',
-      emoji: '🔄',
       icon: RefreshCw,
-      color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'bg-indigo-50/30',
-      borderColor: 'border-indigo-200/40',
-      letterColor: 'text-indigo-200/20'
+      bgColor: 'bg-gradient-to-br from-indigo-50 to-indigo-100/50',
+      borderColor: 'border-indigo-200/60',
+      letterColor: 'text-indigo-300/30'
     },
     {
       letter: 'O',
       title: 'Learner Obsession',
       description: 'Put students first, because they\'re the future we\'re building.',
-      emoji: '❤️',
       icon: Heart,
-      color: 'from-red-500 to-pink-500',
-      bgColor: 'bg-red-50/30',
-      borderColor: 'border-red-200/40',
-      letterColor: 'text-red-200/20'
+      bgColor: 'bg-gradient-to-br from-red-50 to-red-100/50',
+      borderColor: 'border-red-200/60',
+      letterColor: 'text-red-300/30'
     }
   ];
 
@@ -115,103 +103,104 @@ export function WhyWorkWithUs() {
   };
 
   return (
-    <section id="why-work-with-us" className="py-16 lg:py-20 bg-gradient-to-br from-white to-pink-50 relative overflow-hidden">
+    <section id="why-work-with-us" className="py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
       {/* Subtle background decoration */}
       <div className="absolute inset-0">
         {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-pink-50/30 to-pink-100/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100/50" />
         
-        {/* Abstract accent shapes */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-pink-200 rounded-full blur-2xl opacity-20" />
+        {/* Abstract accent shapes with brand yellow */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-yellow-100 rounded-full blur-3xl opacity-40" />
+        <div className="absolute bottom-20 left-20 w-48 h-48 bg-yellow-200 rounded-full blur-2xl opacity-30" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-300 rounded-full blur-xl opacity-20" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* CARDIO Header - Main Section Title */}
+        {/* Section Header - What Sets JetLearn Apart */}
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* Main CARDIO Heading */}
+          {/* Main Heading */}
           <motion.h2 
-            className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 relative"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <span className="bg-gradient-to-r from-gray-900 via-pink-600 to-pink-400 bg-clip-text text-transparent">
-              CARDIO
-            </span>
+            What Sets JetLearn Apart
           </motion.h2>
           
-          {/* Tagline */}
+          {/* Subheading */}
           <motion.p 
-            className="text-lg md:text-xl text-gray-600 font-medium"
+            className="text-lg md:text-xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Our DNA: What drives JetLearn forward.
+            Our Core Values (CARDIO) — the DNA that drives JetLearn forward.
           </motion.p>
         </motion.div>
 
         {/* Values Grid - Premium 3x2 Layout */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {values.map((value, index) => {
+            const IconComponent = value.icon;
+            
             return (
               <motion.div
                 key={value.letter}
                 variants={itemVariants}
                 whileHover={{ 
-                  y: -6, 
+                  y: -8, 
                   scale: 1.02,
-                  boxShadow: "0 25px 50px -12px rgba(255, 207, 240, 0.25)",
+                  boxShadow: "0 25px 50px -12px rgba(254, 222, 0, 0.3)",
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
                 className="group relative"
               >
-                <div className={`relative p-8 rounded-2xl bg-white border ${value.borderColor} shadow-lg transition-all duration-500 h-full overflow-hidden`}>
-                  {/* Letter watermark */}
-                  <div className={`absolute top-6 right-6 text-8xl font-black ${value.letterColor} select-none pointer-events-none z-0`}>
+                <div className={`relative p-6 rounded-2xl bg-white border ${value.borderColor} shadow-lg transition-all duration-500 h-full overflow-hidden`}>
+                  {/* Letter watermark - bottom-right diagonal */}
+                  <div className={`absolute bottom-4 right-4 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12`}>
                     {value.letter}
                   </div>
                   
-                  {/* Background accent */}
+                  {/* Background gradient */}
                   <div className={`absolute inset-0 rounded-2xl ${value.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   
                   <div className="relative z-10">
                     {/* Icon section */}
-                    <div className="mb-6">
+                    <div className="mb-5">
                       <motion.div 
-                        className="w-16 h-16 flex items-center justify-center text-4xl mb-4"
+                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-yellow-100 group-hover:to-yellow-200 transition-all duration-300"
                         whileHover={{ 
                           scale: 1.1,
                           rotate: 5
                         }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        {value.emoji}
+                        <IconComponent className="w-6 h-6 text-gray-700 group-hover:text-yellow-700 transition-colors duration-300" />
                       </motion.div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
                       {value.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-base text-gray-600 leading-relaxed font-normal">
+                    <p className="text-sm text-gray-600 leading-relaxed font-normal">
                       {value.description}
                     </p>
                   </div>
@@ -221,7 +210,7 @@ export function WhyWorkWithUs() {
           })}
         </motion.div>
 
-        {/* Call to Action - Centered Below Section */}
+        {/* Call to Action - Compact Brand Button */}
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -230,14 +219,14 @@ export function WhyWorkWithUs() {
           viewport={{ once: true }}
         >
           <motion.button
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 relative overflow-hidden group shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 relative overflow-hidden group shadow-md"
             style={{ 
-              background: 'linear-gradient(135deg, #ffcf00 0%, #ff9500 100%)',
+              backgroundColor: '#fede00',
               color: '#000'
             }}
             whileHover={{ 
-              y: -4,
-              boxShadow: "0 25px 50px -12px rgba(255, 207, 0, 0.4)"
+              y: -2,
+              boxShadow: "0 10px 25px -5px rgba(254, 222, 0, 0.4)"
             }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -249,15 +238,15 @@ export function WhyWorkWithUs() {
             }}
           >
             {/* Background gradient effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-300 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
             
-            <span className="relative z-10 tracking-wide">Choose Your Team</span>
+            <span className="relative z-10">Choose Your Team</span>
             <motion.div
               className="relative z-10"
-              whileHover={{ x: 5 }}
+              whileHover={{ x: 3 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-4 h-4" />
             </motion.div>
           </motion.button>
         </motion.div>
