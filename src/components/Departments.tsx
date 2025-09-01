@@ -161,21 +161,21 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                   </div>
                   
                   {/* Content */}
-                  <div className="p-5 md:p-6 flex flex-col h-full">
+                  <div className="p-6 md:p-8 flex flex-col h-full">
                     <div className="flex-1">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors leading-tight">
                         {dept.title}
                       </h3>
-                      <p className="text-sm text-gray-500 font-medium mb-3">
+                      <p className="text-sm text-gray-500 font-medium mb-2">
                         {dept.subtitle}
                       </p>
-                      <p className="text-gray-600 leading-relaxed mb-3">
+                      <p className="text-gray-600 leading-relaxed mb-2">
                         {dept.description}
                       </p>
                     </div>
                     
                     {/* CTA - positioned at bottom */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <div className="flex items-center justify-between pt-2 border-t border-gray-100">
                       <span 
                         className="text-sm font-medium transition-colors"
                         style={{ color: '#ffcf00' }}
