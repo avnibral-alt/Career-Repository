@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Brain, Bot, Sparkles, MapPin, Users, Star } from 'lucide-react';
+import { Brain, Bot, Sparkles, MapPin, Users, Star, Globe, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface DepartmentsProps {
@@ -13,35 +13,26 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
     {
       id: 'management',
       title: 'Global Teachers',
-      subtitle: 'International Opportunities',
+      subtitle: 'International Teaching Roles',
       description: 'Teach the future. Inspire the next generation of innovators across the globe.',
       icon: Brain,
-      image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      isInternational: true,
-      locations: ['Amsterdam', 'London', 'New York', 'Remote'],
-      stats: { countries: '15+', students: '10K+' }
+      isInternational: true
     },
     {
       id: 'teachers',
       title: 'JetLearn Career',
-      subtitle: 'India-Based Roles',
+      subtitle: 'India-Based Development Roles',
       description: 'Build the engine that powers the future. Code, create, and innovate from the heart of India.',
       icon: Bot,
-      image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      isInternational: false,
-      locations: ['Delhi NCR', 'Mumbai', 'Bangalore'],
-      stats: { team: '50+', growth: '200%' }
+      isInternational: false
     },
     {
       id: 'strategic',
       title: 'Management Trainees',
-      subtitle: 'India-Based Roles',
+      subtitle: 'India-Based Leadership Roles',
       description: 'Lead the charge. Develop strategies that will change how the world learns.',
       icon: Star,
-      image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      isInternational: false,
-      locations: ['Delhi NCR', 'Remote'],
-      stats: { projects: '25+', impact: 'High' }
+      isInternational: false
     }
   ];
 
@@ -113,7 +104,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
             viewport={{ once: true }}
           >
             <Sparkles className="w-4 h-4" />
-            <span>Innovation Opportunities</span>
+            <span>Three Departments, One Mission</span>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
@@ -143,139 +134,56 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Card 
-                  className={`group cursor-pointer overflow-hidden bg-white border-2 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl h-full touch-manipulation ${
-                    dept.isInternational 
-                      ? 'border-blue-200 hover:border-blue-300' 
-                      : 'border-gray-100 hover:border-gray-200'
-                  }`}
+                  className="group cursor-pointer overflow-hidden bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl h-full touch-manipulation"
                   onClick={() => handleCardClick(dept.id)}
                   style={{ touchAction: 'manipulation' }}
                 >
-                  <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
-                    <ImageWithFallback
-                      src={dept.image}
-                      alt={dept.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    
-                    {/* International badge */}
-                    {dept.isInternational && (
-                      <motion.div 
-                        className="absolute top-4 left-4 px-3 py-1 rounded-full text-white text-xs font-medium shadow-lg"
-                        style={{ backgroundColor: '#ffcf00', color: '#000' }}
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.2 }}
-                        viewport={{ once: true }}
-                      >
-                        🌍 International
-                      </motion.div>
-                    )}
-                    
-                    {/* Icon container */}
-                    <motion.div 
-                      className="absolute bottom-6 left-6"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <div 
-                        className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center shadow-lg backdrop-blur-sm ${
-                          dept.isInternational 
-                            ? 'bg-gradient-to-r from-blue-500 to-indigo-500' 
-                            : 'bg-gradient-to-r from-gray-600 to-gray-700'
-                        }`}
-                      >
-                        <IconComponent className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
+                  <div className="p-6 md:p-8">
+                    {/* Icon header */}
+                    <div className="mb-6">
+                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${
+                        dept.isInternational 
+                          ? 'bg-gradient-to-br from-blue-500 to-blue-600' 
+                          : 'bg-gradient-to-br from-gray-500 to-gray-600'
+                      }`}>
+                        <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                    </motion.div>
+                      
+                      {/* International badge */}
+                      {dept.isInternational && (
+                        <motion.div 
+                          className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium mb-3"
+                          style={{ backgroundColor: '#ffcf00', color: '#000' }}
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <Globe className="w-3 h-3" />
+                          <span>International Role</span>
+                        </motion.div>
+                      )}
+                    </div>
                     
-                    {/* Hover overlay */}
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                      dept.isInternational ? 'bg-blue-400/10' : 'bg-gray-400/10'
-                    }`} />
-                  </div>
-                  
-                  <div className="p-5 md:p-6 lg:p-8">
-                    <div className="mb-3">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-gray-800 transition-colors leading-tight">
+                    <div className="mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors leading-tight">
                         {dept.title}
                       </h3>
-                      <p className={`text-sm font-medium ${
-                        dept.isInternational ? 'text-blue-600' : 'text-gray-500'
-                      }`}>
+                      <p className="text-sm text-gray-500 font-medium mb-4">
                         {dept.subtitle}
                       </p>
                     </div>
                     
-                    <p className="text-gray-600 leading-relaxed mb-5 md:mb-6 text-base lg:text-lg">
+                    <p className="text-gray-600 leading-relaxed mb-8">
                       {dept.description}
                     </p>
-
-                    {/* Locations */}
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm font-medium text-gray-700">Locations:</span>
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {dept.locations.map((location, idx) => (
-                          <span 
-                            key={idx}
-                            className="px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-600"
-                          >
-                            {location}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="flex items-center gap-4 mb-5">
-                      {dept.isInternational ? (
-                        <>
-                          <div className="flex items-center gap-1">
-                            <Sparkles className="w-4 h-4 text-blue-500" />
-                            <span className="text-sm text-gray-600">International Role</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Users className="w-4 h-4 text-indigo-500" />
-                            <span className="text-sm text-gray-600">Remote Available</span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex items-center gap-1">
-                            <Users className="w-4 h-4 text-gray-500" />
-                            <span className="text-sm text-gray-600">{dept.stats.team} Team</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Star className="w-4 h-4 text-gray-500" />
-                            <span className="text-sm text-gray-600">{dept.stats.growth} Growth</span>
-                          </div>
-                        </>
-                      )}
-                    </div>
                     
-                    <motion.div 
-                      className="flex items-center text-sm lg:text-base font-medium"
-                      style={{ color: '#ffcf00' }}
-                      whileHover={{ x: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <span>
-                        {dept.isInternational ? 'View Global Opportunities' : 'View Local Opportunities'}
+                    {/* CTA */}
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-sm font-medium text-gray-900 group-hover:text-gray-700 transition-colors">
+                        View Opportunities
                       </span>
-                      <motion.svg 
-                        className="w-4 h-4 md:w-5 md:h-5 ml-2" 
-                        fill="currentColor" 
-                        viewBox="0 0 20 20"
-                        whileHover={{ x: 3 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </motion.svg>
-                    </motion.div>
+                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                    </div>
                   </div>
                   
                   {/* Subtle glow effect on hover */}
