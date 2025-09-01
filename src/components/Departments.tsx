@@ -16,7 +16,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'International Teaching Roles',
       description: 'Teach the future. Inspire the next generation of innovators across the globe.',
       icon: Brain,
-      image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hdGlvbmFsJTIwdGVhY2hlcnMlMjBlZHVjYXRpb258ZW58MXx8fHwxNzU2MTE4NzQ5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: true
     },
     {
@@ -25,7 +25,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'India-Based Development Roles',
       description: 'Build the engine that powers the future. Code, create, and innovate from the heart of India.',
       icon: Bot,
-      image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbXxlbnwxfHx8fDE3NTYxMTg3NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false
     },
     {
@@ -34,7 +34,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'India-Based Leadership Roles',
       description: 'Lead the charge. Develop strategies that will change how the world learns.',
       icon: Star,
-      image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwdGVhbSUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTg3NTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false
     }
   ];
@@ -97,18 +97,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* International badge */}
-          <motion.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-6"
-            style={{ backgroundColor: '#ffcf00', color: '#000', borderColor: '#e5b800' }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Sparkles className="w-4 h-4" />
-            <span>Three Departments, One Mission</span>
-          </motion.div>
+
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             Why Choose JetLearn
@@ -142,7 +131,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                   style={{ touchAction: 'manipulation' }}
                 >
                   {/* Image header */}
-                  <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden rounded-t-3xl">
                     <ImageWithFallback
                       src={dept.image}
                       alt={dept.title}
@@ -180,13 +169,13 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                       <p className="text-sm text-gray-500 font-medium mb-4">
                         {dept.subtitle}
                       </p>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed mb-4">
                         {dept.description}
                       </p>
                     </div>
                     
                     {/* CTA - positioned at bottom */}
-                    <div className="flex items-center justify-between pt-6 mt-6 border-t border-gray-100">
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <span 
                         className="text-sm font-medium transition-colors"
                         style={{ color: '#ffcf00' }}
@@ -214,18 +203,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
           })}
         </motion.div>
 
-        {/* Call to action */}
-        <motion.div 
-          className="text-center mt-16 mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-            <strong style={{ color: '#ffcf00' }}>Global Teachers</strong> is our international role, while other positions offer local impact with global reach.
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );
