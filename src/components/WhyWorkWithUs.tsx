@@ -30,7 +30,9 @@ export function WhyWorkWithUs() {
       icon: Users,
       bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
       borderColor: 'border-blue-200/60',
-      letterColor: 'text-blue-300/30'
+      letterColor: 'text-blue-400/40',
+      iconColor: 'text-blue-600',
+      iconBgColor: 'bg-blue-100'
     },
     {
       letter: 'A',
@@ -39,7 +41,9 @@ export function WhyWorkWithUs() {
       icon: Zap,
       bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
       borderColor: 'border-orange-200/60',
-      letterColor: 'text-orange-300/30'
+      letterColor: 'text-orange-400/40',
+      iconColor: 'text-orange-600',
+      iconBgColor: 'bg-orange-100'
     },
     {
       letter: 'R',
@@ -48,7 +52,9 @@ export function WhyWorkWithUs() {
       icon: Target,
       bgColor: 'bg-gradient-to-br from-green-50 to-green-100/50',
       borderColor: 'border-green-200/60',
-      letterColor: 'text-green-300/30'
+      letterColor: 'text-green-400/40',
+      iconColor: 'text-green-600',
+      iconBgColor: 'bg-green-100'
     },
     {
       letter: 'D',
@@ -57,7 +63,9 @@ export function WhyWorkWithUs() {
       icon: BarChart3,
       bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
       borderColor: 'border-purple-200/60',
-      letterColor: 'text-purple-300/30'
+      letterColor: 'text-purple-400/40',
+      iconColor: 'text-purple-600',
+      iconBgColor: 'bg-purple-100'
     },
     {
       letter: 'I',
@@ -66,7 +74,9 @@ export function WhyWorkWithUs() {
       icon: RefreshCw,
       bgColor: 'bg-gradient-to-br from-indigo-50 to-indigo-100/50',
       borderColor: 'border-indigo-200/60',
-      letterColor: 'text-indigo-300/30'
+      letterColor: 'text-indigo-400/40',
+      iconColor: 'text-indigo-600',
+      iconBgColor: 'bg-indigo-100'
     },
     {
       letter: 'O',
@@ -75,7 +85,9 @@ export function WhyWorkWithUs() {
       icon: Heart,
       bgColor: 'bg-gradient-to-br from-red-50 to-red-100/50',
       borderColor: 'border-red-200/60',
-      letterColor: 'text-red-300/30'
+      letterColor: 'text-red-400/40',
+      iconColor: 'text-red-600',
+      iconBgColor: 'bg-red-100'
     }
   ];
 
@@ -171,9 +183,13 @@ export function WhyWorkWithUs() {
                 className="group relative"
               >
                 <div className={`relative p-6 rounded-2xl bg-white border ${value.borderColor} shadow-lg transition-all duration-500 h-full overflow-hidden`}>
-                  {/* Letter watermark - bottom-right diagonal */}
-                  <div className={`absolute bottom-4 right-4 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12`}>
-                    {value.letter}
+                  {/* Letter watermark - bottom-right diagonal with shine effect */}
+                  <div className={`absolute bottom-4 right-4 text-8xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
+                    <div className="relative">
+                      {value.letter}
+                      {/* Shine effect overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60 transform -skew-x-12" />
+                    </div>
                   </div>
                   
                   {/* Background gradient */}
@@ -183,14 +199,14 @@ export function WhyWorkWithUs() {
                     {/* Icon section */}
                     <div className="mb-5">
                       <motion.div 
-                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-yellow-100 group-hover:to-yellow-200 transition-all duration-300"
+                        className={`w-12 h-12 rounded-xl ${value.iconBgColor} flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-yellow-100 group-hover:to-yellow-200 transition-all duration-300`}
                         whileHover={{ 
                           scale: 1.1,
                           rotate: 5
                         }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <IconComponent className="w-6 h-6 text-gray-700 group-hover:text-yellow-700 transition-colors duration-300" />
+                        <IconComponent className={`w-6 h-6 ${value.iconColor} group-hover:text-yellow-700 transition-colors duration-300`} />
                       </motion.div>
                     </div>
 
