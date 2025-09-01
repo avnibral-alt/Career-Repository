@@ -16,6 +16,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'International Teaching Roles',
       description: 'Teach the future. Inspire the next generation of innovators across the globe.',
       icon: Brain,
+      image: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5hZ2VtZW50JTIwYnVzaW5lc3MlMjB0ZWFtJTIwcHJvZmVzc2lvbmFsc3xlbnwxfHx8fDE3NTYxMTc4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: true
     },
     {
@@ -24,6 +25,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'India-Based Development Roles',
       description: 'Build the engine that powers the future. Code, create, and innovate from the heart of India.',
       icon: Bot,
+      image: "https://images.unsplash.com/photo-1634912314602-0d01437e3540?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMHJvYm90aWNzJTIwY29kaW5nJTIwZWR1Y2F0aW9ufGVufDF8fHx8MTc1NjExODc0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false
     },
     {
@@ -32,6 +34,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
       subtitle: 'India-Based Leadership Roles',
       description: 'Lead the charge. Develop strategies that will change how the world learns.',
       icon: Star,
+      image: "https://images.unsplash.com/photo-1594492691731-3d7974140624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBidXNpbmVzcyUyMHN0cmF0ZWd5JTIwd29ybGR3aWRlfGVufDF8fHx8MTc1NjExODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       isInternational: false
     }
   ];
@@ -138,51 +141,62 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                   onClick={() => handleCardClick(dept.id)}
                   style={{ touchAction: 'manipulation' }}
                 >
-                  <div className="p-6 md:p-8">
-                    {/* Icon header */}
-                    <div className="mb-6">
-                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${
-                        dept.isInternational 
-                          ? 'bg-gradient-to-br from-blue-500 to-blue-600' 
-                          : 'bg-gradient-to-br from-gray-500 to-gray-600'
-                      }`}>
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      
-                      {/* International badge */}
-                      {dept.isInternational && (
-                        <motion.div 
-                          className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium mb-3"
-                          style={{ backgroundColor: '#ffcf00', color: '#000' }}
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ duration: 0.3, delay: 0.1 }}
-                        >
-                          <Globe className="w-3 h-3" />
-                          <span>International Role</span>
-                        </motion.div>
-                      )}
-                    </div>
+                  {/* Image header */}
+                  <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
+                    <ImageWithFallback
+                      src={dept.image}
+                      alt={dept.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     
-                    <div className="mb-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors leading-tight">
+                    {/* International badge */}
+                    {dept.isInternational && (
+                      <motion.div 
+                        className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium shadow-lg"
+                        style={{ backgroundColor: '#ffcf00', color: '#000' }}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                        viewport={{ once: true }}
+                      >
+                        <Globe className="w-3 h-3 inline mr-1" />
+                        International
+                      </motion.div>
+                    )}
+                    
+                    {/* Icon overlay */}
+                    <div className="absolute bottom-4 left-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 md:p-8 flex flex-col h-full">
+                    <div className="flex-1">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors leading-tight">
                         {dept.title}
                       </h3>
                       <p className="text-sm text-gray-500 font-medium mb-4">
                         {dept.subtitle}
                       </p>
+                      <p className="text-gray-600 leading-relaxed">
+                        {dept.description}
+                      </p>
                     </div>
                     
-                    <p className="text-gray-600 leading-relaxed mb-8">
-                      {dept.description}
-                    </p>
-                    
-                    {/* CTA */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      <span className="text-sm font-medium text-gray-900 group-hover:text-gray-700 transition-colors">
+                    {/* CTA - positioned at bottom */}
+                    <div className="flex items-center justify-between pt-6 mt-6 border-t border-gray-100">
+                      <span 
+                        className="text-sm font-medium transition-colors"
+                        style={{ color: '#ffcf00' }}
+                      >
                         View Opportunities
                       </span>
-                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                      <ArrowRight 
+                        className="w-4 h-4 transition-colors" 
+                        style={{ color: '#ffcf00' }}
+                      />
                     </div>
                   </div>
                   
