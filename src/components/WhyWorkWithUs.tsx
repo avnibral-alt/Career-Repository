@@ -199,14 +199,14 @@ export function WhyWorkWithUs() {
                     {/* Icon section */}
                     <div className="mb-5">
                       <motion.div 
-                        className={`w-12 h-12 rounded-xl ${value.iconBgColor} flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-yellow-100 group-hover:to-yellow-200 transition-all duration-300`}
+                        className={`w-12 h-12 rounded-xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md`}
                         whileHover={{ 
                           scale: 1.1,
                           rotate: 5
                         }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <IconComponent className={`w-6 h-6 ${value.iconColor} group-hover:text-yellow-700 transition-colors duration-300`} />
+                        <IconComponent className={`w-6 h-6 ${value.iconColor} transition-all duration-300`} />
                       </motion.div>
                     </div>
 
