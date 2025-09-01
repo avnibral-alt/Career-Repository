@@ -125,12 +125,16 @@ export function WhyWorkWithUs() {
         <div className="absolute top-20 right-20 w-64 h-64 bg-yellow-100 rounded-full blur-3xl opacity-40" />
         <div className="absolute bottom-20 left-20 w-48 h-48 bg-yellow-200 rounded-full blur-2xl opacity-30" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-300 rounded-full blur-xl opacity-20" />
+        
+        {/* Additional brand yellow accents */}
+        <div className="absolute top-40 left-40 w-24 h-24 bg-yellow-200 rounded-full blur-lg opacity-25" />
+        <div className="absolute bottom-40 right-40 w-20 h-20 bg-yellow-300 rounded-full blur-md opacity-20" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header - What Sets JetLearn Apart */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -138,7 +142,7 @@ export function WhyWorkWithUs() {
         >
           {/* Main Heading */}
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 relative"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -149,7 +153,7 @@ export function WhyWorkWithUs() {
           
           {/* Subheading */}
           <motion.p 
-            className="text-lg md:text-xl text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -211,12 +215,12 @@ export function WhyWorkWithUs() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight">
                       {value.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed font-normal">
+                    <p className="text-base text-gray-600 leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -235,7 +239,7 @@ export function WhyWorkWithUs() {
           viewport={{ once: true }}
         >
           <motion.button
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-medium text-base transition-all duration-300 hover:scale-105 relative overflow-hidden group shadow-md"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group shadow-lg"
             style={{ 
               backgroundColor: '#fede00',
               color: '#000'
@@ -254,7 +258,7 @@ export function WhyWorkWithUs() {
             }}
           >
             {/* Background gradient effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
             
             <span className="relative z-10">Choose Your Team</span>
             <motion.div
@@ -262,7 +266,7 @@ export function WhyWorkWithUs() {
               whileHover={{ x: 3 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </motion.div>
           </motion.button>
         </motion.div>

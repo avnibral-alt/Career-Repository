@@ -69,7 +69,7 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
             <span className="text-sm font-medium">✨ Join Our Team</span>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 leading-tight">
             Apply Now
           </h2>
           

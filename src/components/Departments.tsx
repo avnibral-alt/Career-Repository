@@ -116,7 +116,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
             <span>Innovation Opportunities</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             Why Choose JetLearn
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -198,7 +198,7 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                   
                   <div className="p-5 md:p-6 lg:p-8">
                     <div className="mb-3">
-                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1 group-hover:text-gray-800 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-gray-800 transition-colors leading-tight">
                         {dept.title}
                       </h3>
                       <p className={`text-sm font-medium ${

@@ -225,7 +225,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
             <span className="text-sm font-medium">🌍 Open Positions</span>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             {departmentTitles[selectedDepartment as keyof typeof departmentTitles]}
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -275,7 +275,7 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
                       )}
                       
                       <motion.h3 
-                        className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-gray-800 transition-colors"
+                        className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:text-gray-800 transition-colors leading-tight"
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       >

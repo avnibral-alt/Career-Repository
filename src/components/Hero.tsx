@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export function Hero() {
             </motion.h1>
             
             <motion.p 
-              className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+              className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export function Hero() {
             >
               <Button 
                 onClick={() => scrollToSection('why-work-with-us')}
-                className="group relative px-8 py-5 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden touch-manipulation"
+                className="group relative px-8 py-4 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden touch-manipulation"
                 style={{ backgroundColor: '#ffcf00', color: '#000' }}
               >
                 {/* Gradient overlay for hover effect */}
