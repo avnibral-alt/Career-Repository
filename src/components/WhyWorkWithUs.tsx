@@ -91,19 +91,19 @@ export function WhyWorkWithUs() {
     switch (variant) {
       case 'soft':
         return {
-          background: 'bg-[#F8C642]/10',
+          background: 'bg-yellow-50/30',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
       case 'brand':
         return {
-          background: 'bg-[#F8C642]/15',
+          background: 'bg-yellow-50/40',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
       default: // neutral
         return {
-          background: 'bg-[#F8C642]/10',
+          background: 'bg-yellow-50/30',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
