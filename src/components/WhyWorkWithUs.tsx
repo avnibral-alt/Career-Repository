@@ -140,7 +140,7 @@ export function WhyWorkWithUs() {
 
           {/* Leadership Cards Grid */}
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
@@ -156,8 +156,8 @@ export function WhyWorkWithUs() {
               >
                 <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
                   {/* Profile Image Container */}
-                  <div className="relative mb-8">
-                    <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -210,15 +210,15 @@ export function WhyWorkWithUs() {
               >
                 <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
                   {/* Profile Image Container */}
-                  <div className="relative mb-8">
-                    <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                          target.src = "https://images.unsplash.comphoto-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
                         }}
                       />
                     </div>
@@ -264,8 +264,8 @@ export function WhyWorkWithUs() {
               >
                 <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
                   {/* Profile Image Container */}
-                  <div className="relative mb-8">
-                    <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
