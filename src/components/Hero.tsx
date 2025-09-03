@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="hero relative w-full h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Content Overlay - Left Aligned */}
-      <div className="relative z-10 w-full px-6 lg:px-12 xl:px-20">
+      <div className="relative z-10 w-full px-6 lg:px-12 xl:px-20 pt-8">
         <motion.div 
           className="max-w-4xl space-y-6"
           initial={{ opacity: 0, y: 50 }}
