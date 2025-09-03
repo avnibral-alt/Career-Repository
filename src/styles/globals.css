@@ -63,8 +63,8 @@ header * {
 #home {
   margin-top: var(--header-height) !important;
   padding-top: 2rem !important;
-  height: 70vh !important;
-  min-height: 70vh !important;
+  height: 60vh !important;
+  min-height: 60vh !important;
   position: relative !important;
   z-index: 1 !important;
   display: flex !important;
@@ -118,9 +118,9 @@ section#home .relative.z-10 {
   background-color: #fede00 !important;
   color: #000 !important;
   border: none !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   padding: 12px 24px !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   transition: all 0.3s ease !important;
 }
 
