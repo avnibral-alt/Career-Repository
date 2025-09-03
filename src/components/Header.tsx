@@ -31,7 +31,7 @@ export function Header() {
         backgroundColor: '#ffffff !important',
         color: '#000000 !important',
         borderBottom: '1px solid #e5e7eb',
-        height: '80px' // Ensure consistent height
+        height: '64px' // Reduced height for mobile
       }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -41,24 +41,24 @@ export function Header() {
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <motion.div 
-            className="flex-shrink-0 flex items-center gap-3"
+            className="flex-shrink-0 flex items-center gap-2 sm:gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center"
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center"
                    style={{ backgroundColor: '#fede00' }}>
-                <Sparkles className="w-4 h-4 text-black" />
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-black" />
               </div>
-              <span className="text-2xl lg:text-3xl font-bold text-gray-900 cursor-pointer">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 cursor-pointer">
                 Jet<span style={{ color: '#fede00' }}>Learn</span>
               </span>
             </div>
             
             {/* Innovation indicator */}
-            <div className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full border-2"
+            <div className="hidden sm:flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border-2"
                  style={{ backgroundColor: '#fede00', color: '#000', borderColor: '#e5b800' }}>
-              <Sparkles className="w-3 h-3" />
+              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
               <span className="text-xs font-semibold">Innovation</span>
             </div>
           </motion.div>
@@ -78,7 +78,7 @@ export function Header() {
                 <Button 
                   variant="ghost" 
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-5 py-2.5 rounded-xl transition-all duration-300 font-medium text-base"
+                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-all duration-300 font-medium text-sm sm:text-base"
                 >
                   {item.name}
                 </Button>
@@ -94,12 +94,12 @@ export function Header() {
           >
             <Button 
               variant="ghost" 
-              className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 p-2.5 rounded-xl"
+              className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 p-2 sm:p-2.5 rounded-xl"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-nav"
               onClick={() => setIsMenuOpen((v) => !v)}
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </Button>
