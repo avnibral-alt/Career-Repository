@@ -157,8 +157,8 @@ export function WhyWorkWithUs() {
                 <div 
                   className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-4 border-yellow-400"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%)',
-                    backgroundColor: '#fbbf24'
+                    background: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #f97316 100%)',
+                    backgroundColor: '#fcd34d'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -182,13 +182,13 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
+                    <h4 className="text-3xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Abhishek Bahl
                     </h4>
                     
                     {/* Role Badge with LinkedIn Icon */}
-                    <div className="flex items-center gap-3 bg-white border border-white px-4 py-2 rounded-full shadow-md">
-                      <p className="text-sm font-semibold text-black">
+                    <div className="flex items-center gap-3 bg-white border border-white px-5 py-3 rounded-full shadow-md">
+                      <p className="text-base font-semibold text-black">
                         Founder & CEO
                       </p>
                       <a 
@@ -205,7 +205,7 @@ export function WhyWorkWithUs() {
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-black leading-relaxed text-center max-w-xs font-medium">
+                    <p className="text-base text-black leading-relaxed text-center max-w-xs font-medium">
                       Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                     </p>
                   </div>
@@ -227,8 +227,8 @@ export function WhyWorkWithUs() {
                 <div 
                   className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-4 border-yellow-400"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%)',
-                    backgroundColor: '#fbbf24'
+                    background: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #f97316 100%)',
+                    backgroundColor: '#fcd34d'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -252,13 +252,13 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
+                    <h4 className="text-3xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Jatin Luthra
                     </h4>
                     
                     {/* Role Badge with LinkedIn Icon */}
-                    <div className="flex items-center gap-3 bg-white border border-white px-4 py-2 rounded-full shadow-md">
-                      <p className="text-sm font-semibold text-black">
+                    <div className="flex items-center gap-3 bg-white border border-white px-5 py-3 rounded-full shadow-md">
+                      <p className="text-base font-semibold text-black">
                         Co-Founder
                       </p>
                       <a 
@@ -275,7 +275,7 @@ export function WhyWorkWithUs() {
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-black leading-relaxed text-center max-w-xs font-medium">
+                    <p className="text-base text-black leading-relaxed text-center max-w-xs font-medium">
                       Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                     </p>
                   </div>
@@ -297,8 +297,8 @@ export function WhyWorkWithUs() {
                 <div 
                   className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-4 border-yellow-400"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%)',
-                    backgroundColor: '#fbbf24'
+                    background: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #f97316 100%)',
+                    backgroundColor: '#fcd34d'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -322,13 +322,13 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
+                    <h4 className="text-3xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Kapil Bahl
                     </h4>
                     
                     {/* Role Badge with LinkedIn Icon */}
-                    <div className="flex items-center gap-3 bg-white border border-white px-4 py-2 rounded-full shadow-md">
-                      <p className="text-sm font-semibold text-black">
+                    <div className="flex items-center gap-3 bg-white border border-white px-5 py-3 rounded-full shadow-md">
+                      <p className="text-base font-semibold text-black">
                         COO
                       </p>
                       <a 
@@ -345,7 +345,7 @@ export function WhyWorkWithUs() {
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-black leading-relaxed text-center max-w-xs font-medium">
+                    <p className="text-base text-black leading-relaxed text-center max-w-xs font-medium">
                       Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                     </p>
                   </div>
