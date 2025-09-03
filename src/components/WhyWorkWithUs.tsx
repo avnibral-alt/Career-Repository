@@ -63,7 +63,7 @@ export function WhyWorkWithUs() {
 
         {/* Impact at JetLearn Section */}
         <motion.div 
-          className="mb-16 lg:mb-20"
+          className="mb-16 lg:mb-20 bg-yellow-400 py-16 px-8 rounded-3xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -71,9 +71,9 @@ export function WhyWorkWithUs() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               <motion.h3 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -83,7 +83,7 @@ export function WhyWorkWithUs() {
               </motion.h3>
               
               <motion.p 
-                className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-lg"
+                className="text-xl md:text-2xl text-gray-800 leading-relaxed max-w-2xl text-lg"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -130,10 +130,10 @@ export function WhyWorkWithUs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
               Meet Our <span className="text-yellow-500">Leadership Team</span>
             </h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               The visionaries driving JetLearn's mission to transform education worldwide through innovation and technology.
             </p>
           </motion.div>
@@ -154,10 +154,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
+                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
                   {/* Profile Image Container */}
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -174,9 +174,9 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -184,13 +184,13 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
                     Abhishek Bahl
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-xl font-semibold text-gray-800 mb-4">
                     Founder & CEO
                   </p>
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-700 leading-relaxed">
                     Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                   </p>
                 </div>
@@ -208,10 +208,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
+                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
                   {/* Profile Image Container */}
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
@@ -228,9 +228,9 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -238,13 +238,13 @@ export function WhyWorkWithUs() {
                   </div>
                   
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
                     Jatin Luthra
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-xl font-semibold text-gray-800 mb-4">
                     Co-Founder
                   </p>
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-700 leading-relaxed">
                     Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                   </p>
                 </div>
@@ -262,10 +262,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
+                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
                   {/* Profile Image Container */}
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
@@ -282,9 +282,9 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -292,13 +292,13 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
                     Kapil Bahl
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-xl font-semibold text-gray-800 mb-4">
                     COO
                   </p>
-                  <p className="text-base text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-700 leading-relaxed">
                     Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                   </p>
                 </div>
@@ -306,47 +306,6 @@ export function WhyWorkWithUs() {
 
             </div>
           </div>
-        </motion.div>
-
-        {/* Call to Action - Compact Brand Button */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <motion.button
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group shadow-lg"
-            style={{ 
-              backgroundColor: '#fede00',
-              color: '#000'
-            }}
-            whileHover={{ 
-              y: -2,
-              boxShadow: "0 10px 25px -5px rgba(254, 222, 0, 0.4)"
-            }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => {
-              const element = document.getElementById('departments');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            {/* Background gradient effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-            
-            <span className="relative z-10">Choose Your Team</span>
-            <motion.div
-              className="relative z-10"
-              whileHover={{ x: 3 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <ArrowRight className="w-5 h-5" />
-            </motion.div>
-          </motion.button>
         </motion.div>
       </div>
     </section>
