@@ -155,10 +155,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
-                    backgroundColor: '#fed7aa'
+                    background: 'linear-gradient(135deg, #fede00 0%, #fbbf24 50%, #f59e0b 100%)',
+                    backgroundColor: '#fede00'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -225,10 +225,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
-                    backgroundColor: '#fed7aa'
+                    background: 'linear-gradient(135deg, #fede00 0%, #fbbf24 50%, #f59e0b 100%)',
+                    backgroundColor: '#fede00'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -295,10 +295,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
-                    backgroundColor: '#fed7aa'
+                    background: 'linear-gradient(135deg, #fede00 0%, #fbbf24 50%, #f59e0b 100%)',
+                    backgroundColor: '#fede00'
                   }}
                 >
                   {/* Hover sheen effect */}
