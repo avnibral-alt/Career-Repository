@@ -168,8 +168,20 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* LinkedIn Icon - Always visible */}
-                    <div className="absolute -bottom-1 -right-1">
+                  </div>
+
+                  {/* Content - Better readable text */}
+                  <div className="flex-1 flex flex-col items-center w-full">
+                    {/* Name */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Abhishek Bahl
+                    </h4>
+                    
+                    {/* Designation with LinkedIn icon on the same line */}
+                    <div className="flex items-center justify-between w-full mb-3">
+                      <p className="text-lg font-semibold text-gray-800">
+                        Founder & CEO
+                      </p>
                       <a 
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
@@ -181,19 +193,6 @@ export function WhyWorkWithUs() {
                         </svg>
                       </a>
                     </div>
-                  </div>
-
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center">
-                    {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      Abhishek Bahl
-                    </h4>
-                    
-                    {/* Designation */}
-                    <p className="text-lg font-semibold text-gray-800 mb-3">
-                      Founder & CEO
-                    </p>
                     
                     {/* Short Intro */}
                     <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
@@ -229,8 +228,20 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* LinkedIn Icon - Always visible */}
-                    <div className="absolute -bottom-1 -right-1">
+                  </div>
+                  
+                  {/* Content - Better readable text */}
+                  <div className="flex-1 flex flex-col items-center w-full">
+                    {/* Name */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Jatin Luthra
+                    </h4>
+                    
+                    {/* Designation with LinkedIn icon on the same line */}
+                    <div className="flex items-center justify-between w-full mb-3">
+                      <p className="text-lg font-semibold text-gray-800">
+                        Co-Founder
+                      </p>
                       <a 
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
@@ -242,19 +253,6 @@ export function WhyWorkWithUs() {
                         </svg>
                       </a>
                     </div>
-                  </div>
-                  
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center">
-                    {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      Jatin Luthra
-                    </h4>
-                    
-                    {/* Designation */}
-                    <p className="text-lg font-semibold text-gray-800 mb-3">
-                      Co-Founder
-                    </p>
                     
                     {/* Short Intro */}
                     <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
@@ -290,8 +288,20 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* LinkedIn Icon - Always visible */}
-                    <div className="absolute -bottom-1 -right-1">
+                  </div>
+
+                  {/* Content - Better readable text */}
+                  <div className="flex-1 flex flex-col items-center w-full">
+                    {/* Name */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Kapil Bahl
+                    </h4>
+                    
+                    {/* Designation with LinkedIn icon on the same line */}
+                    <div className="flex items-center justify-between w-full mb-3">
+                      <p className="text-lg font-semibold text-gray-800">
+                        COO
+                      </p>
                       <a 
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
@@ -303,19 +313,6 @@ export function WhyWorkWithUs() {
                         </svg>
                       </a>
                     </div>
-                  </div>
-
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center">
-                    {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      Kapil Bahl
-                    </h4>
-                    
-                    {/* Designation */}
-                    <p className="text-lg font-semibold text-gray-800 mb-3">
-                      COO
-                    </p>
                     
                     {/* Short Intro */}
                     <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
