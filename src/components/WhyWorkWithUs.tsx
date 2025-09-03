@@ -155,10 +155,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)',
-                    backgroundColor: '#fef3c7'
+                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
+                    backgroundColor: '#fed7aa'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -186,8 +186,8 @@ export function WhyWorkWithUs() {
                       Abhishek Bahl
                     </h4>
                     
-                    {/* Role and LinkedIn - Redesigned */}
-                    <div className="flex flex-col items-center space-y-2">
+                    {/* Role and LinkedIn - Better Integrated */}
+                    <div className="flex items-center gap-3">
                       <p className="text-lg font-semibold text-gray-700">
                         Founder & CEO
                       </p>
@@ -195,10 +195,10 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
                         style={{ backgroundColor: '#0A66C2' }}
                       >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -225,10 +225,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)',
-                    backgroundColor: '#fef3c7'
+                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
+                    backgroundColor: '#fed7aa'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -256,8 +256,8 @@ export function WhyWorkWithUs() {
                       Jatin Luthra
                     </h4>
                     
-                    {/* Role and LinkedIn - Redesigned */}
-                    <div className="flex flex-col items-center space-y-2">
+                    {/* Role and LinkedIn - Better Integrated */}
+                    <div className="flex items-center gap-3">
                       <p className="text-lg font-semibold text-gray-700">
                         Co-Founder
                       </p>
@@ -265,10 +265,10 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
                         style={{ backgroundColor: '#0A66C2' }}
                       >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -295,10 +295,10 @@ export function WhyWorkWithUs() {
                 }}
               >
                 <div 
-                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-yellow-300"
+                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden border-2 border-orange-200"
                   style={{ 
-                    background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%)',
-                    backgroundColor: '#fef3c7'
+                    background: 'linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%)',
+                    backgroundColor: '#fed7aa'
                   }}
                 >
                   {/* Hover sheen effect */}
@@ -326,8 +326,8 @@ export function WhyWorkWithUs() {
                       Kapil Bahl
                     </h4>
                     
-                    {/* Role and LinkedIn - Redesigned */}
-                    <div className="flex flex-col items-center space-y-2">
+                    {/* Role and LinkedIn - Better Integrated */}
+                    <div className="flex items-center gap-3">
                       <p className="text-lg font-semibold text-gray-700">
                         COO
                       </p>
@@ -335,10 +335,10 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
                         style={{ backgroundColor: '#0A66C2' }}
                       >
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
