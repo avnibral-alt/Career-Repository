@@ -1,12 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { 
-  Users, 
-  Zap, 
-  Target, 
-  BarChart3, 
-  RefreshCw, 
-  Heart,
   ArrowRight,
   Sparkles,
   TrendingUp,
@@ -22,74 +16,7 @@ import {
 } from 'lucide-react';
 
 export function WhyWorkWithUs() {
-  const values = [
-    {
-      letter: 'C',
-      title: 'Collaborate',
-      description: 'Where brilliant minds unite across borders to create magic.',
-      icon: Users,
-      bgColor: 'bg-blue-600',
-      borderColor: 'border-blue-500/20',
-      letterColor: 'text-blue-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    },
-    {
-      letter: 'A',
-      title: 'Bias for Action',
-      description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
-      icon: Zap,
-      bgColor: 'bg-orange-500',
-      borderColor: 'border-orange-400/20',
-      letterColor: 'text-orange-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    },
-    {
-      letter: 'R',
-      title: 'Own & Deliver Results',
-      description: 'Take the wheel, own the outcome, and make it happen.',
-      icon: Target,
-      bgColor: 'bg-green-600',
-      borderColor: 'border-green-500/20',
-      letterColor: 'text-green-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    },
-    {
-      letter: 'D',
-      title: 'Be Data-Driven',
-      description: 'Let the numbers tell the story, not just your gut feeling.',
-      icon: BarChart3,
-      bgColor: 'bg-purple-600',
-      borderColor: 'border-purple-500/20',
-      letterColor: 'text-purple-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    },
-    {
-      letter: 'I',
-      title: 'Iterate & Learn',
-      description: 'Fail fast, learn faster, and keep the innovation engine running.',
-      icon: RefreshCw,
-      bgColor: 'bg-indigo-600',
-      borderColor: 'border-indigo-500/20',
-      letterColor: 'text-indigo-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    },
-    {
-      letter: 'O',
-      title: 'Learner Obsession',
-      description: 'Put students first, because they\'re the future we\'re building.',
-      icon: Heart,
-      bgColor: 'bg-red-600',
-      borderColor: 'border-red-500/20',
-      letterColor: 'text-red-200/80',
-      iconColor: 'text-white',
-      iconBgColor: 'bg-white/20'
-    }
-  ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -132,185 +59,7 @@ export function WhyWorkWithUs() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Section Header - What Sets JetLearn Apart */}
-        <motion.div 
-          className="text-center mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          {/* Main Heading */}
-          <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            What Sets JetLearn Apart
-          </motion.h2>
-          
-          {/* Subheading */}
-          <motion.p 
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Our Core Values (CARDIO) — the DNA that drives JetLearn forward.
-          </motion.p>
-        </motion.div>
 
-        {/* Values Carousel - Horizontal Scrolling */}
-        <motion.div 
-          className="mb-16 relative"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          onAnimationStart={() => console.log('Carousel animation started')}
-        >
-          {/* Carousel Container */}
-          <div className="relative overflow-hidden bg-gray-100 p-4">
-            {/* Debug Info */}
-            <div className="text-center mb-4 p-2 bg-red-500 text-white rounded">
-              🚨 CAROUSEL DEBUG: {values.length} values loaded, Carousel should be scrolling!
-            </div>
-            {/* Infinite Scroll Container */}
-            <div className="flex animate-scroll-carousel gap-6 md:gap-8" style={{ border: '2px solid red' }}>
-              {/* First set of cards */}
-              {values.map((value, index) => {
-                const IconComponent = value.icon;
-                return (
-                  <motion.div
-                    key={`first-${value.letter}`}
-                    className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
-                    style={{ border: '2px solid green', backgroundColor: 'white' }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      transition: { type: "spring", stiffness: 300, damping: 20 }
-                    }}
-                    onHoverStart={() => {
-                      // Pause animation on hover
-                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                      if (carousel) carousel.style.animationPlayState = 'paused';
-                    }}
-                    onHoverEnd={() => {
-                      // Resume animation
-                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                      if (carousel) carousel.style.animationPlayState = 'running';
-                    }}
-                  >
-                    <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
-                      {/* Letter watermark - top-right with glow effect */}
-                      <div className={`absolute top-6 right-6 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
-                        <div className="relative">
-                          {value.letter}
-                          {/* Glow effect */}
-                          <div className="absolute inset-0 bg-white/20 blur-xl rounded-full" />
-                        </div>
-                      </div>
-                      
-                      <div className="relative z-10">
-                        {/* Icon section with white background */}
-                        <div className="mb-6">
-                          <motion.div 
-                            className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
-                            whileHover={{ 
-                              scale: 1.1,
-                              rotate: 5
-                            }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          >
-                            <IconComponent className={`w-8 h-8 ${value.iconColor} transition-all duration-300`} />
-                          </motion.div>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                          {value.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-lg text-white/90 leading-relaxed">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-              
-              {/* Duplicate set for infinite loop effect */}
-              {values.map((value, index) => {
-                const IconComponent = value.icon;
-                return (
-                  <motion.div
-                    key={`second-${value.letter}`}
-                    className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
-                    style={{ border: '2px solid green', backgroundColor: 'white' }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      transition: { type: "spring", stiffness: 300, damping: 20 }
-                    }}
-                    onHoverStart={() => {
-                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                      if (carousel) carousel.style.animationPlayState = 'paused';
-                    }}
-                    onHoverEnd={() => {
-                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                      if (carousel) carousel.style.animationPlayState = 'running';
-                    }}
-                  >
-                    <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
-                      {/* Letter watermark - top-right with glow effect */}
-                      <div className={`absolute top-6 right-6 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
-                        <div className="relative">
-                          {value.letter}
-                          {/* Glow effect */}
-                          <div className="absolute inset-0 bg-white/20 blur-xl rounded-full" />
-                        </div>
-                      </div>
-                      
-                      <div className="relative z-10">
-                        {/* Icon section with white background */}
-                        <div className="mb-6">
-                          <motion.div 
-                            className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
-                            whileHover={{ 
-                              scale: 1.1,
-                              rotate: 5
-                            }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                          >
-                            <IconComponent className={`w-8 h-8 ${value.iconColor} transition-all duration-300`} />
-                          </motion.div>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                          {value.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-lg text-white/90 leading-relaxed">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-          
-          {/* Mobile swipe indicator */}
-          <div className="md:hidden text-center mt-6">
-            <p className="text-sm text-gray-500">Swipe to explore our values</p>
-          </div>
-        </motion.div>
 
         {/* Impact at JetLearn Section */}
         <motion.div 
@@ -362,6 +111,189 @@ export function WhyWorkWithUs() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Our Leadership Team Section */}
+        <motion.div 
+          className="mb-16 lg:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {/* Section Header */}
+          <motion.div 
+            className="text-center mb-12 lg:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              Our <span className="text-yellow-500">Leadership Team</span>
+            </h3>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Meet the visionaries driving JetLearn's mission to transform education worldwide.
+            </p>
+          </motion.div>
+
+          {/* Leadership Grid */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {/* Abhishek Bahl - Founder & CEO */}
+              <motion.div
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -8,
+                  transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+              >
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center">
+                  {/* Profile Image */}
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg">
+                      <img 
+                        src="/images/abhishek.jpg" 
+                        alt="Abhishek Bahl"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name and Role */}
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                    Abhishek Bahl
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Founder & CEO
+                  </p>
+
+                  {/* LinkedIn Link */}
+                  <a 
+                    href="https://www.linkedin.com/in/abhishek-bahl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-300 group-hover:scale-110"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Jatin Luthra - Co-Founder */}
+              <motion.div
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -8,
+                  transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+              >
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center">
+                  {/* Profile Image */}
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg">
+                      <img 
+                        src="/images/jatin.jpg" 
+                        alt="Jatin Luthra"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name and Role */}
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                    Jatin Luthra
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Co-Founder
+                  </p>
+
+                  {/* LinkedIn Link */}
+                  <a 
+                    href="https://www.linkedin.com/in/jatin-luthra" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-300 group-hover:scale-110"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Kapil Bahl - Chief Operating Officer */}
+              <motion.div
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  y: -8,
+                  transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+              >
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center">
+                  {/* Profile Image */}
+                  <div className="relative mb-6">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg">
+                      <img 
+                        src="/images/kapil.jpg" 
+                        alt="Kapil Bahl"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name and Role */}
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                    Kapil Bahl
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Chief Operating Officer
+                  </p>
+
+                  {/* LinkedIn Link */}
+                  <a 
+                    href="https://www.linkedin.com/in/kapil-bahl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-300 group-hover:scale-110"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
 
