@@ -26,11 +26,12 @@ export function Header() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white shadow-lg border-b border-gray-200' 
-          : 'bg-white/95 backdrop-blur-md'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-gray-200 transition-all duration-300"
+      style={{ 
+        backgroundColor: '#ffffff !important',
+        color: '#000000 !important',
+        borderBottom: '1px solid #e5e7eb'
+      }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -112,6 +113,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="md:hidden pb-4 bg-white border-t border-gray-200"
+            style={{ backgroundColor: '#ffffff' }}
           >
             <div className="mt-2 grid gap-2 pt-3">
               <Button 

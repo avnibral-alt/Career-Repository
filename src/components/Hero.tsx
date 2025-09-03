@@ -5,7 +5,7 @@ import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -14,13 +14,13 @@ export function Hero() {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div 
-          className="space-y-10"
+          className="space-y-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export function Hero() {
           
           {/* Call to Action */}
           <motion.div
-            className="pt-8"
+            className="pt-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -92,23 +92,23 @@ export function Hero() {
           
           {/* Quick Filters */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 pt-6"
+            className="flex flex-wrap justify-center gap-4 pt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
           >
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
               <MapPin className="w-5 h-5" />
               <span>Remote</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
               <Briefcase className="w-5 h-5" />
               <span>Full-time</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
               <span>In Office</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
               <span>Part Time</span>
             </button>
           </motion.div>
