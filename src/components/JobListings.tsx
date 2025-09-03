@@ -236,55 +236,6 @@ export function JobListings({ selectedDepartment, onApplyClick }: JobListingsPro
           </p>
         </motion.div>
 
-        {/* Impact at JetLearn Section */}
-        <motion.div 
-          className="mb-16 md:mb-20 lg:mb-24"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6">
-              <motion.h3 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                Impact at JetLearn
-              </motion.h3>
-              
-              <motion.p 
-                className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-lg"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Working at JetLearn means being part of something bigger than yourself. Every day, you'll contribute to creating meaningful global impact through innovative education that inspires the next generation of innovators. Our mission empowers learners worldwide with future-ready skills, transforming how children engage with technology and unlocking their potential to shape tomorrow's world.
-              </motion.p>
-            </div>
-
-            {/* Right Column - Image */}
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-                  alt="Team collaboration and innovation at JetLearn"
-                  className="w-full h-80 lg:h-96 object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-                {/* Subtle overlay for better text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
         <motion.div 
           className="space-y-6 md:space-y-8"
           variants={containerVariants}
