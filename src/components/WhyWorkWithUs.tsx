@@ -154,13 +154,13 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 border border-blue-200/50">
+                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 border border-blue-300">
                   {/* Hover sheen effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
                   
                   {/* Profile Image Container */}
                   <div className="relative mb-6 z-10">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-2 border-white">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-4 border-white">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -176,35 +176,31 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors duration-300">
+                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Abhishek Bahl
                     </h4>
                     
-                    {/* Role Badge */}
-                    <div className="bg-white/70 border border-blue-200 px-4 py-2 rounded-full">
-                      <p className="text-sm font-semibold text-slate-700">
+                    {/* Role Badge with LinkedIn Icon */}
+                    <div className="flex items-center gap-3 bg-white/90 border border-white px-4 py-2 rounded-full">
+                      <p className="text-sm font-semibold text-black">
                         Founder & CEO
                       </p>
+                      <a 
+                        href="https://www.linkedin.com/in/abhishekbahl/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-1"
+                      >
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-slate-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-sm text-black leading-relaxed text-center max-w-xs">
                       Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                     </p>
-                  </div>
-
-                  {/* LinkedIn Button */}
-                  <div className="mt-6 z-10">
-                    <a 
-                      href="https://www.linkedin.com/in/abhishekbahl/"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -221,13 +217,13 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-purple-50 via-purple-100 to-pink-100 border border-purple-200/50">
+                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-purple-400 via-purple-500 to-pink-500 border border-purple-300">
                   {/* Hover sheen effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
                   
                   {/* Profile Image Container */}
                   <div className="relative mb-6 z-10">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-2 border-white">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-4 border-white">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
@@ -243,35 +239,31 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors duration-300">
+                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Jatin Luthra
                     </h4>
                     
-                    {/* Role Badge */}
-                    <div className="bg-white/70 border border-purple-200 px-4 py-2 rounded-full">
-                      <p className="text-sm font-semibold text-slate-700">
+                    {/* Role Badge with LinkedIn Icon */}
+                    <div className="flex items-center gap-3 bg-white/90 border border-white px-4 py-2 rounded-full">
+                      <p className="text-sm font-semibold text-black">
                         Co-Founder
                       </p>
+                      <a 
+                        href="https://www.linkedin.com/in/luthra/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-1"
+                      >
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-slate-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-sm text-black leading-relaxed text-center max-w-xs">
                       Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                     </p>
-                  </div>
-
-                  {/* LinkedIn Button */}
-                  <div className="mt-6 z-10">
-                    <a 
-                      href="https://www.linkedin.com/in/luthra/"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -288,13 +280,13 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-orange-50 via-orange-100 to-red-100 border border-orange-200/50">
+                <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 border border-orange-300">
                   {/* Hover sheen effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 -translate-x-full group-hover:translate-x-full" />
                   
                   {/* Profile Image Container */}
                   <div className="relative mb-6 z-10">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-2 border-white">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 border-4 border-white">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
@@ -310,35 +302,31 @@ export function WhyWorkWithUs() {
                   {/* Content */}
                   <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
                     {/* Name */}
-                    <h4 className="text-2xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors duration-300">
+                    <h4 className="text-2xl font-bold text-black group-hover:text-gray-800 transition-colors duration-300">
                       Kapil Bahl
                     </h4>
                     
-                    {/* Role Badge */}
-                    <div className="bg-white/70 border border-orange-200 px-4 py-2 rounded-full">
-                      <p className="text-sm font-semibold text-slate-700">
+                    {/* Role Badge with LinkedIn Icon */}
+                    <div className="flex items-center gap-3 bg-white/90 border border-white px-4 py-2 rounded-full">
+                      <p className="text-sm font-semibold text-black">
                         COO
                       </p>
+                      <a 
+                        href="https://www.linkedin.com/in/kapil-b-4297a43/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-1"
+                      >
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                      </a>
                     </div>
                     
                     {/* Bio */}
-                    <p className="text-sm text-slate-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-sm text-black leading-relaxed text-center max-w-xs">
                       Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                     </p>
-                  </div>
-
-                  {/* LinkedIn Button */}
-                  <div className="mt-6 z-10">
-                    <a 
-                      href="https://www.linkedin.com/in/kapil-b-4297a43/"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </motion.div>
