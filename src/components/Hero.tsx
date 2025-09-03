@@ -5,7 +5,7 @@ import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden mt-16 lg:mt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
