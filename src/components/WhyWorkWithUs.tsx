@@ -139,8 +139,8 @@ export function WhyWorkWithUs() {
           </motion.div>
 
           {/* Leadership Cards Grid - Clean centered layout */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
@@ -154,7 +154,7 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center">
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
                   {/* Profile Image Container - Smaller size */}
                   <div className="relative mb-4">
                     <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
@@ -194,8 +194,8 @@ export function WhyWorkWithUs() {
                       </a>
                     </div>
                     
-                    {/* Short Intro */}
-                    <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
+                    {/* Short Intro - Larger font, three lines */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
                       Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                     </p>
                   </div>
@@ -214,7 +214,7 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center">
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
                   {/* Profile Image Container - Smaller size */}
                   <div className="relative mb-4">
                     <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
@@ -254,8 +254,8 @@ export function WhyWorkWithUs() {
                       </a>
                     </div>
                     
-                    {/* Short Intro */}
-                    <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
+                    {/* Short Intro - Larger font, three lines */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
                       Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                     </p>
                   </div>
@@ -274,7 +274,7 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center">
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
                   {/* Profile Image Container - Smaller size */}
                   <div className="relative mb-4">
                     <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
@@ -314,8 +314,8 @@ export function WhyWorkWithUs() {
                       </a>
                     </div>
                     
-                    {/* Short Intro */}
-                    <p className="text-sm text-gray-700 leading-relaxed text-center px-2">
+                    {/* Short Intro - Larger font, three lines */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
                       Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                     </p>
                   </div>
