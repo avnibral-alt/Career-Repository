@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
-import { MapPin, Briefcase } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export function Hero() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      const element = document.getElementById('why-work-with-us');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -14,31 +31,30 @@ export function Hero() {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      {/* Content Overlay - Left Aligned like BCG */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div 
-          className="space-y-10"
+          className="max-w-3xl space-y-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Main Title - JOBS AT JETLEARN */}
+          {/* Main Title - Left Aligned */}
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <span className="inline">JOBS AT </span>
-            <span className="inline text-yellow-400">JETLEARN</span>
+            Jobs at JetLearn
           </motion.h1>
           
-          {/* Greeting */}
+          {/* Greeting - Left Aligned */}
           <motion.div 
-            className="text-xl md:text-2xl lg:text-3xl font-medium"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium text-white text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -46,71 +62,45 @@ export function Hero() {
             <span className="text-yellow-400">Namaste</span>, we are JetLearn!
           </motion.div>
           
-          {/* Brief Description */}
+          {/* Description - Left Aligned */}
           <motion.p 
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto font-medium"
+            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            Shape the future of AI-powered education with innovative technology and personalized learning experiences.
+            JetLearn in India is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
           </motion.p>
           
-          {/* Call to Action */}
+          {/* Search Section - Left Aligned */}
           <motion.div
-            className="pt-10"
+            className="pt-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
-            <Button 
-              onClick={() => {
-                const element = document.getElementById('why-work-with-us');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="group relative px-10 py-5 text-xl rounded-2xl font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden"
-              style={{ backgroundColor: '#fede00', color: '#000' }}
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                Search Jobs
-                <motion.svg 
-                  className="w-6 h-6" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </motion.svg>
-              </span>
-            </Button>
-          </motion.div>
-          
-          {/* Quick Filters */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-4 pt-10"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
-          >
-            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
-              <MapPin className="w-5 h-5" />
-              <span>Remote</span>
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
-              <Briefcase className="w-5 h-5" />
-              <span>Full-time</span>
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
-              <span>In Office</span>
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
-              <span>Part Time</span>
-            </button>
+            {/* Search Bar */}
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+              {/* Job Search Input */}
+              <div className="flex-1 relative">
+                <input
+                  type="text"
+                  placeholder="Search Jobs"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  className="w-full pl-4 pr-4 py-4 bg-white rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all duration-300"
+                />
+              </div>
+              
+              {/* Search Button */}
+              <Button 
+                onClick={handleSearch}
+                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu whitespace-nowrap"
+              >
+                Search
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>
