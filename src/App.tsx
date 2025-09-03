@@ -22,95 +22,68 @@ export default function App() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
-    // Optimize mobile scrolling
+    // Optimize mobile scrolling and ensure scrolling is enabled
     if ('ontouchstart' in window) {
       document.body.style.setProperty('-webkit-overflow-scrolling', 'touch');
-      document.documentElement.style.overflowX = 'hidden';
     }
     
-    return () => window.removeEventListener('resize', checkMobile);
+    // Always ensure scrolling is enabled for normal page viewing
+    const enableScrolling = () => {
+      document.documentElement.style.overflow = 'auto';
+      document.documentElement.style.overflowX = 'hidden';
+      document.documentElement.style.overflowY = 'auto';
+      document.body.style.overflow = 'auto';
+      document.body.style.overscrollBehavior = 'auto';
+    };
+    
+    // Enable scrolling immediately
+    enableScrolling();
+    
+    // Also enable scrolling after a short delay to override any iframe restrictions
+    const timeoutId = setTimeout(enableScrolling, 100);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
-  // When embedded in an iframe, post dynamic height to parent and disable internal scrollbars
+  // Force enable scrolling for mobile devices
   useEffect(() => {
-    const isEmbedded = window.self !== window.top;
-    if (!isEmbedded) return;
-
-    const setNoScroll = () => {
-      document.documentElement.style.overflow = 'hidden';
+    const forceEnableScrolling = () => {
+      // Force enable scrolling on all elements
+      document.documentElement.style.overflow = 'auto';
       document.documentElement.style.overflowX = 'hidden';
-      document.documentElement.style.overflowY = 'hidden';
-      document.body.style.overflow = 'hidden';
-      document.body.style.overscrollBehavior = 'none';
-    };
-
-    const postHeight = () => {
-      const doc = document;
-      const height = Math.max(
-        doc.body.scrollHeight,
-        doc.documentElement.scrollHeight,
-        doc.body.offsetHeight,
-        doc.documentElement.offsetHeight,
-        doc.body.clientHeight,
-        doc.documentElement.clientHeight
-      );
-      window.parent.postMessage({ type: 'JETLEARN_IFRAME_HEIGHT', height, href: window.location.href }, '*');
-    };
-
-    setNoScroll();
-    postHeight();
-
-    // Observe DOM size changes for dynamic updates (with fallback)
-    let resizeObserver: ResizeObserver | null = null;
-    let mutationObserver: MutationObserver | null = null;
-
-    if ('ResizeObserver' in window) {
-      resizeObserver = new ResizeObserver(() => {
-        // Use rAF to coalesce multiple changes
-        requestAnimationFrame(postHeight);
-      });
-      resizeObserver.observe(document.body);
-    } else {
-      mutationObserver = new MutationObserver(() => {
-        requestAnimationFrame(postHeight);
-      });
-      mutationObserver.observe(document.body, {
-        attributes: true,
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-    }
-
-    // Also listen to window resizes and font loading
-    window.addEventListener('resize', postHeight);
-    window.addEventListener('load', postHeight);
-    if ((document as any).fonts) {
-      const fonts: any = (document as any).fonts;
-      if (typeof fonts.addEventListener === 'function') {
-        fonts.addEventListener('loadingdone', postHeight as EventListener);
-      } else if ('onloadingdone' in fonts) {
-        fonts.onloadingdone = postHeight as any;
-      }
-    }
-
-    // Periodic safety ping in case some changes are not observed
-    const intervalId = window.setInterval(postHeight, 1000);
-
-    return () => {
-      resizeObserver && resizeObserver.disconnect();
-      mutationObserver && mutationObserver.disconnect();
-      window.removeEventListener('resize', postHeight);
-      window.removeEventListener('load', postHeight);
-      if ((document as any).fonts) {
-        const fonts: any = (document as any).fonts;
-        if (typeof fonts.removeEventListener === 'function') {
-          fonts.removeEventListener('loadingdone', postHeight as EventListener);
-        } else if ('onloadingdone' in fonts) {
-          fonts.onloadingdone = null;
+      document.documentElement.style.overflowY = 'auto';
+      document.body.style.overflow = 'auto';
+      document.body.style.overscrollBehavior = 'auto';
+      
+      // Also ensure all sections can scroll
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        if (section instanceof HTMLElement) {
+          section.style.overflow = 'visible';
+          section.style.position = 'relative';
         }
-      }
-      window.clearInterval(intervalId);
+      });
+    };
+
+    // Enable scrolling immediately
+    forceEnableScrolling();
+    
+    // Also enable scrolling after DOM is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', forceEnableScrolling);
+    } else {
+      forceEnableScrolling();
+    }
+    
+    // Enable scrolling after a delay to override any iframe restrictions
+    const timeoutId = setTimeout(forceEnableScrolling, 200);
+    
+    return () => {
+      document.removeEventListener('DOMContentLoaded', forceEnableScrolling);
+      clearTimeout(timeoutId);
     };
   }, []);
 

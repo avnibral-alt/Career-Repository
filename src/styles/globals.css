@@ -97,6 +97,35 @@ section {
   overflow: visible;
 }
 
+/* Force enable scrolling - override any JavaScript restrictions */
+html, body {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Ensure all sections can scroll */
+section, div, main {
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* Mobile-specific scrolling fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: auto !important;
+  }
+  
+  section, div, main {
+    overflow: visible !important;
+    position: relative !important;
+  }
+}
+
 /* Ensure proper spacing for fixed header */
 main {
   /* padding-top: var(--header-height); */
