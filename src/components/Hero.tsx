@@ -5,7 +5,7 @@ import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[85vh] flex items-center justify-center overflow-hidden mt-16 lg:mt-20">
+    <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden mt-16 lg:mt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -20,12 +20,12 @@ export function Hero() {
       {/* Content Overlay */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div 
-          className="space-y-8"
+          className="space-y-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Main Title */}
+          {/* Main Title - JOBS AT JETLEARN */}
           <motion.h1 
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
             initial={{ opacity: 0, y: 30 }}
@@ -38,7 +38,7 @@ export function Hero() {
           
           {/* Greeting */}
           <motion.div 
-            className="text-2xl md:text-3xl lg:text-4xl font-medium"
+            className="text-xl md:text-2xl lg:text-3xl font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -46,19 +46,19 @@ export function Hero() {
             <span className="text-yellow-400">Namaste</span>, we are JetLearn!
           </motion.div>
           
-          {/* Description */}
+          {/* Brief Description */}
           <motion.p 
-            className="text-xl md:text-2xl lg:text-3xl text-gray-100 leading-relaxed max-w-5xl mx-auto font-medium"
+            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            JetLearn is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
+            Shape the future of AI-powered education with innovative technology and personalized learning experiences.
           </motion.p>
           
           {/* Call to Action */}
           <motion.div
-            className="pt-6"
+            className="pt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -97,18 +97,18 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
           >
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
               <MapPin className="w-5 h-5" />
               <span>Remote</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
               <Briefcase className="w-5 h-5" />
               <span>Full-time</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
               <span>In Office</span>
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/40 text-white hover:bg-white/30 transition-all duration-300 font-medium">
+            <button className="flex items-center gap-2 px-6 py-3 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-400/40 text-yellow-300 hover:bg-yellow-500/30 transition-all duration-300 font-medium">
               <span>Part Time</span>
             </button>
           </motion.div>
