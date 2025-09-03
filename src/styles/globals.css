@@ -63,7 +63,8 @@ header * {
 #home {
   margin-top: var(--header-height) !important;
   padding-top: 2rem !important;
-  min-height: calc(100vh - var(--header-height)) !important;
+  height: 70vh !important;
+  min-height: 70vh !important;
   position: relative !important;
   z-index: 1 !important;
   display: flex !important;
@@ -95,6 +96,42 @@ section#home .absolute.inset-0 img {
 section#home .relative.z-10 {
   position: relative !important;
   z-index: 10 !important;
+}
+
+/* BCG-style responsive padding */
+@media (min-width: 768px) {
+  #home {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #home {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+/* Custom button styling for BCG-style design */
+#home button {
+  background-color: #fede00 !important;
+  color: #000 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+#home button:hover {
+  background-color: #e6c800 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(254, 222, 0, 0.3) !important;
+}
+
+#home button:active {
+  transform: translateY(0) !important;
 }
 
 .dark {
