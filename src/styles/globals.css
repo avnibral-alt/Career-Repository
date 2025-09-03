@@ -82,7 +82,7 @@ header * {
 
 /* Hero section positioning - clean background style with proper header spacing */
 .hero {
-  margin-top: var(--header-height) !important;
+  margin-top: 90px !important;
   padding-top: 8rem !important;
   height: 70vh !important;
   min-height: 70vh !important;
