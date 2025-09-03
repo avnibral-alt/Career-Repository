@@ -159,9 +159,13 @@ export function WhyWorkWithUs() {
                   <div className="relative mb-8">
                     <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+                        src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
@@ -209,9 +213,13 @@ export function WhyWorkWithUs() {
                   <div className="relative mb-8">
                     <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+                        src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
@@ -259,9 +267,13 @@ export function WhyWorkWithUs() {
                   <div className="relative mb-8">
                     <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                       <img 
-                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+                        src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
