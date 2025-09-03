@@ -290,3 +290,36 @@ html, body, #root {
     scroll-behavior: auto !important;
   }
 }
+
+/* Carousel Animation */
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-carousel {
+  animation: scroll-carousel 30s linear infinite;
+}
+
+/* Pause animation on hover for better UX */
+.animate-scroll-carousel:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile touch scrolling */
+@media (max-width: 768px) {
+  .animate-scroll-carousel {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .animate-scroll-carousel > * {
+    scroll-snap-align: start;
+  }
+}

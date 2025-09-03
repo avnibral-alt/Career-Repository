@@ -28,66 +28,66 @@ export function WhyWorkWithUs() {
       title: 'Collaborate',
       description: 'Where brilliant minds unite across borders to create magic.',
       icon: Users,
-      bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
-      borderColor: 'border-blue-200/60',
-      letterColor: 'text-blue-400/40',
-      iconColor: 'text-blue-600',
-      iconBgColor: 'bg-blue-100'
+      bgColor: 'bg-gradient-to-br from-blue-600 to-blue-700',
+      borderColor: 'border-blue-500/20',
+      letterColor: 'text-blue-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     },
     {
       letter: 'A',
       title: 'Bias for Action',
       description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
       icon: Zap,
-      bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
-      borderColor: 'border-orange-200/60',
-      letterColor: 'text-orange-400/40',
-      iconColor: 'text-orange-600',
-      iconBgColor: 'bg-orange-100'
+      bgColor: 'bg-gradient-to-br from-orange-500 to-orange-600',
+      borderColor: 'border-orange-400/20',
+      letterColor: 'text-orange-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     },
     {
       letter: 'R',
       title: 'Own & Deliver Results',
       description: 'Take the wheel, own the outcome, and make it happen.',
       icon: Target,
-      bgColor: 'bg-gradient-to-br from-green-50 to-green-100/50',
-      borderColor: 'border-green-200/60',
-      letterColor: 'text-green-400/40',
-      iconColor: 'text-green-600',
-      iconBgColor: 'bg-green-100'
+      bgColor: 'bg-gradient-to-br from-green-600 to-green-700',
+      borderColor: 'border-green-500/20',
+      letterColor: 'text-green-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     },
     {
       letter: 'D',
       title: 'Be Data-Driven',
       description: 'Let the numbers tell the story, not just your gut feeling.',
       icon: BarChart3,
-      bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
-      borderColor: 'border-purple-200/60',
-      letterColor: 'text-purple-400/40',
-      iconColor: 'text-purple-600',
-      iconBgColor: 'bg-purple-100'
+      bgColor: 'bg-gradient-to-br from-purple-600 to-purple-700',
+      borderColor: 'border-purple-500/20',
+      letterColor: 'text-purple-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     },
     {
       letter: 'I',
       title: 'Iterate & Learn',
       description: 'Fail fast, learn faster, and keep the innovation engine running.',
       icon: RefreshCw,
-      bgColor: 'bg-gradient-to-br from-indigo-50 to-indigo-100/50',
-      borderColor: 'border-indigo-200/60',
-      letterColor: 'text-indigo-400/40',
-      iconColor: 'text-indigo-600',
-      iconBgColor: 'bg-indigo-100'
+      bgColor: 'bg-gradient-to-br from-indigo-600 to-indigo-700',
+      borderColor: 'border-indigo-500/20',
+      letterColor: 'text-indigo-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     },
     {
       letter: 'O',
       title: 'Learner Obsession',
       description: 'Put students first, because they\'re the future we\'re building.',
       icon: Heart,
-      bgColor: 'bg-gradient-to-br from-red-50 to-red-100/50',
-      borderColor: 'border-red-200/60',
-      letterColor: 'text-red-400/40',
-      iconColor: 'text-red-600',
-      iconBgColor: 'bg-red-100'
+      bgColor: 'bg-gradient-to-br from-red-600 to-red-700',
+      borderColor: 'border-red-500/20',
+      letterColor: 'text-red-200/80',
+      iconColor: 'text-yellow-300',
+      iconBgColor: 'bg-yellow-400/20'
     }
   ];
 
@@ -163,71 +163,146 @@ export function WhyWorkWithUs() {
           </motion.p>
         </motion.div>
 
-        {/* Values Grid - Premium 3x2 Layout */}
+        {/* Values Carousel - Horizontal Scrolling */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-6xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="mb-16 relative"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {values.map((value, index) => {
-            const IconComponent = value.icon;
-            
-            return (
-              <motion.div
-                key={value.letter}
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
-                  boxShadow: "0 25px 50px -12px rgba(254, 222, 0, 0.3)",
-                  transition: { type: "spring", stiffness: 300, damping: 20 }
-                }}
-                className="group relative"
-              >
-                <div className={`relative p-6 rounded-2xl bg-white border ${value.borderColor} shadow-lg transition-all duration-500 h-full overflow-hidden`}>
-                  {/* Letter watermark - bottom-right diagonal with shine effect */}
-                  <div className={`absolute bottom-4 right-4 text-8xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
-                    <div className="relative">
-                      {value.letter}
-                      {/* Shine effect overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60 transform -skew-x-12" />
-                    </div>
-                  </div>
-                  
-                  {/* Background gradient */}
-                  <div className={`absolute inset-0 rounded-2xl ${value.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  
-                  <div className="relative z-10">
-                    {/* Icon section */}
-                    <div className="mb-5">
-                      <motion.div 
-                        className={`w-12 h-12 rounded-xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md`}
-                        whileHover={{ 
-                          scale: 1.1,
-                          rotate: 5
-                        }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <IconComponent className={`w-6 h-6 ${value.iconColor} transition-all duration-300`} />
-                      </motion.div>
-                    </div>
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+            {/* Infinite Scroll Container */}
+            <div className="flex animate-scroll-carousel gap-6 md:gap-8">
+              {/* First set of cards */}
+              {values.map((value, index) => {
+                const IconComponent = value.icon;
+                return (
+                  <motion.div
+                    key={`first-${value.letter}`}
+                    className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { type: "spring", stiffness: 300, damping: 20 }
+                    }}
+                                         onHoverStart={() => {
+                       // Pause animation on hover
+                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                       if (carousel) carousel.style.animationPlayState = 'paused';
+                     }}
+                     onHoverEnd={() => {
+                       // Resume animation
+                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                       if (carousel) carousel.style.animationPlayState = 'running';
+                     }}
+                  >
+                    <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
+                      {/* Letter watermark - top-right with glow effect */}
+                      <div className={`absolute top-6 right-6 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
+                        <div className="relative">
+                          {value.letter}
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 bg-yellow-300/20 blur-xl rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="relative z-10">
+                        {/* Icon section with brand accent */}
+                        <div className="mb-6">
+                          <motion.div 
+                            className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
+                            whileHover={{ 
+                              scale: 1.1,
+                              rotate: 5
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                          >
+                            <IconComponent className={`w-8 h-8 ${value.iconColor} transition-all duration-300`} />
+                          </motion.div>
+                        </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight">
-                      {value.title}
-                    </h3>
+                        {/* Title */}
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                          {value.title}
+                        </h3>
 
-                    {/* Description */}
-                    <p className="text-base text-gray-600 leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                        {/* Description */}
+                        <p className="text-lg text-blue-50 leading-relaxed">
+                          {value.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+              
+              {/* Duplicate set for infinite loop effect */}
+              {values.map((value, index) => {
+                const IconComponent = value.icon;
+                return (
+                  <motion.div
+                    key={`second-${value.letter}`}
+                    className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { type: "spring", stiffness: 300, damping: 20 }
+                    }}
+                                         onHoverStart={() => {
+                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                       if (carousel) carousel.style.animationPlayState = 'paused';
+                     }}
+                     onHoverEnd={() => {
+                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                       if (carousel) carousel.style.animationPlayState = 'running';
+                     }}
+                  >
+                    <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
+                      {/* Letter watermark - top-right with glow effect */}
+                      <div className={`absolute top-6 right-6 text-7xl font-black ${value.letterColor} select-none pointer-events-none z-0 transform rotate-12 drop-shadow-lg`}>
+                        <div className="relative">
+                          {value.letter}
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 bg-yellow-300/20 blur-xl rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="relative z-10">
+                        {/* Icon section with brand accent */}
+                        <div className="mb-6">
+                          <motion.div 
+                            className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
+                            whileHover={{ 
+                              scale: 1.1,
+                              rotate: 5
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                          >
+                            <IconComponent className={`w-8 h-8 ${value.iconColor} transition-all duration-300`} />
+                          </motion.div>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                          {value.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-lg text-blue-50 leading-relaxed">
+                          {value.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Mobile swipe indicator */}
+          <div className="md:hidden text-center mt-6">
+            <p className="text-sm text-gray-500">Swipe to explore our values</p>
+          </div>
         </motion.div>
 
         {/* Impact at JetLearn Section */}
