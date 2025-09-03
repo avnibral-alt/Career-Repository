@@ -53,7 +53,7 @@ export function Hero() {
                 color: '#000'
               }}
             >
-              Explore Careers
+              Search Jobs
             </Button>
           </motion.div>
         </motion.div>
