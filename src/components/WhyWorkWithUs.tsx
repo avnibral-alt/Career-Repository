@@ -116,7 +116,7 @@ export function WhyWorkWithUs() {
 
         {/* Leadership Team Section */}
         <motion.div 
-          className="mb-16 lg:mb-20"
+          className="mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -124,44 +124,44 @@ export function WhyWorkWithUs() {
         >
           {/* Section Header */}
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
               Meet Our <span className="text-yellow-500">Leadership Team</span>
             </h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The visionaries driving JetLearn's mission to transform education worldwide through innovation and technology.
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              The visionaries driving JetLearn's mission to transform education worldwide.
             </p>
           </motion.div>
 
-          {/* Leadership Cards Grid */}
+          {/* Leadership Cards Grid - Compact 3-column layout */}
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
                 className="group"
                 initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8,
+                  y: -4,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-4">
+                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
@@ -169,14 +169,14 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -184,17 +184,17 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Abhishek Bahl
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-base font-semibold text-yellow-600 mb-3">
                     Founder & CEO
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                   </p>
                 </div>
-        </motion.div>
+              </motion.div>
 
               {/* Jatin Luthra - Co-Founder */}
               <motion.div
@@ -204,33 +204,33 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8, 
+                  y: -4, 
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-4">
+                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "https://images.unsplash.comphoto-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                          target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
                         }}
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -238,38 +238,38 @@ export function WhyWorkWithUs() {
                   </div>
                   
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Jatin Luthra
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-base font-semibold text-yellow-600 mb-3">
                     Co-Founder
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                   </p>
                 </div>
               </motion.div>
 
               {/* Kapil Bahl - COO */}
-                      <motion.div 
+              <motion.div 
                 className="group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                        whileHover={{ 
-                  y: -8,
+                whileHover={{ 
+                  y: -4,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border border-gray-100">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                  <div className="relative mb-4">
+                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
@@ -277,14 +277,14 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -292,13 +292,13 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
                     Kapil Bahl
                   </h4>
-                  <p className="text-lg font-semibold text-yellow-600 mb-4">
+                  <p className="text-base font-semibold text-yellow-600 mb-3">
                     COO
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                   </p>
                 </div>
