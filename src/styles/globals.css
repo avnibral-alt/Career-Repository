@@ -94,7 +94,6 @@ header {
 /* Hero section positioning and navbar spacing */
 .hero {
   margin-top: var(--header-height) !important;
-  padding-top: 5rem !important;
   height: 80vh !important;
   min-height: 80vh !important;
 }

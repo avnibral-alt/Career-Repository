@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full h-[80vh] overflow-hidden pt-20">
+    <section className="hero relative w-full h-[80vh] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -17,7 +17,7 @@ export function Hero() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full h-full flex items-center px-6 lg:px-12">
+      <div className="relative z-10 w-full h-full flex items-center px-6 lg:px-12 pt-24">
         <motion.div 
           className="max-w-3xl"
           initial={{ opacity: 0, x: -50 }}
