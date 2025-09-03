@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full h-screen flex items-center overflow-hidden">
+    <section className="hero relative w-full min-h-[80vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -12,14 +12,14 @@ export function Hero() {
           alt="Team collaboration and innovation at JetLearn"
           className="w-full h-full object-cover"
         />
-        {/* Dark gradient overlay - black with 60% opacity fading to transparent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        {/* Dark gradient overlay - black with 70% opacity fading to transparent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div 
-          className="max-w-2xl"
+          className="max-w-xl lg:max-w-2xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -30,14 +30,14 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            <h2 className="text-lg md:text-xl font-medium tracking-wide text-white mb-4">
+            <h2 className="text-lg md:text-xl font-medium tracking-wide text-yellow-400 mb-4 uppercase">
               Careers
             </h2>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -47,7 +47,7 @@ export function Hero() {
           
           {/* Supporting Paragraph */}
           <motion.p 
-            className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl lg:max-w-3xl mb-8"
+            className="text-base md:text-lg text-white/80 leading-relaxed max-w-xl mt-4 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export function Hero() {
 
       {/* Additional visual elements for depth */}
       <motion.div 
-        className="absolute bottom-8 right-8 w-32 h-32 rounded-full opacity-10 blur-3xl bg-yellow-400 hidden lg:block"
+        className="absolute bottom-8 right-8 w-32 h-32 rounded-full opacity-10 blur-3xl bg-yellow-400 hidden xl:block"
         animate={{ 
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.2, 0.1]
