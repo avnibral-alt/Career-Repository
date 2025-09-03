@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[75vh] flex items-center overflow-hidden pt-20 pb-16">
+    <section id="home" className="relative h-[65vh] flex items-center overflow-hidden pt-24 pb-20 px-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -17,9 +17,9 @@ export function Hero() {
       </div>
 
       {/* Content Overlay - Left Aligned like BCG */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div 
-          className="max-w-4xl space-y-8"
+          className="max-w-4xl space-y-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -56,7 +56,7 @@ export function Hero() {
           
           {/* Search Button - Left Aligned */}
           <motion.div
-            className="pt-8"
+            className="pt-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -68,7 +68,7 @@ export function Hero() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-10 py-5 text-xl font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu"
+              className="px-12 py-6 text-xl font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu"
               style={{ backgroundColor: '#fede00', color: '#000' }}
             >
               Search Jobs
