@@ -80,9 +80,10 @@ header * {
   transform: scale(1.02) !important;
 }
 
-/* Hero section positioning - clean background style */
+/* Hero section positioning - clean background style with proper header spacing */
 .hero {
   margin-top: var(--header-height) !important;
+  padding-top: 5rem !important;
   height: 70vh !important;
   min-height: 70vh !important;
   position: relative !important;

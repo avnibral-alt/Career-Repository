@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section className="hero relative w-full h-[70vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-20">
       {/* Content Overlay - Left Aligned */}
       <div className="relative z-10 w-full px-6 lg:px-12 xl:px-20">
         <motion.div 
