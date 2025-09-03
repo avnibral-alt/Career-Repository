@@ -83,14 +83,13 @@ header * {
 /* Hero section positioning and navbar spacing */
 .hero {
   margin-top: var(--header-height) !important;
-  min-height: calc(100vh - var(--header-height)) !important;
+  height: 70vh !important;
+  min-height: 70vh !important;
   position: relative !important;
   z-index: 1 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
 }
 
 /* Ensure proper spacing for fixed header */
@@ -111,10 +110,11 @@ section.hero .absolute.inset-0 img {
   height: 100% !important;
 }
 
-/* Ensure content is properly positioned */
+/* Ensure content is properly positioned and left-aligned */
 section.hero .relative.z-10 {
   position: relative !important;
   z-index: 10 !important;
+  text-align: left !important;
 }
 
 /* BCG-style responsive padding */
@@ -135,12 +135,12 @@ section.hero .relative.z-10 {
 /* Hero section responsive adjustments */
 @media (max-width: 1024px) {
   .hero h1 {
-    font-size: 3.5rem !important;
+    font-size: 3rem !important;
     line-height: 1.2 !important;
   }
   
   .hero p {
-    font-size: 1.25rem !important;
+    font-size: 1.125rem !important;
     line-height: 1.6 !important;
   }
 }
