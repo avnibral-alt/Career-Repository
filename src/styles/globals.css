@@ -291,7 +291,7 @@ html, body, #root {
   }
 }
 
-/* Carousel Animation */
+/* Carousel Animation - Not currently used */
 @keyframes scroll-carousel {
   0% {
     transform: translateX(0);
@@ -304,15 +304,10 @@ html, body, #root {
 .animate-scroll-carousel {
   animation: scroll-carousel 20s linear infinite;
   will-change: transform;
-  /* Force hardware acceleration */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  /* Debug styles */
-  border: 3px solid blue !important;
-  background: yellow !important;
-  min-height: 200px !important;
 }
 
 /* Pause animation on hover for better UX */

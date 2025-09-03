@@ -22,7 +22,6 @@ import {
 } from 'lucide-react';
 
 export function WhyWorkWithUs() {
-  console.log('Loading values array with', 6, 'items');
   const values = [
     {
       letter: 'C',
