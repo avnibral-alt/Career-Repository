@@ -5,7 +5,7 @@ import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -14,20 +14,20 @@ export function Hero() {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div 
-          className="space-y-8"
+          className="space-y-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Main Title */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -38,7 +38,7 @@ export function Hero() {
           
           {/* Greeting */}
           <motion.div 
-            className="text-xl md:text-2xl lg:text-3xl font-medium"
+            className="text-2xl md:text-3xl lg:text-4xl font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -48,7 +48,7 @@ export function Hero() {
           
           {/* Description */}
           <motion.p 
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-100 leading-relaxed max-w-5xl mx-auto font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -56,35 +56,12 @@ export function Hero() {
             JetLearn is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
           </motion.p>
           
-          {/* Quick Filters */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          >
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-              <MapPin className="w-4 h-4" />
-              <span>Remote</span>
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-              <Briefcase className="w-4 h-4" />
-              <span>Full-time</span>
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-              <span>In Office</span>
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-              <span>Part Time</span>
-            </button>
-          </motion.div>
-          
           {/* Call to Action */}
           <motion.div
             className="pt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
             <Button 
               onClick={() => {
@@ -93,12 +70,13 @@ export function Hero() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="group relative px-8 py-4 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden border-2 border-yellow-400 bg-transparent hover:bg-yellow-400 text-yellow-400 hover:text-gray-900"
+              className="group relative px-10 py-5 text-xl rounded-2xl font-semibold transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden"
+              style={{ backgroundColor: '#fede00', color: '#000' }}
             >
               <span className="relative z-10 flex items-center gap-3">
                 Search Jobs
                 <motion.svg 
-                  className="w-5 h-5" 
+                  className="w-6 h-6" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -110,6 +88,29 @@ export function Hero() {
                 </motion.svg>
               </span>
             </Button>
+          </motion.div>
+          
+          {/* Quick Filters */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 pt-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+          >
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+              <MapPin className="w-5 h-5" />
+              <span>Remote</span>
+            </button>
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+              <Briefcase className="w-5 h-5" />
+              <span>Full-time</span>
+            </button>
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+              <span>In Office</span>
+            </button>
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/25 transition-all duration-300 font-medium">
+              <span>Part Time</span>
+            </button>
           </motion.div>
         </motion.div>
       </div>
