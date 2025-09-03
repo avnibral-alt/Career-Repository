@@ -80,7 +80,7 @@ header * {
   transform: scale(1.02) !important;
 }
 
-/* Hero section positioning - background image style */
+/* Hero section positioning - clean background style */
 .hero {
   margin-top: var(--header-height) !important;
   height: 70vh !important;
@@ -91,6 +91,7 @@ header * {
   align-items: center !important;
   justify-content: flex-start !important;
   overflow: hidden !important;
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #eff6ff 100%) !important;
 }
 
 /* Ensure proper spacing for fixed header */
@@ -102,13 +103,6 @@ main {
 header {
   height: var(--header-height) !important;
   min-height: var(--header-height) !important;
-}
-
-/* Ensure background image covers properly */
-section.hero .absolute.inset-0 img {
-  object-fit: cover !important;
-  width: 100% !important;
-  height: 100% !important;
 }
 
 /* Ensure content is properly positioned and left-aligned */
