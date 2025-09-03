@@ -172,9 +172,6 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                           {dept.title}
                         </h3>
                       </div>
-                      <p className="text-sm text-gray-500 font-medium mb-3">
-                        {dept.subtitle}
-                      </p>
                       <p className="text-gray-600 leading-relaxed">
                         {dept.description}
                       </p>
@@ -183,14 +180,14 @@ export function Departments({ onDepartmentClick }: DepartmentsProps) {
                     {/* CTA - positioned at bottom */}
                     <div className="flex items-center justify-between pt-4 mt-6 border-t border-gray-100">
                       <span 
-                        className="text-sm font-medium transition-colors group-hover:text-yellow-600"
-                        style={{ color: '#ffcf00' }}
+                        className="text-base font-semibold transition-colors group-hover:text-yellow-600"
+                        style={{ color: '#f59e0b' }}
                       >
                         View Opportunities
                       </span>
                       <ArrowRight 
-                        className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" 
-                        style={{ color: '#ffcf00' }}
+                        className="w-5 h-5 transition-all duration-300 group-hover:translate-x-1" 
+                        style={{ color: '#f59e0b' }}
                       />
                     </div>
                   </div>
