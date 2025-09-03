@@ -124,7 +124,7 @@ export function WhyWorkWithUs() {
         >
           {/* Section Header */}
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -138,9 +138,9 @@ export function WhyWorkWithUs() {
             </p>
           </motion.div>
 
-          {/* Leadership Cards Grid - Clean centered layout */}
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Leadership Cards Grid - Redesigned with better layout */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
@@ -150,54 +150,61 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -4,
+                  y: -8,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
-                  {/* Profile Image Container - Smaller size */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent */}
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                  
+                  {/* Profile Image Container - Larger and more prominent */}
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
                         }}
                       />
                     </div>
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
                   </div>
 
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center w-full">
+                  {/* Content - Improved typography and layout */}
+                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
                     {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
                       Abhishek Bahl
                     </h4>
                     
-                    {/* Designation with LinkedIn icon on the same line */}
-                    <div className="flex items-center justify-between w-full mb-3">
-                      <p className="text-lg font-semibold text-gray-800">
-                        Founder & CEO
-                      </p>
-                      <a 
-                        href="https://www.linkedin.com/in/abhishekbahl/"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-100 shadow-md transition-all duration-300 group-hover:scale-110"
-                      >
-                        <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </a>
-                    </div>
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
+                      Founder & CEO
+                    </p>
                     
-                    {/* Short Intro - Larger font, three lines */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
+                    {/* Description */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
                       Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                     </p>
+                  </div>
+
+                  {/* LinkedIn Button - Bottom positioned */}
+                  <div className="mt-6">
+                    <a 
+                      href="https://www.linkedin.com/in/abhishekbahl/"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -210,54 +217,61 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -4, 
+                  y: -8, 
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
-                  {/* Profile Image Container - Smaller size */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent */}
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                  
+                  {/* Profile Image Container */}
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
                         }}
                       />
                     </div>
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
                   </div>
                   
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center w-full">
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
                     {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
                       Jatin Luthra
                     </h4>
                     
-                    {/* Designation with LinkedIn icon on the same line */}
-                    <div className="flex items-center justify-between w-full mb-3">
-                      <p className="text-lg font-semibold text-gray-800">
-                        Co-Founder
-                      </p>
-                      <a 
-                        href="https://www.linkedin.com/in/luthra/"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-100 shadow-md transition-all duration-300 group-hover:scale-110"
-                      >
-                        <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </a>
-                    </div>
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
+                      Co-Founder
+                    </p>
                     
-                    {/* Short Intro - Larger font, three lines */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
+                    {/* Description */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
                       Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                     </p>
+                  </div>
+
+                  {/* LinkedIn Button */}
+                  <div className="mt-6">
+                    <a 
+                      href="https://www.linkedin.com/in/luthra/"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -270,54 +284,61 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -4,
+                  y: -8,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-yellow-500 h-full flex flex-col items-center max-w-xs">
-                  {/* Profile Image Container - Smaller size */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent */}
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                  
+                  {/* Profile Image Container */}
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
                         }}
                       />
                     </div>
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
                   </div>
 
-                  {/* Content - Better readable text */}
-                  <div className="flex-1 flex flex-col items-center w-full">
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
                     {/* Name */}
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
                       Kapil Bahl
                     </h4>
                     
-                    {/* Designation with LinkedIn icon on the same line */}
-                    <div className="flex items-center justify-between w-full mb-3">
-                      <p className="text-lg font-semibold text-gray-800">
-                        COO
-                      </p>
-                      <a 
-                        href="https://www.linkedin.com/in/kapil-b-4297a43/"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-100 shadow-md transition-all duration-300 group-hover:scale-110"
-                      >
-                        <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </a>
-                    </div>
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
+                      COO
+                    </p>
                     
-                    {/* Short Intro - Larger font, three lines */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center px-1 max-w-[200px]">
+                    {/* Description */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
                       Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                     </p>
+                  </div>
+
+                  {/* LinkedIn Button */}
+                  <div className="mt-6">
+                    <a 
+                      href="https://www.linkedin.com/in/kapil-b-4297a43/"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </motion.div>
