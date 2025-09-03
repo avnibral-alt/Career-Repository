@@ -91,21 +91,24 @@ export function WhyWorkWithUs() {
     switch (variant) {
       case 'soft':
         return {
-          background: 'bg-yellow-50/30',
+          background: 'bg-white',
           border: 'border-l-2 border-l-[#F8C642]',
-          shadow: 'shadow-md hover:shadow-lg'
+          shadow: 'shadow-md hover:shadow-lg',
+          backgroundColor: 'rgba(254, 243, 199, 0.3)' // yellow-50 with 30% opacity
         };
       case 'brand':
         return {
-          background: 'bg-yellow-50/40',
+          background: 'bg-white',
           border: 'border-l-2 border-l-[#F8C642]',
-          shadow: 'shadow-md hover:shadow-lg'
+          shadow: 'shadow-md hover:shadow-lg',
+          backgroundColor: 'rgba(254, 243, 199, 0.4)' // yellow-50 with 40% opacity
         };
       default: // neutral
         return {
-          background: 'bg-yellow-50/30',
+          background: 'bg-white',
           border: 'border-l-2 border-l-[#F8C642]',
-          shadow: 'shadow-md hover:shadow-lg'
+          shadow: 'shadow-md hover:shadow-lg',
+          backgroundColor: 'rgba(254, 243, 199, 0.3)' // yellow-50 with 30% opacity
         };
     }
   };
@@ -232,7 +235,8 @@ export function WhyWorkWithUs() {
                       className={`relative rounded-2xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden ${cardStyles.background} ${cardStyles.border} ${cardStyles.shadow} hover:shadow-xl`}
                       style={{
                         '--tw-shadow-color': 'rgba(248, 198, 66, 0.25)',
-                        '--tw-shadow': '0 0 0 3px var(--tw-shadow-color)'
+                        '--tw-shadow': '0 0 0 3px var(--tw-shadow-color)',
+                        backgroundColor: cardStyles.backgroundColor
                       } as React.CSSProperties}
                     >
                       {/* Hover accent border glow effect */}
