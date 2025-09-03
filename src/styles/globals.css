@@ -95,7 +95,8 @@ header {
 .hero {
   margin-top: var(--header-height) !important;
   padding-top: 5rem !important;
-  min-height: calc(80vh - var(--header-height)) !important;
+  height: 80vh !important;
+  min-height: 80vh !important;
 }
 
 /* Hero section responsive adjustments */
