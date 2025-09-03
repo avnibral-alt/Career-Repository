@@ -12,54 +12,43 @@ export function Hero() {
           alt="Team collaboration and innovation at JetLearn"
           className="w-full h-full object-cover"
         />
-        {/* Dark gradient overlay - black with 70% opacity fading to transparent */}
+        {/* Dark gradient overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </div>
 
-      {/* Content Wrapper - absolute positioning with flex layout */}
-      <div className="absolute inset-0 flex items-center justify-start lg:justify-start justify-center px-6 lg:px-12">
+      {/* Content Container */}
+      <div className="relative z-10 w-full h-full flex items-center px-6 lg:px-12">
         <motion.div 
           className="max-w-3xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Small Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          >
-            <h2 className="text-lg md:text-xl font-medium tracking-wide text-yellow-400 mb-4 uppercase">
-              Careers
-            </h2>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1 
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             Discover yourself and find your team.
           </motion.h1>
           
-          {/* Supporting Paragraph */}
+          {/* Subheading */}
           <motion.p 
-            className="text-base md:text-lg text-white/80 leading-relaxed mt-4 mb-8"
+            className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            Here, your voice is respected, your accomplishments celebrated, and your curiosity continuously nurtured as you work together across teams to solve complex challenges. Ready to be where you can thrive?
+            At JetLearn, your voice is respected, your accomplishments are celebrated, and your curiosity is nurtured as you work with global teams to solve complex challenges.
           </motion.p>
           
           {/* Call-to-Action Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <Button 
               onClick={() => {
@@ -68,7 +57,7 @@ export function Hero() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-6 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0 mt-6"
+              className="px-8 py-4 text-lg font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0"
               style={{ 
                 backgroundColor: '#FEDE00', 
                 color: '#000'
@@ -79,20 +68,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Additional visual elements for depth */}
-      <motion.div 
-        className="absolute bottom-8 right-8 w-32 h-32 rounded-full opacity-10 blur-3xl bg-yellow-400 hidden xl:block"
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1]
-        }}
-        transition={{ 
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
     </section>
   );
 }
