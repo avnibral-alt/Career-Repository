@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] lg:min-h-[95vh] overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50" style={{ marginTop: '64px' }}>
+    <section className="hero relative w-full min-h-[80vh] sm:min-h-[85vh] md:min-h-[90vh] lg:min-h-[95vh] overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50" style={{ marginTop: '60px' }}>
       {/* Content Overlay - Left Aligned with proper top positioning */}
       <div className="relative z-10 w-full h-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
         <motion.div 

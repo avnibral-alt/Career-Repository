@@ -137,6 +137,33 @@ header {
   min-height: var(--header-height) !important;
 }
 
+/* Mobile navbar optimizations */
+@media (max-width: 768px) {
+  header {
+    height: 60px !important;
+    min-height: 60px !important;
+  }
+  
+  /* Ensure mobile menu is properly positioned */
+  #mobile-nav {
+    top: 60px !important;
+    z-index: 40 !important;
+  }
+  
+  /* Optimize mobile logo sizing */
+  header .w-6.h-6 {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  /* Ensure mobile menu button is properly sized */
+  header button[aria-controls="mobile-nav"] {
+    padding: 8px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
 /* Ensure proper scrolling on mobile */
 html, body {
   overflow-x: hidden;
