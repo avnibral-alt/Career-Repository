@@ -28,66 +28,66 @@ export function WhyWorkWithUs() {
       title: 'Collaborate',
       description: 'Where brilliant minds unite across borders to create magic.',
       icon: Users,
-      bgColor: 'bg-gradient-to-br from-blue-600 to-blue-700',
+      bgColor: 'bg-blue-600',
       borderColor: 'border-blue-500/20',
       letterColor: 'text-blue-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     },
     {
       letter: 'A',
       title: 'Bias for Action',
       description: 'Move fast, break things (responsibly), and ship like there\'s no tomorrow.',
       icon: Zap,
-      bgColor: 'bg-gradient-to-br from-orange-500 to-orange-600',
+      bgColor: 'bg-orange-500',
       borderColor: 'border-orange-400/20',
       letterColor: 'text-orange-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     },
     {
       letter: 'R',
       title: 'Own & Deliver Results',
       description: 'Take the wheel, own the outcome, and make it happen.',
       icon: Target,
-      bgColor: 'bg-gradient-to-br from-green-600 to-green-700',
+      bgColor: 'bg-green-600',
       borderColor: 'border-green-500/20',
       letterColor: 'text-green-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     },
     {
       letter: 'D',
       title: 'Be Data-Driven',
       description: 'Let the numbers tell the story, not just your gut feeling.',
       icon: BarChart3,
-      bgColor: 'bg-gradient-to-br from-purple-600 to-purple-700',
+      bgColor: 'bg-purple-600',
       borderColor: 'border-purple-500/20',
       letterColor: 'text-purple-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     },
     {
       letter: 'I',
       title: 'Iterate & Learn',
       description: 'Fail fast, learn faster, and keep the innovation engine running.',
       icon: RefreshCw,
-      bgColor: 'bg-gradient-to-br from-indigo-600 to-indigo-700',
+      bgColor: 'bg-indigo-600',
       borderColor: 'border-indigo-500/20',
       letterColor: 'text-indigo-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     },
     {
       letter: 'O',
       title: 'Learner Obsession',
       description: 'Put students first, because they\'re the future we\'re building.',
       icon: Heart,
-      bgColor: 'bg-gradient-to-br from-red-600 to-red-700',
+      bgColor: 'bg-red-600',
       borderColor: 'border-red-500/20',
       letterColor: 'text-red-200/80',
-      iconColor: 'text-yellow-300',
-      iconBgColor: 'bg-yellow-400/20'
+      iconColor: 'text-white',
+      iconBgColor: 'bg-white/20'
     }
   ];
 
@@ -186,16 +186,16 @@ export function WhyWorkWithUs() {
                       scale: 1.05,
                       transition: { type: "spring", stiffness: 300, damping: 20 }
                     }}
-                                         onHoverStart={() => {
-                       // Pause animation on hover
-                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                       if (carousel) carousel.style.animationPlayState = 'paused';
-                     }}
-                     onHoverEnd={() => {
-                       // Resume animation
-                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                       if (carousel) carousel.style.animationPlayState = 'running';
-                     }}
+                    onHoverStart={() => {
+                      // Pause animation on hover
+                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                      if (carousel) carousel.style.animationPlayState = 'paused';
+                    }}
+                    onHoverEnd={() => {
+                      // Resume animation
+                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                      if (carousel) carousel.style.animationPlayState = 'running';
+                    }}
                   >
                     <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
                       {/* Letter watermark - top-right with glow effect */}
@@ -203,12 +203,12 @@ export function WhyWorkWithUs() {
                         <div className="relative">
                           {value.letter}
                           {/* Glow effect */}
-                          <div className="absolute inset-0 bg-yellow-300/20 blur-xl rounded-full" />
+                          <div className="absolute inset-0 bg-white/20 blur-xl rounded-full" />
                         </div>
                       </div>
                       
                       <div className="relative z-10">
-                        {/* Icon section with brand accent */}
+                        {/* Icon section with white background */}
                         <div className="mb-6">
                           <motion.div 
                             className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
@@ -228,7 +228,7 @@ export function WhyWorkWithUs() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-lg text-blue-50 leading-relaxed">
+                        <p className="text-lg text-white/90 leading-relaxed">
                           {value.description}
                         </p>
                       </div>
@@ -248,14 +248,14 @@ export function WhyWorkWithUs() {
                       scale: 1.05,
                       transition: { type: "spring", stiffness: 300, damping: 20 }
                     }}
-                                         onHoverStart={() => {
-                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                       if (carousel) carousel.style.animationPlayState = 'paused';
-                     }}
-                     onHoverEnd={() => {
-                       const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
-                       if (carousel) carousel.style.animationPlayState = 'running';
-                     }}
+                    onHoverStart={() => {
+                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                      if (carousel) carousel.style.animationPlayState = 'paused';
+                    }}
+                    onHoverEnd={() => {
+                      const carousel = document.querySelector('.animate-scroll-carousel') as HTMLElement;
+                      if (carousel) carousel.style.animationPlayState = 'running';
+                    }}
                   >
                     <div className={`relative p-8 rounded-3xl ${value.bgColor} border ${value.borderColor} shadow-xl transition-all duration-500 h-full overflow-hidden group-hover:shadow-2xl`}>
                       {/* Letter watermark - top-right with glow effect */}
@@ -263,12 +263,12 @@ export function WhyWorkWithUs() {
                         <div className="relative">
                           {value.letter}
                           {/* Glow effect */}
-                          <div className="absolute inset-0 bg-yellow-300/20 blur-xl rounded-full" />
+                          <div className="absolute inset-0 bg-white/20 blur-xl rounded-full" />
                         </div>
                       </div>
                       
                       <div className="relative z-10">
-                        {/* Icon section with brand accent */}
+                        {/* Icon section with white background */}
                         <div className="mb-6">
                           <motion.div 
                             className={`w-16 h-16 rounded-2xl ${value.iconBgColor} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg backdrop-blur-sm`}
@@ -288,7 +288,7 @@ export function WhyWorkWithUs() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-lg text-blue-50 leading-relaxed">
+                        <p className="text-lg text-white/90 leading-relaxed">
                           {value.description}
                         </p>
                       </div>
