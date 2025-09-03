@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[65vh] flex items-center overflow-hidden pt-24 pb-20 px-8">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-20 px-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 

@@ -30,14 +30,15 @@ export function Header() {
       style={{ 
         backgroundColor: '#ffffff !important',
         color: '#000000 !important',
-        borderBottom: '1px solid #e5e7eb'
+        borderBottom: '1px solid #e5e7eb',
+        height: '80px' // Ensure consistent height
       }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <motion.div 
             className="flex-shrink-0 flex items-center gap-3"
@@ -112,10 +113,10 @@ export function Header() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="md:hidden pb-4 bg-white border-t border-gray-200"
+            className="md:hidden pb-4 bg-white border-t border-gray-200 absolute top-full left-0 right-0"
             style={{ backgroundColor: '#ffffff' }}
           >
-            <div className="mt-2 grid gap-2 pt-3">
+            <div className="mt-2 grid gap-2 pt-3 px-4">
               <Button 
                 variant="ghost" 
                 className="justify-start text-gray-700 hover:text-gray-900 hover:bg-gray-100 px-4 py-3 rounded-xl text-base font-medium"

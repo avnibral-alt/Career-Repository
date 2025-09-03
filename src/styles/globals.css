@@ -39,6 +39,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --header-height: 80px;
 }
 
 /* Force header to be white */
@@ -56,6 +57,44 @@ header * {
 .dark header, .dark .header, .dark [data-header] {
   background-color: #ffffff !important;
   color: #000000 !important;
+}
+
+/* Hero section specific fixes */
+#home {
+  margin-top: var(--header-height) !important;
+  padding-top: 2rem !important;
+  min-height: calc(100vh - var(--header-height)) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Ensure proper spacing for fixed header */
+main {
+  /* padding-top: var(--header-height); */
+}
+
+/* Force header height consistency */
+header {
+  height: var(--header-height) !important;
+  min-height: var(--header-height) !important;
+}
+
+/* Ensure background image covers properly */
+section#home .absolute.inset-0 img {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure content is properly positioned */
+section#home .relative.z-10 {
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 .dark {
@@ -144,6 +183,8 @@ header * {
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
   }
 }
 

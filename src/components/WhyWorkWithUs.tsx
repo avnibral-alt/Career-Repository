@@ -146,9 +146,9 @@ export function WhyWorkWithUs() {
               <motion.div
                 className="group"
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
                 whileHover={{ 
                   y: -8,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
@@ -194,7 +194,7 @@ export function WhyWorkWithUs() {
                     Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                   </p>
                 </div>
-              </motion.div>
+        </motion.div>
 
               {/* Jatin Luthra - Co-Founder */}
               <motion.div
@@ -204,7 +204,7 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8,
+                  y: -8, 
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
@@ -236,7 +236,7 @@ export function WhyWorkWithUs() {
                       </a>
                     </div>
                   </div>
-
+                  
                   {/* Name and Role */}
                   <h4 className="text-2xl font-bold text-gray-900 mb-3">
                     Jatin Luthra
@@ -251,13 +251,13 @@ export function WhyWorkWithUs() {
               </motion.div>
 
               {/* Kapil Bahl - COO */}
-              <motion.div
+                      <motion.div 
                 className="group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                whileHover={{ 
+                        whileHover={{ 
                   y: -8,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
