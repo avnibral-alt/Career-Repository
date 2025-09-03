@@ -87,9 +87,6 @@ header * {
   min-height: 70vh !important;
   position: relative !important;
   z-index: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
   overflow: hidden !important;
   background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #eff6ff 100%) !important;
 }
