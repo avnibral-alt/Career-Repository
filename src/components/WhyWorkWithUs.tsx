@@ -116,7 +116,7 @@ export function WhyWorkWithUs() {
 
         {/* Leadership Team Section */}
         <motion.div 
-          className="mb-12"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -124,23 +124,23 @@ export function WhyWorkWithUs() {
         >
           {/* Section Header */}
           <motion.div 
-            className="text-center mb-10"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Meet Our <span className="text-yellow-500">Leadership Team</span>
             </h3>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              The visionaries driving JetLearn's mission to transform education worldwide.
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              The visionaries driving JetLearn's mission to transform education worldwide through innovation and technology.
             </p>
           </motion.div>
 
           {/* Leadership Cards Grid - Compact 3-column layout */}
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
@@ -154,10 +154,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -169,14 +169,14 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -184,13 +184,13 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
                     Abhishek Bahl
                   </h4>
-                  <p className="text-base font-semibold text-yellow-600 mb-3">
+                  <p className="text-lg font-semibold text-yellow-600 mb-4">
                     Founder & CEO
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                   </p>
                 </div>
@@ -208,10 +208,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
@@ -223,14 +223,14 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -238,13 +238,13 @@ export function WhyWorkWithUs() {
                   </div>
                   
                   {/* Name and Role */}
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
                     Jatin Luthra
                   </h4>
-                  <p className="text-base font-semibold text-yellow-600 mb-3">
+                  <p className="text-lg font-semibold text-yellow-600 mb-4">
                     Co-Founder
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                   </p>
                 </div>
@@ -262,10 +262,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border border-gray-100 h-full">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 h-full">
                   {/* Profile Image Container */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
@@ -277,14 +277,14 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* LinkedIn Icon Overlay */}
-                    <div className="absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                    <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <a 
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
@@ -292,13 +292,13 @@ export function WhyWorkWithUs() {
                   </div>
 
                   {/* Name and Role */}
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">
                     Kapil Bahl
                   </h4>
-                  <p className="text-base font-semibold text-yellow-600 mb-3">
+                  <p className="text-lg font-semibold text-yellow-600 mb-4">
                     COO
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-base text-gray-600 leading-relaxed">
                     Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                   </p>
                 </div>
