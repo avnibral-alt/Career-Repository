@@ -80,7 +80,7 @@ header * {
   transform: scale(1.02) !important;
 }
 
-/* Hero section positioning - clean background style with proper header spacing */
+/* Hero section positioning - FORCE margin-top to be visible */
 .hero {
   margin-top: 120px !important;
   height: 70vh !important;
