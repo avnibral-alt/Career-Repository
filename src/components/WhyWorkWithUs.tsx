@@ -122,6 +122,10 @@ export function WhyWorkWithUs() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
+          {/* Debug Info */}
+          <div className="text-center mb-4 p-2 bg-green-500 text-white rounded">
+            🎯 LEADERSHIP TEAM DEBUG: Section is rendering!
+          </div>
           {/* Section Header */}
           <motion.div 
             className="text-center mb-12 lg:mb-16"
@@ -154,7 +158,12 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-red-500">
+                  {/* Debug Info */}
+                  <div className="text-center mb-4 p-2 bg-blue-500 text-white rounded text-sm">
+                    🧑‍💼 ABHISHEK CARD DEBUG: Card is visible!
+                  </div>
+                  
                   {/* Profile Image */}
                   <div className="relative mb-6">
                     <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg">
