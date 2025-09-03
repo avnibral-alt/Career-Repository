@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 
 export function WhyWorkWithUs() {
+  console.log('Loading values array with', 6, 'items');
   const values = [
     {
       letter: 'C',
@@ -170,11 +171,16 @@ export function WhyWorkWithUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
+          onAnimationStart={() => console.log('Carousel animation started')}
         >
           {/* Carousel Container */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden bg-gray-100 p-4">
+            {/* Debug Info */}
+            <div className="text-center mb-4 p-2 bg-red-500 text-white rounded">
+              🚨 CAROUSEL DEBUG: {values.length} values loaded, Carousel should be scrolling!
+            </div>
             {/* Infinite Scroll Container */}
-            <div className="flex animate-scroll-carousel gap-6 md:gap-8">
+            <div className="flex animate-scroll-carousel gap-6 md:gap-8" style={{ border: '2px solid red' }}>
               {/* First set of cards */}
               {values.map((value, index) => {
                 const IconComponent = value.icon;
@@ -182,6 +188,7 @@ export function WhyWorkWithUs() {
                   <motion.div
                     key={`first-${value.letter}`}
                     className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
+                    style={{ border: '2px solid green', backgroundColor: 'white' }}
                     whileHover={{ 
                       scale: 1.05,
                       transition: { type: "spring", stiffness: 300, damping: 20 }
@@ -244,6 +251,7 @@ export function WhyWorkWithUs() {
                   <motion.div
                     key={`second-${value.letter}`}
                     className="flex-shrink-0 w-80 md:w-96 group cursor-pointer"
+                    style={{ border: '2px solid green', backgroundColor: 'white' }}
                     whileHover={{ 
                       scale: 1.05,
                       transition: { type: "spring", stiffness: 300, damping: 20 }
