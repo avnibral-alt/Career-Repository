@@ -1,156 +1,187 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { Search, MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // More reliable mobile scrolling
-      const isMobile = window.innerWidth < 768;
-      const headerOffset = 80; // Account for sticky header
-      
-      if (isMobile) {
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      // Scroll to job listings section
+      const element = document.getElementById('job-listings');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
 
-  return (
-    <section id="home" className="pt-14 sm:pt-16 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 lg:py-32 relative">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* Left content */}
-          <motion.div 
-            className="space-y-8"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            >
-              <span className="block">INNOVATORS WANTED:</span>
-              <span className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Join the JetLearn Revolution ⚡
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            >
-              Shape the future of AI-powered education. We're building the world's most innovative learning platform and need exceptional talent to join our mission.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button 
-                onClick={() => scrollToSection('why-work-with-us')}
-                className="group relative px-8 py-4 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden touch-manipulation"
-                style={{ backgroundColor: '#ffcf00', color: '#000' }}
-              >
-                {/* Gradient overlay for hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Button content */}
-                <span className="relative z-10 flex items-center gap-3">
-                  Why JetLearn
-                  <motion.svg 
-                    className="w-5 h-5" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </motion.svg>
-                </span>
-              </Button>
-            </motion.div>
-          </motion.div>
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
-          {/* Right content - Professional globally appealing image */}
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+          alt="Team collaboration and innovation at JetLearn"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
+      {/* Content Overlay */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <motion.div 
+          className="space-y-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Main Title */}
+          <motion.h1 
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hdGlvbmFsJTIwdGVhbSUyMHdvcmtpbmclMjBjb2xsYWJvcmF0aW9uJTIwbW9kZXJuJTIwb2ZmaWNlfGVufDF8fHx8MTc1NjExOTI1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Professional international team collaboration in modern workspace"
-                className="w-full h-72 sm:h-80 md:h-96 lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              
-              {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              
-              {/* Subtle decorative elements */}
-              <div className="absolute top-6 right-6 flex gap-2">
-                <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                  <span className="text-lg">⚡</span>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-4 h-4 text-indigo-600" />
-                </div>
+            <span className="block">JOBS AT</span>
+            <span className="block text-yellow-400">JETLEARN</span>
+          </motion.h1>
+          
+          {/* Greeting */}
+          <motion.div 
+            className="text-xl md:text-2xl lg:text-3xl font-medium"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            <span className="text-yellow-400">Namaste</span>, we are JetLearn!
+          </motion.div>
+          
+          {/* Description */}
+          <motion.p 
+            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          >
+            JetLearn is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
+          </motion.p>
+          
+          {/* Search Section */}
+          <motion.div
+            className="max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          >
+            {/* Search Bar */}
+            <div className="flex flex-col sm:flex-row gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-2 border border-white/20">
+              {/* Job Search Input */}
+              <div className="flex-1 relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search Jobs"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  className="w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all duration-300"
+                />
               </div>
+              
+              {/* Search Button */}
+              <Button 
+                onClick={handleSearch}
+                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu"
+              >
+                Search
+              </Button>
             </div>
             
-            {/* Floating decorative elements */}
-            <motion.div 
-              className="absolute -top-6 -right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full opacity-20 blur-sm bg-gradient-to-r from-blue-400 to-indigo-400"
-              animate={{ 
-                y: [0, -20, 0],
-                rotate: [0, 180, 360]
-              }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className="absolute -bottom-6 -left-6 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full opacity-15 blur-sm bg-gradient-to-r from-purple-400 to-pink-400"
-              animate={{ 
-                y: [0, 15, 0],
-                rotate: [0, -90, -180]
-              }}
-              transition={{ 
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
+            {/* Quick Filters */}
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+                <MapPin className="w-4 h-4" />
+                <span>Remote</span>
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+                <Briefcase className="w-4 h-4" />
+                <span>Full-time</span>
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+                <span>Engineering</span>
+              </button>
+            </div>
           </motion.div>
-        </div>
+          
+          {/* Call to Action */}
+          <motion.div
+            className="pt-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+          >
+            <Button 
+              onClick={() => {
+                const element = document.getElementById('why-work-with-us');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="group relative px-8 py-4 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden border-2 border-yellow-400 bg-transparent hover:bg-yellow-400 text-yellow-400 hover:text-gray-900"
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                Why Work at JetLearn
+                <motion.svg 
+                  className="w-5 h-5" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </span>
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
+
+      {/* Floating decorative elements */}
+      <motion.div 
+        className="absolute top-20 left-10 w-16 h-16 rounded-full opacity-20 blur-sm bg-gradient-to-r from-yellow-400 to-orange-400 z-10"
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [0, 180, 360]
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-20 right-10 w-20 h-20 rounded-full opacity-15 blur-sm bg-gradient-to-r from-blue-400 to-indigo-400 z-10"
+        animate={{ 
+          y: [0, 15, 0],
+          rotate: [0, -90, -180]
+        }}
+        transition={{ 
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
     </section>
   );
 }
