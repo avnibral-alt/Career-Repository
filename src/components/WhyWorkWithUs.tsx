@@ -150,16 +150,18 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8,
+                  y: -12,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-4 border-yellow-400 hover:border-yellow-500 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent - removed top border, now using full border */}
+                <div className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700">
+                  {/* Background pattern overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-60" />
                   
-                  {/* Profile Image Container - Larger and more prominent */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
+                  {/* Profile Image Container - Enhanced with glow effect */}
+                  <div className="relative mb-8 z-10">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 relative">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -170,37 +172,43 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
+                    {/* Glowing ring effect */}
+                    <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-pulse" />
+                    <div className="absolute inset-0 rounded-full border-2 border-white/60 animate-ping" />
                   </div>
 
-                  {/* Content - Improved typography and layout */}
-                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
-                    {/* Name */}
-                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
-                      Abhishek Bahl
-                    </h4>
+                  {/* Content - Enhanced typography and layout */}
+                  <div className="flex-1 flex flex-col items-center w-full space-y-5 z-10">
+                    {/* Name with accent underline */}
+                    <div className="space-y-2">
+                      <h4 className="text-2xl font-bold text-white group-hover:text-yellow-200 transition-colors duration-300">
+                        Abhishek Bahl
+                      </h4>
+                      <div className="w-16 h-1 bg-yellow-400 mx-auto rounded-full group-hover:w-20 transition-all duration-300" />
+                    </div>
                     
-                    {/* Designation */}
-                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
-                      Founder & CEO
-                    </p>
+                    {/* Designation - Enhanced styling */}
+                    <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+                      <p className="text-lg font-semibold text-white">
+                        Founder & CEO
+                      </p>
+                    </div>
                     
                     {/* Description */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-base text-white/90 leading-relaxed text-center max-w-xs">
                       Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
                     </p>
                   </div>
 
-                  {/* LinkedIn Button - Bottom positioned */}
-                  <div className="mt-6">
+                  {/* LinkedIn Button - Fixed visibility and enhanced styling */}
+                  <div className="mt-8 z-10">
                     <a 
                       href="https://www.linkedin.com/in/abhishekbahl/"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 border-2 border-white"
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white hover:bg-yellow-400 text-blue-600 hover:text-white shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 border-2 border-white/20"
                     >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                       </svg>
                     </a>
@@ -216,16 +224,18 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8, 
+                  y: -12,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-4 border-yellow-400 hover:border-yellow-500 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent - removed top border, now using full border */}
+                <div className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-purple-500 via-purple-600 to-pink-600">
+                  {/* Background pattern overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-60" />
                   
                   {/* Profile Image Container */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
+                  <div className="relative mb-8 z-10">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 relative">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
@@ -236,37 +246,43 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
+                    {/* Glowing ring effect */}
+                    <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-pulse" />
+                    <div className="absolute inset-0 rounded-full border-2 border-white/60 animate-ping" />
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
-                    {/* Name */}
-                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
-                      Jatin Luthra
-                    </h4>
+                  <div className="flex-1 flex flex-col items-center w-full space-y-5 z-10">
+                    {/* Name with accent underline */}
+                    <div className="space-y-2">
+                      <h4 className="text-2xl font-bold text-white group-hover:text-yellow-200 transition-colors duration-300">
+                        Jatin Luthra
+                      </h4>
+                      <div className="w-16 h-1 bg-yellow-400 mx-auto rounded-full group-hover:w-20 transition-all duration-300" />
+                    </div>
                     
                     {/* Designation */}
-                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
-                      Co-Founder
-                    </p>
+                    <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+                      <p className="text-lg font-semibold text-white">
+                        Co-Founder
+                      </p>
+                    </div>
                     
                     {/* Description */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-base text-white/90 leading-relaxed text-center max-w-xs">
                       Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
                     </p>
                   </div>
 
                   {/* LinkedIn Button */}
-                  <div className="mt-6">
+                  <div className="mt-8 z-10">
                     <a 
                       href="https://www.linkedin.com/in/luthra/"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 border-2 border-white"
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white hover:bg-yellow-400 text-blue-600 hover:text-white shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 border-2 border-white/20"
                     >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                       </svg>
                     </a>
@@ -282,16 +298,18 @@ export function WhyWorkWithUs() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8,
+                  y: -12,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-4 border-yellow-400 hover:border-yellow-500 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent - removed top border, now using full border */}
+                <div className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-8 text-center h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-orange-500 via-red-500 to-pink-500">
+                  {/* Background pattern overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-60" />
                   
                   {/* Profile Image Container */}
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-yellow-100 shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110">
+                  <div className="relative mb-8 z-10">
+                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 relative">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
@@ -302,37 +320,43 @@ export function WhyWorkWithUs() {
                         }}
                       />
                     </div>
-                    {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-yellow-100 animate-pulse opacity-60" />
+                    {/* Glowing ring effect */}
+                    <div className="absolute inset-0 rounded-full border-4 border-white/30 animate-pulse" />
+                    <div className="absolute inset-0 rounded-full border-2 border-white/60 animate-ping" />
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 flex flex-col items-center w-full space-y-4">
-                    {/* Name */}
-                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
-                      Kapil Bahl
-                    </h4>
+                  <div className="flex-1 flex flex-col items-center w-full space-y-5 z-10">
+                    {/* Name with accent underline */}
+                    <div className="space-y-2">
+                      <h4 className="text-2xl font-bold text-white group-hover:text-yellow-200 transition-colors duration-300">
+                        Kapil Bahl
+                      </h4>
+                      <div className="w-16 h-1 bg-yellow-400 mx-auto rounded-full group-hover:w-20 transition-all duration-300" />
+                    </div>
                     
                     {/* Designation */}
-                    <p className="text-lg font-semibold text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full">
-                      COO
-                    </p>
+                    <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+                      <p className="text-lg font-semibold text-white">
+                        COO
+                      </p>
+                    </div>
                     
                     {/* Description */}
-                    <p className="text-base text-gray-700 leading-relaxed text-center max-w-xs">
+                    <p className="text-base text-white/90 leading-relaxed text-center max-w-xs">
                       Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
                     </p>
                   </div>
 
                   {/* LinkedIn Button */}
-                  <div className="mt-6">
+                  <div className="mt-8 z-10">
                     <a 
                       href="https://www.linkedin.com/in/kapil-b-4297a43/"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-yellow-500 hover:bg-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 border-2 border-white"
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white hover:bg-yellow-400 text-blue-600 hover:text-white shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 border-2 border-white/20"
                     >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                       </svg>
                     </a>
