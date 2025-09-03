@@ -1,28 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
-import { Search } from 'lucide-react';
 
 export function Hero() {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
-      const element = document.getElementById('why-work-with-us');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-20">
+    <section id="home" className="relative h-[75vh] flex items-center overflow-hidden pt-20 pb-16">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -37,14 +19,14 @@ export function Hero() {
       {/* Content Overlay - Left Aligned like BCG */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div 
-          className="max-w-3xl space-y-8"
+          className="max-w-4xl space-y-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Main Title - Left Aligned */}
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white text-left"
+            className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight text-white text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -54,7 +36,7 @@ export function Hero() {
           
           {/* Greeting - Left Aligned */}
           <motion.div 
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-white text-left"
+            className="text-3xl md:text-4xl lg:text-5xl font-medium text-white text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -64,7 +46,7 @@ export function Hero() {
           
           {/* Description - Left Aligned */}
           <motion.p 
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl text-left"
+            className="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed max-w-3xl text-left font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -72,35 +54,25 @@ export function Hero() {
             JetLearn in India is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
           </motion.p>
           
-          {/* Search Section - Left Aligned */}
+          {/* Search Button - Left Aligned */}
           <motion.div
-            className="pt-6"
+            className="pt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
-            {/* Search Bar */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-              {/* Job Search Input */}
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  placeholder="Search Jobs"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  className="w-full pl-4 pr-4 py-4 bg-white rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all duration-300"
-                />
-              </div>
-              
-              {/* Search Button */}
-              <Button 
-                onClick={handleSearch}
-                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu whitespace-nowrap"
-              >
-                Search
-              </Button>
-            </div>
+            <Button 
+              onClick={() => {
+                const element = document.getElementById('why-work-with-us');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="px-10 py-5 text-xl font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu"
+              style={{ backgroundColor: '#fede00', color: '#000' }}
+            >
+              Search Jobs
+            </Button>
           </motion.div>
         </motion.div>
       </div>
