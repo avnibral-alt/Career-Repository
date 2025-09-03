@@ -138,9 +138,9 @@ export function WhyWorkWithUs() {
             </p>
           </motion.div>
 
-          {/* Leadership Cards Grid - Redesigned with better layout */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {/* Leadership Cards Grid - Enhanced Design */}
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               {/* Abhishek Bahl - Founder & CEO */}
               <motion.div
@@ -154,9 +154,8 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent */}
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-300 hover:border-yellow-400 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent - removed top border, now using full border */}
                   
                   {/* Profile Image Container - Larger and more prominent */}
                   <div className="relative mb-6">
@@ -221,9 +220,8 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent */}
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-300 hover:border-yellow-400 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent - removed top border, now using full border */}
                   
                   {/* Profile Image Container */}
                   <div className="relative mb-6">
@@ -288,9 +286,8 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-100 hover:border-yellow-300 h-full flex flex-col items-center relative overflow-hidden">
-                  {/* Background accent */}
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center border-2 border-yellow-300 hover:border-yellow-400 h-full flex flex-col items-center relative overflow-hidden">
+                  {/* Background accent - removed top border, now using full border */}
                   
                   {/* Profile Image Container */}
                   <div className="relative mb-6">
@@ -306,7 +303,7 @@ export function WhyWorkWithUs() {
                       />
                     </div>
                     {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-yellow-200 animate-pulse opacity-60" />
+                    <div className="absolute inset-0 rounded-full border-2 border-yellow-100 animate-pulse opacity-60" />
                   </div>
 
                   {/* Content */}
