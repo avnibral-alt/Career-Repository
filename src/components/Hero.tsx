@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full min-h-[80vh] flex items-center overflow-hidden">
+    <section className="hero relative w-full min-h-[80vh] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -16,10 +16,10 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
+      {/* Content Wrapper - absolute positioning with flex layout */}
+      <div className="absolute inset-0 flex items-center justify-start lg:justify-start justify-center px-6 lg:px-12">
         <motion.div 
-          className="max-w-xl lg:max-w-2xl"
+          className="max-w-3xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -47,7 +47,7 @@ export function Hero() {
           
           {/* Supporting Paragraph */}
           <motion.p 
-            className="text-base md:text-lg text-white/80 leading-relaxed max-w-xl mt-4 mb-8"
+            className="text-base md:text-lg text-white/80 leading-relaxed mt-4 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -68,7 +68,7 @@ export function Hero() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-6 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0"
+              className="px-6 py-3 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0 mt-6"
               style={{ 
                 backgroundColor: '#FEDE00', 
                 color: '#000'

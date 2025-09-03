@@ -91,6 +91,12 @@ header {
   transform: scale(1.02) !important;
 }
 
+/* Hero section positioning and navbar spacing */
+.hero {
+  margin-top: var(--header-height) !important;
+  min-height: calc(80vh - var(--header-height)) !important;
+}
+
 /* Hero section responsive adjustments */
 @media (max-width: 1024px) {
   .hero h1 {
@@ -115,11 +121,12 @@ header {
     line-height: 1.6 !important;
   }
   
-  .hero {
-    text-align: center !important;
+  .hero .absolute.inset-0 {
+    justify-content: center !important;
   }
   
-  .hero .max-w-xl {
+  .hero .max-w-3xl {
+    text-align: center !important;
     margin: 0 auto !important;
   }
 }
