@@ -91,19 +91,19 @@ export function WhyWorkWithUs() {
     switch (variant) {
       case 'soft':
         return {
-          background: 'bg-gradient-to-br from-gray-50 to-yellow-50',
+          background: 'bg-[#F8C642]/10',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
       case 'brand':
         return {
-          background: 'bg-yellow-50/80',
+          background: 'bg-[#F8C642]/15',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
       default: // neutral
         return {
-          background: 'bg-white dark:bg-slate-900',
+          background: 'bg-[#F8C642]/10',
           border: 'border-l-2 border-l-[#F8C642]',
           shadow: 'shadow-md hover:shadow-lg'
         };
@@ -263,18 +263,28 @@ export function WhyWorkWithUs() {
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 flex flex-col items-center w-full space-y-4 z-10">
+                      <div className="flex-1 flex flex-col items-center w-full space-y-2 z-10">
                         {/* Name */}
                         <h4 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors duration-300">
                           {leader.name}
                         </h4>
                         
-                        {/* Role Chip with Yellow Accent Dot */}
-                        <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-full">
-                          <div className="w-2 h-2 rounded-full bg-[#F8C642] flex-shrink-0"></div>
+                        {/* Role and LinkedIn - Integrated */}
+                        <div className="flex items-center gap-2">
                           <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
                             {leader.role}
                           </p>
+                          <a 
+                            href={leader.linkedin}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-6 h-6 text-[#0A66C2] hover:text-[#004182] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
+                            aria-label={`Connect with ${leader.name} on LinkedIn`}
+                          >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
                         </div>
                         
                         {/* Bio */}
@@ -283,20 +293,7 @@ export function WhyWorkWithUs() {
                         </p>
                       </div>
 
-                      {/* LinkedIn Button - Fixed Position in Footer */}
-                      <div className="mt-6 z-10 self-end">
-                        <a 
-                          href={leader.linkedin}
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#0A66C2] hover:bg-[#004182] text-white shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
-                          aria-label={`Connect with ${leader.name} on LinkedIn`}
-                        >
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </a>
-                      </div>
+                      {/* Remove the LinkedIn button from footer since it's now with designation */}
                     </div>
                   </motion.div>
                 );
