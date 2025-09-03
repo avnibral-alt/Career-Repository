@@ -1,29 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
-import { Search, MapPin, Briefcase } from 'lucide-react';
+import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = () => {
-    if (searchQuery.trim()) {
-      // Scroll to job listings section
-      const element = document.getElementById('job-listings');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -50,8 +32,8 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <span className="block">JOBS AT</span>
-            <span className="block text-yellow-400">JETLEARN</span>
+            <span className="inline">JOBS AT </span>
+            <span className="inline text-yellow-400">JETLEARN</span>
           </motion.h1>
           
           {/* Greeting */}
@@ -74,51 +56,27 @@ export function Hero() {
             JetLearn is a powerhouse of educational innovation, shaping individuals who go on to tackle impactful and demanding projects, lead renowned global organizations, and spearhead India's and the world's future in AI-powered education.
           </motion.p>
           
-          {/* Search Section */}
+          {/* Quick Filters */}
           <motion.div
-            className="max-w-2xl mx-auto"
+            className="flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
-            {/* Search Bar */}
-            <div className="flex flex-col sm:flex-row gap-4 bg-white/10 backdrop-blur-sm rounded-2xl p-2 border border-white/20">
-              {/* Job Search Input */}
-              <div className="flex-1 relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search Jobs"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  className="w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:bg-white transition-all duration-300"
-                />
-              </div>
-              
-              {/* Search Button */}
-              <Button 
-                onClick={handleSearch}
-                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu"
-              >
-                Search
-              </Button>
-            </div>
-            
-            {/* Quick Filters */}
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-                <MapPin className="w-4 h-4" />
-                <span>Remote</span>
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-                <Briefcase className="w-4 h-4" />
-                <span>Full-time</span>
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
-                <span>Engineering</span>
-              </button>
-            </div>
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+              <MapPin className="w-4 h-4" />
+              <span>Remote</span>
+            </button>
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+              <Briefcase className="w-4 h-4" />
+              <span>Full-time</span>
+            </button>
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+              <span>In Office</span>
+            </button>
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+              <span>Part Time</span>
+            </button>
           </motion.div>
           
           {/* Call to Action */}
@@ -138,7 +96,7 @@ export function Hero() {
               className="group relative px-8 py-4 text-lg rounded-2xl font-medium transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu overflow-hidden border-2 border-yellow-400 bg-transparent hover:bg-yellow-400 text-yellow-400 hover:text-gray-900"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Why Work at JetLearn
+                Search Jobs
                 <motion.svg 
                   className="w-5 h-5" 
                   fill="none" 
