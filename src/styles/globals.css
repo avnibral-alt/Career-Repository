@@ -80,15 +80,21 @@ header * {
   transform: scale(1.02) !important;
 }
 
-/* Hero section positioning - FORCE margin-top to be visible */
-.hero {
-  margin-top: 120px !important;
-  height: 70vh !important;
-  min-height: 70vh !important;
-  position: relative !important;
-  z-index: 1 !important;
-  overflow: hidden !important;
-  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #eff6ff 100%) !important;
+/* Ensure proper scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections are properly scrollable */
+section {
+  position: relative;
+  overflow: visible;
 }
 
 /* Ensure proper spacing for fixed header */
@@ -102,57 +108,24 @@ header {
   min-height: var(--header-height) !important;
 }
 
-/* Ensure content is properly positioned and left-aligned */
-section.hero .relative.z-10 {
-  position: relative !important;
-  z-index: 10 !important;
-  text-align: left !important;
+/* Ensure proper scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Hero section responsive adjustments */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 3rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  .hero p {
-    font-size: 1.125rem !important;
-    line-height: 1.6 !important;
-  }
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  .hero p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-  }
-  
-  .hero {
-    text-align: center !important;
-  }
-  
-  .hero .max-w-4xl {
-    margin: 0 auto !important;
-  }
+/* Ensure sections are properly scrollable */
+section {
+  position: relative;
+  overflow: visible;
 }
 
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 2rem !important;
-    line-height: 1.3 !important;
-  }
-  
-  .hero p {
-    font-size: 0.875rem !important;
-    line-height: 1.5 !important;
-  }
-}
+
 
 .dark {
   --background: oklch(0.145 0 0);
