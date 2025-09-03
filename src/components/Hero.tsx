@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export function Hero() {
   return (
-    <section className="hero relative w-full h-[80vh] overflow-hidden">
+    <section className="hero relative w-full min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -16,17 +16,17 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full h-full flex items-center px-6 lg:px-12 pt-24">
+      {/* Content Overlay - Left Aligned like the working version */}
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div 
-          className="max-w-3xl"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="max-w-4xl space-y-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Main Heading */}
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white text-left tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -34,9 +34,9 @@ export function Hero() {
             Discover yourself and find your team.
           </motion.h1>
           
-          {/* Subheading */}
+          {/* Supporting Paragraph */}
           <motion.p 
-            className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl"
+            className="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed max-w-3xl text-left font-normal opacity-95"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -46,6 +46,7 @@ export function Hero() {
           
           {/* Call-to-Action Button */}
           <motion.div
+            className="pt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -57,7 +58,7 @@ export function Hero() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-8 py-4 text-lg font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0"
+              className="px-8 py-4 text-xl font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform-gpu border-0"
               style={{ 
                 backgroundColor: '#FEDE00', 
                 color: '#000'
@@ -68,6 +69,33 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Floating decorative elements */}
+      <motion.div 
+        className="absolute top-20 left-10 w-16 h-16 rounded-full opacity-20 blur-sm bg-gradient-to-r from-yellow-400 to-orange-400 z-10"
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [0, 180, 360]
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-20 right-10 w-20 h-20 rounded-full opacity-15 blur-sm bg-gradient-to-r from-blue-400 to-indigo-400 z-10"
+        animate={{ 
+          y: [0, 15, 0],
+          rotate: [0, -90, -180]
+        }}
+        transition={{ 
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
     </section>
   );
 }
