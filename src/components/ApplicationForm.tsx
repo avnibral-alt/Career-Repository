@@ -43,39 +43,39 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
   }, []);
 
   return (
-    <section id="application-form" className="py-14 md:py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section id="application-form" className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-20 w-64 h-64 bg-yellow-400 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-20 w-80 h-80 bg-purple-400 rounded-full blur-3xl" />
+        <div className="absolute top-10 right-10 sm:right-20 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-yellow-400 rounded-full blur-2xl sm:blur-3xl" />
+        <div className="absolute bottom-10 left-10 sm:left-20 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-purple-400 rounded-full blur-2xl sm:blur-3xl" />
       </div>
       
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-8 relative">
         <motion.div 
-          className="text-center mb-10 md:mb-12 lg:mb-16"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <motion.div 
-            className="inline-flex items-center px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6"
             style={{ backgroundColor: '#ffcf00', color: '#000' }}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
             viewport={{ once: true }}
           >
-            <span className="text-sm font-medium">✨ Join Our Team</span>
+            <span className="text-xs sm:text-sm font-medium">✨ Join Our Team</span>
           </motion.div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 sm:mb-4 md:mb-6 leading-tight">
             Apply Now
           </h2>
           
           {selectedJob && (
             <motion.p 
-              className="text-base md:text-xl font-medium mb-4 px-5 md:px-6 py-2.5 md:py-3 rounded-2xl inline-block" 
+              className="text-sm sm:text-base md:text-xl font-medium mb-3 sm:mb-4 px-3 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-2xl inline-block" 
               style={{ backgroundColor: '#ffcf00', color: '#000' }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -85,7 +85,7 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
             </motion.p>
           )}
           
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
             No matter where you live, you can shape the future of AI-powered education with JetLearn.
           </p>
         </motion.div>
@@ -96,12 +96,12 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Card className="p-5 md:p-8 lg:p-12 border-2 border-gray-100 shadow-2xl rounded-3xl bg-white/90 backdrop-blur-sm relative overflow-hidden group">
+          <Card className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border-2 border-gray-100 shadow-2xl rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-sm relative overflow-hidden group">
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             
             {/* Decorative elements */}
-            <div className="absolute top-6 right-6 w-12 h-12 opacity-10">
+            <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-8 sm:w-12 h-8 sm:h-12 opacity-10">
               <svg viewBox="0 0 40 40" className="w-full h-full">
                 <defs>
                   <pattern id="form-grid" width="8" height="8" patternUnits="userSpaceOnUse">
@@ -131,25 +131,46 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
         }
         
         .hubspot-form-wrapper .hs-form .hs-form-field {
-          margin-bottom: 2rem !important;
+          margin-bottom: 1.5rem !important;
+        }
+        
+        @media (max-width: 640px) {
+          .hubspot-form-wrapper .hs-form .hs-form-field {
+            margin-bottom: 1rem !important;
+          }
         }
         
         .hubspot-form-wrapper .hs-form .hs-form-field label {
           color: #000 !important;
           font-weight: 600 !important;
-          margin-bottom: 0.75rem !important;
+          margin-bottom: 0.5rem !important;
           display: block !important;
-          font-size: 1rem !important;
+          font-size: 0.875rem !important;
+        }
+        
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form .hs-form-field label {
+            font-size: 1rem !important;
+            margin-bottom: 0.75rem !important;
+          }
         }
         
         .hubspot-form-wrapper .hs-form .hs-input {
           width: 100% !important;
-          padding: 1rem !important;
+          padding: 0.75rem !important;
           border: 2px solid #e5e7eb !important;
-          border-radius: 1rem !important;
-          font-size: 1rem !important;
+          border-radius: 0.75rem !important;
+          font-size: 0.875rem !important;
           background-color: #fff !important;
           transition: all 0.3s ease !important;
+        }
+        
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form .hs-input {
+            padding: 1rem !important;
+            border-radius: 1rem !important;
+            font-size: 1rem !important;
+          }
         }
         
         .hubspot-form-wrapper .hs-form .hs-input:focus {
@@ -163,14 +184,24 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
           background: linear-gradient(135deg, #fede00 0%, #f59e0b 100%) !important;
           color: #000 !important;
           border: none !important;
-          padding: 1rem 3rem !important;
-          border-radius: 1rem !important;
+          padding: 0.75rem 2rem !important;
+          border-radius: 0.75rem !important;
           font-weight: 600 !important;
-          font-size: 1.1rem !important;
+          font-size: 1rem !important;
           cursor: pointer !important;
           transition: all 0.3s ease !important;
           position: relative !important;
           overflow: hidden !important;
+          width: 100% !important;
+        }
+        
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form .hs-button {
+            padding: 1rem 3rem !important;
+            border-radius: 1rem !important;
+            font-size: 1.1rem !important;
+            width: auto !important;
+          }
         }
         
         .hubspot-form-wrapper .hs-form .hs-button:hover {
@@ -184,25 +215,45 @@ export function ApplicationForm({ selectedJob }: ApplicationFormProps) {
         }
         
         .hubspot-form-wrapper .hs-form textarea {
-          min-height: 120px !important;
+          min-height: 100px !important;
           resize: vertical !important;
           font-family: inherit !important;
         }
         
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form textarea {
+            min-height: 120px !important;
+          }
+        }
+        
         .hubspot-form-wrapper .hs-form .hs-error-msgs {
           color: #dc2626 !important;
-          font-size: 0.875rem !important;
+          font-size: 0.75rem !important;
           margin-top: 0.5rem !important;
           font-weight: 500 !important;
         }
         
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form .hs-error-msgs {
+            font-size: 0.875rem !important;
+          }
+        }
+        
         .hubspot-form-wrapper .hs-form select {
-          padding: 1rem !important;
+          padding: 0.75rem !important;
           border: 2px solid #e5e7eb !important;
-          border-radius: 1rem !important;
-          font-size: 1rem !important;
+          border-radius: 0.75rem !important;
+          font-size: 0.875rem !important;
           background-color: #fff !important;
           transition: all 0.3s ease !important;
+        }
+        
+        @media (min-width: 640px) {
+          .hubspot-form-wrapper .hs-form select {
+            padding: 1rem !important;
+            border-radius: 1rem !important;
+            font-size: 1rem !important;
+          }
         }
         
         .hubspot-form-wrapper .hs-form select:focus {
