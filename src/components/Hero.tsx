@@ -5,7 +5,7 @@ import { MapPin, Briefcase } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden mt-16 lg:mt-20">
+    <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -20,7 +20,7 @@ export function Hero() {
       {/* Content Overlay */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div 
-          className="space-y-6"
+          className="space-y-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export function Hero() {
           
           {/* Call to Action */}
           <motion.div
-            className="pt-4"
+            className="pt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -92,7 +92,7 @@ export function Hero() {
           
           {/* Quick Filters */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 pt-4"
+            className="flex flex-wrap justify-center gap-4 pt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
