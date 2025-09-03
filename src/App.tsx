@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
 import { WhyWorkWithUs } from './components/WhyWorkWithUs';
 import { Departments } from './components/Departments';
 import { JobListings } from './components/JobListings';
@@ -165,8 +164,6 @@ export default function App() {
       <Header />
       
       <main className="scroll-container">
-        <Hero />
-        
         <WhyWorkWithUs />
         
         <Departments onDepartmentClick={handleDepartmentClick} />
