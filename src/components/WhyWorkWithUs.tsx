@@ -138,7 +138,7 @@ export function WhyWorkWithUs() {
             </p>
           </motion.div>
 
-          {/* Leadership Cards Grid - Compact 3-column layout */}
+          {/* Leadership Cards Grid - Clean centered layout */}
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
@@ -154,10 +154,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
-                  {/* Profile Image Container */}
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full flex flex-col items-center">
+                  {/* Profile Image Container - Centered */}
                   <div className="relative mb-6">
-                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:shadow-2xl transition-all duration-300">
                       <img 
                         src="/images/abhishek.jpg"
                         alt="Abhishek Bahl - Founder & CEO"
@@ -174,25 +174,32 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/abhishekbahl/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
 
-                  {/* Name and Role */}
-                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
-                    Abhishek Bahl
-                  </h4>
-                  <p className="text-xl font-semibold text-gray-800 mb-4">
-                    Founder & CEO
-                  </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
-                  </p>
+                  {/* Content - Centered below image */}
+                  <div className="flex-1 flex flex-col items-center">
+                    {/* Name */}
+                    <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                      Abhishek Bahl
+                    </h4>
+                    
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-gray-800 mb-4">
+                      Founder & CEO
+                    </p>
+                    
+                    {/* Short Intro */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center">
+                      Leading JetLearn's mission to revolutionize education through innovative technology and personalized learning experiences.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -208,10 +215,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
-                  {/* Profile Image Container */}
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full flex flex-col items-center">
+                  {/* Profile Image Container - Centered */}
                   <div className="relative mb-6">
-                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:shadow-2xl transition-all duration-300">
                       <img 
                         src="/images/jatin.jpg"
                         alt="Jatin Luthra - Co-Founder"
@@ -228,25 +235,32 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/luthra/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
                   
-                  {/* Name and Role */}
-                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
-                    Jatin Luthra
-                  </h4>
-                  <p className="text-xl font-semibold text-gray-800 mb-4">
-                    Co-Founder
-                  </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
-                  </p>
+                  {/* Content - Centered below image */}
+                  <div className="flex-1 flex flex-col items-center">
+                    {/* Name */}
+                    <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                      Jatin Luthra
+                    </h4>
+                    
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-gray-800 mb-4">
+                      Co-Founder
+                    </p>
+                    
+                    {/* Short Intro */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center">
+                      Driving innovation and strategic growth to expand JetLearn's global reach and educational impact.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -262,10 +276,10 @@ export function WhyWorkWithUs() {
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
               >
-                <div className="bg-yellow-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full">
-                  {/* Profile Image Container */}
+                <div className="bg-yellow-400 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center border border-yellow-500 h-full flex flex-col items-center">
+                  {/* Profile Image Container - Centered */}
                   <div className="relative mb-6">
-                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:shadow-2xl transition-all duration-300">
                       <img 
                         src="/images/kapil.jpg"
                         alt="Kapil Bahl - COO"
@@ -282,25 +296,32 @@ export function WhyWorkWithUs() {
                         href="https://www.linkedin.com/in/kapil-b-4297a43/"
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white hover:bg-gray-100 shadow-lg transition-all duration-300 group-hover:scale-110"
                       >
-                        <svg className="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.047-1.032-3.047-1.032 0-1.26 1.317-1.26 3.047v5.569h-3.493V9h3.493v1.464h.046c.455-.865 1.562-1.78 3.214-1.78 3.448 0 4.082 2.225 4.082 5.111v6.767zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
 
-                  {/* Name and Role */}
-                  <h4 className="text-3xl font-bold text-gray-900 mb-4">
-                    Kapil Bahl
-                  </h4>
-                  <p className="text-xl font-semibold text-gray-800 mb-4">
-                    COO
-                  </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
-                  </p>
+                  {/* Content - Centered below image */}
+                  <div className="flex-1 flex flex-col items-center">
+                    {/* Name */}
+                    <h4 className="text-2xl font-bold text-gray-900 mb-3">
+                      Kapil Bahl
+                    </h4>
+                    
+                    {/* Designation */}
+                    <p className="text-lg font-semibold text-gray-800 mb-4">
+                      COO
+                    </p>
+                    
+                    {/* Short Intro */}
+                    <p className="text-base text-gray-700 leading-relaxed text-center">
+                      Optimizing operations and scaling JetLearn's infrastructure to support our growing global community of learners.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
