@@ -24,7 +24,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Main Title - Left Aligned */}
+          {/* Main Title - Jobs at JetLearn */}
           <motion.h1 
             className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight text-white text-left"
             initial={{ opacity: 0, y: 30 }}
