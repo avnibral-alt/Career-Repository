@@ -265,13 +265,13 @@ export function WhyWorkWithUs() {
                       {/* Content */}
                       <div className="flex-1 flex flex-col items-center w-full space-y-2 z-10">
                         {/* Name */}
-                        <h4 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors duration-300">
+                        <h4 className="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors duration-300">
                           {leader.name}
                         </h4>
                         
                         {/* Role and LinkedIn - Integrated */}
                         <div className="flex items-center gap-2">
-                          <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                          <p className="text-base md:text-lg font-medium text-slate-700 dark:text-slate-300">
                             {leader.role}
                           </p>
                           <a 
@@ -288,7 +288,7 @@ export function WhyWorkWithUs() {
                         </div>
                         
                         {/* Bio */}
-                        <p className="text-sm md:text-[15px] leading-6 text-slate-700 dark:text-slate-300 leading-relaxed text-center max-w-[60ch]">
+                        <p className="text-base md:text-lg leading-7 text-slate-700 dark:text-slate-300 leading-relaxed text-center max-w-[60ch]">
                           {leader.bio}
                         </p>
                       </div>
