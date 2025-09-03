@@ -76,20 +76,17 @@ header * {
   box-shadow: 0 10px 25px rgba(254, 222, 0, 0.4) !important;
 }
 
-#home button:active, .hero button:active {
+#home button:active, .hero button:hover {
   transform: scale(1.02) !important;
 }
 
-/* Hero section positioning and navbar spacing */
+/* Hero section positioning - now matching Impact section style */
 .hero {
   margin-top: var(--header-height) !important;
-  height: 70vh !important;
-  min-height: 70vh !important;
   position: relative !important;
   z-index: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
+  background-color: #f9fafb !important;
+  overflow: hidden !important;
 }
 
 /* Ensure proper spacing for fixed header */
@@ -135,7 +132,7 @@ section.hero .relative.z-10 {
 /* Hero section responsive adjustments */
 @media (max-width: 1024px) {
   .hero h1 {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
     line-height: 1.2 !important;
   }
   
@@ -147,7 +144,7 @@ section.hero .relative.z-10 {
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     line-height: 1.2 !important;
   }
   
@@ -160,14 +157,14 @@ section.hero .relative.z-10 {
     text-align: center !important;
   }
   
-  .hero .max-w-4xl {
+  .hero .max-w-lg {
     margin: 0 auto !important;
   }
 }
 
 @media (max-width: 640px) {
   .hero h1 {
-    font-size: 2rem !important;
+    font-size: 1.75rem !important;
     line-height: 1.3 !important;
   }
   
