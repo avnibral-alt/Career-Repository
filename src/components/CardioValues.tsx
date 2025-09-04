@@ -185,31 +185,6 @@ export function CardioValues() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div 
-          className="text-center mt-12 sm:mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-lg sm:text-xl text-gray-600 mb-6">
-            Ready to be part of a team that lives these values?
-          </p>
-          <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const element = document.getElementById('departments');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Explore Opportunities
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );
