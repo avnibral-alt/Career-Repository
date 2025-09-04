@@ -9,7 +9,7 @@ export function CardioValues() {
       title: 'Collaboration',
       description: 'We believe in the power of working together to achieve extraordinary results.',
       icon: Users,
-      color: 'from-yellow-400 to-yellow-500',
+      color: 'from-yellow-500 to-yellow-600',
       bgColor: 'bg-yellow-50',
       textColor: 'text-gray-900'
     },
@@ -18,7 +18,7 @@ export function CardioValues() {
       title: 'Adaptability',
       description: 'Embracing change and innovation to stay ahead in the dynamic world of education.',
       icon: Zap,
-      color: 'from-yellow-500 to-yellow-600',
+      color: 'from-yellow-600 to-yellow-700',
       bgColor: 'bg-yellow-100',
       textColor: 'text-gray-900'
     },
@@ -27,7 +27,7 @@ export function CardioValues() {
       title: 'Resilience',
       description: 'Building strength and determination to overcome challenges and grow stronger.',
       icon: Heart,
-      color: 'from-yellow-600 to-yellow-700',
+      color: 'from-yellow-700 to-yellow-800',
       bgColor: 'bg-yellow-50',
       textColor: 'text-gray-900'
     },
@@ -36,7 +36,7 @@ export function CardioValues() {
       title: 'Dedication',
       description: 'Committed to excellence and passionate about making a meaningful impact.',
       icon: Target,
-      color: 'from-yellow-400 to-yellow-500',
+      color: 'from-yellow-500 to-yellow-600',
       bgColor: 'bg-yellow-100',
       textColor: 'text-gray-900'
     },
@@ -45,7 +45,7 @@ export function CardioValues() {
       title: 'Innovation',
       description: 'Pioneering new approaches and creative solutions in education technology.',
       icon: Lightbulb,
-      color: 'from-yellow-500 to-yellow-600',
+      color: 'from-yellow-600 to-yellow-700',
       bgColor: 'bg-yellow-50',
       textColor: 'text-gray-900'
     },
@@ -54,7 +54,7 @@ export function CardioValues() {
       title: 'Opportunity',
       description: 'Creating pathways for growth and success for students and educators worldwide.',
       icon: Globe,
-      color: 'from-yellow-600 to-yellow-700',
+      color: 'from-yellow-700 to-yellow-800',
       bgColor: 'bg-yellow-100',
       textColor: 'text-gray-900'
     }
@@ -151,10 +151,10 @@ export function CardioValues() {
                     <div className="flex justify-center mb-6 sm:mb-8">
                       <div className={`
                         w-20 h-20 rounded-full flex items-center justify-center
-                        bg-gradient-to-r ${value.color} text-white shadow-lg
+                        bg-gradient-to-r ${value.color} text-white shadow-lg border-2 border-white
                         group-hover:scale-110 transition-transform duration-300
                       `}>
-                        <IconComponent className="w-10 h-10" />
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
                     </div>
 
