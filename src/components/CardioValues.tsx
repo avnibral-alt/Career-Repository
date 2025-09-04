@@ -9,36 +9,36 @@ export function CardioValues() {
       title: 'Collaboration',
       description: 'We believe in the power of working together to achieve extraordinary results.',
       icon: Users,
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-900'
+      color: 'from-yellow-400 to-yellow-500',
+      bgColor: 'bg-yellow-50',
+      textColor: 'text-gray-900'
     },
     {
       letter: 'A',
       title: 'Adaptability',
       description: 'Embracing change and innovation to stay ahead in the dynamic world of education.',
       icon: Zap,
-      color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      textColor: 'text-purple-900'
+      color: 'from-yellow-500 to-yellow-600',
+      bgColor: 'bg-yellow-100',
+      textColor: 'text-gray-900'
     },
     {
       letter: 'R',
       title: 'Resilience',
       description: 'Building strength and determination to overcome challenges and grow stronger.',
       icon: Heart,
-      color: 'from-red-500 to-red-600',
-      bgColor: 'bg-red-50',
-      textColor: 'text-red-900'
+      color: 'from-yellow-600 to-yellow-700',
+      bgColor: 'bg-yellow-50',
+      textColor: 'text-gray-900'
     },
     {
       letter: 'D',
       title: 'Dedication',
       description: 'Committed to excellence and passionate about making a meaningful impact.',
       icon: Target,
-      color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50',
-      textColor: 'text-green-900'
+      color: 'from-yellow-400 to-yellow-500',
+      bgColor: 'bg-yellow-100',
+      textColor: 'text-gray-900'
     },
     {
       letter: 'I',
@@ -47,16 +47,16 @@ export function CardioValues() {
       icon: Lightbulb,
       color: 'from-yellow-500 to-yellow-600',
       bgColor: 'bg-yellow-50',
-      textColor: 'text-yellow-900'
+      textColor: 'text-gray-900'
     },
     {
       letter: 'O',
       title: 'Opportunity',
       description: 'Creating pathways for growth and success for students and educators worldwide.',
       icon: Globe,
-      color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'bg-indigo-50',
-      textColor: 'text-indigo-900'
+      color: 'from-yellow-600 to-yellow-700',
+      bgColor: 'bg-yellow-100',
+      textColor: 'text-gray-900'
     }
   ];
 
@@ -134,47 +134,47 @@ export function CardioValues() {
                   {/* Card */}
                   <div className={`
                     relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-                    border border-gray-200 hover:border-gray-300 p-6 sm:p-8 h-full
+                    border-2 border-yellow-200 hover:border-yellow-300 p-6 sm:p-8 h-full
                     group-hover:scale-105 group-hover:-translate-y-2
                     ${value.bgColor}
                   `}>
                     {/* Card Letter */}
                     <div className={`
-                      absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center
-                      text-2xl font-bold text-white shadow-lg
+                      absolute -top-4 -left-4 w-14 h-14 rounded-full flex items-center justify-center
+                      text-2xl font-bold text-white shadow-lg border-2 border-white
                       bg-gradient-to-r ${value.color}
                     `}>
                       {value.letter}
                     </div>
 
                     {/* Icon */}
-                    <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="flex justify-center mb-6 sm:mb-8">
                       <div className={`
-                        w-16 h-16 rounded-full flex items-center justify-center
-                        bg-gradient-to-r ${value.color} text-white
+                        w-20 h-20 rounded-full flex items-center justify-center
+                        bg-gradient-to-r ${value.color} text-white shadow-lg
                         group-hover:scale-110 transition-transform duration-300
                       `}>
-                        <IconComponent className="w-8 h-8" />
+                        <IconComponent className="w-10 h-10" />
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="text-center">
                       <h3 className={`
-                        text-xl sm:text-2xl font-bold mb-3 sm:mb-4
+                        text-2xl sm:text-3xl font-bold mb-4 sm:mb-6
                         ${value.textColor}
                       `}>
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
                         {value.description}
                       </p>
                     </div>
 
                     {/* Decorative elements */}
-                    <div className="absolute top-4 right-4 opacity-10">
+                    <div className="absolute top-4 right-4 opacity-20">
                       <div className={`
-                        w-8 h-8 rounded-full
+                        w-10 h-10 rounded-full
                         bg-gradient-to-r ${value.color}
                       `} />
                     </div>
