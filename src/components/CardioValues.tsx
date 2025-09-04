@@ -118,7 +118,13 @@ export function CardioValues() {
               viewport={{ once: true }}
             >
               {/* Value Card with Brand Colors */}
-              <div className="relative bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-300 hover:border-yellow-400 p-6 sm:p-8 h-full group-hover:scale-105 group-hover:-translate-y-2">
+              <div 
+                className="relative rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 p-6 sm:p-8 h-full group-hover:scale-105 group-hover:-translate-y-2"
+                style={{
+                  background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
+                  borderColor: '#f59e0b'
+                }}
+              >
                 {/* Content */}
                 <div className="text-center">
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">
