@@ -127,10 +127,10 @@ export function CardioValues() {
               >
                 {/* Content */}
                 <div className="text-center">
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">
                     {value.title}
                   </h3>
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed font-medium">
                     {value.description}
                   </p>
                 </div>
