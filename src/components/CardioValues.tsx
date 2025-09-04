@@ -1,62 +1,37 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, Users, Lightbulb, Target, Zap, Globe } from 'lucide-react';
 
 export function CardioValues() {
   const values = [
     {
       letter: 'C',
       title: 'Collaborate',
-      description: 'We believe in the power of working together to achieve extraordinary results.',
-      icon: Users,
-      color: 'from-yellow-500 to-yellow-600',
-      bgColor: 'bg-yellow-50',
-      textColor: 'text-gray-900'
+      description: 'We believe in the power of working together to achieve extraordinary results.'
     },
     {
       letter: 'A',
       title: 'Bias for Action',
-      description: 'Taking initiative and moving quickly to turn ideas into reality.',
-      icon: Zap,
-      color: 'from-yellow-600 to-yellow-700',
-      bgColor: 'bg-yellow-100',
-      textColor: 'text-gray-900'
+      description: 'Taking initiative and moving quickly to turn ideas into reality.'
     },
     {
       letter: 'R',
       title: 'Own and Deliver Results',
-      description: 'Taking full ownership of outcomes and consistently delivering on commitments.',
-      icon: Target,
-      color: 'from-yellow-700 to-yellow-800',
-      bgColor: 'bg-yellow-50',
-      textColor: 'text-gray-900'
+      description: 'Taking full ownership of outcomes and consistently delivering on commitments.'
     },
     {
       letter: 'D',
       title: 'Be Data Driven',
-      description: 'Making informed decisions based on data, metrics, and evidence.',
-      icon: Heart,
-      color: 'from-yellow-500 to-yellow-600',
-      bgColor: 'bg-yellow-100',
-      textColor: 'text-gray-900'
+      description: 'Making informed decisions based on data, metrics, and evidence.'
     },
     {
       letter: 'I',
       title: 'Iterate and Learn',
-      description: 'Continuously improving through rapid experimentation and learning from feedback.',
-      icon: Lightbulb,
-      color: 'from-yellow-600 to-yellow-700',
-      bgColor: 'bg-yellow-50',
-      textColor: 'text-gray-900'
+      description: 'Continuously improving through rapid experimentation and learning from feedback.'
     },
     {
       letter: 'O',
       title: 'Learner Obsession',
-      description: 'Putting learners at the center of everything we do, always striving to improve their experience.',
-      icon: Globe,
-      color: 'from-yellow-700 to-yellow-800',
-      bgColor: 'bg-yellow-100',
-      textColor: 'text-gray-900'
+      description: 'Putting learners at the center of everything we do, always striving to improve their experience.'
     }
   ];
 
@@ -79,112 +54,110 @@ export function CardioValues() {
           </p>
         </motion.div>
 
-        {/* Hands and Cards Container */}
-        <div className="relative">
-          {/* Hands Illustration */}
+        {/* Hands Carrying Playing Cards */}
+        <div className="relative flex justify-center items-center mb-16">
           <motion.div 
-            className="flex justify-center items-center mb-8 sm:mb-12"
+            className="relative"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="relative">
-              {/* Hand holding cards - SVG illustration */}
-              <svg 
-                width="120" 
-                height="80" 
-                viewBox="0 0 120 80" 
-                className="text-gray-300"
-                fill="currentColor"
-              >
-                {/* Left hand */}
-                <path d="M20 60 Q15 55 20 50 Q25 45 30 50 Q35 55 30 60 Q25 65 20 60 Z" />
-                <path d="M25 50 Q20 45 25 40 Q30 35 35 40 Q40 45 35 50 Q30 55 25 50 Z" />
-                <path d="M30 40 Q25 35 30 30 Q35 25 40 30 Q45 35 40 40 Q35 45 30 40 Z" />
-                <path d="M35 30 Q30 25 35 20 Q40 15 45 20 Q50 25 45 30 Q40 35 35 30 Z" />
-                
-                {/* Right hand */}
-                <path d="M100 60 Q95 55 100 50 Q105 45 110 50 Q115 55 110 60 Q105 65 100 60 Z" />
-                <path d="M95 50 Q90 45 95 40 Q100 35 105 40 Q110 45 105 50 Q100 55 95 50 Z" />
-                <path d="M90 40 Q85 35 90 30 Q95 25 100 30 Q105 35 100 40 Q95 45 90 40 Z" />
-                <path d="M85 30 Q80 25 85 20 Q90 15 95 20 Q100 25 95 30 Q90 35 85 30 Z" />
-                
-                {/* Cards being held */}
-                <rect x="45" y="25" width="30" height="20" rx="2" fill="#fede00" opacity="0.3" />
-                <rect x="50" y="20" width="30" height="20" rx="2" fill="#fede00" opacity="0.5" />
-                <rect x="55" y="15" width="30" height="20" rx="2" fill="#fede00" opacity="0.7" />
-              </svg>
-            </div>
-          </motion.div>
+            {/* Hands SVG */}
+            <svg 
+              width="400" 
+              height="200" 
+              viewBox="0 0 400 200" 
+              className="text-gray-400"
+              fill="currentColor"
+            >
+              {/* Left Hand */}
+              <path d="M80 160 Q70 150 80 140 Q90 130 100 140 Q110 150 100 160 Q90 170 80 160 Z" />
+              <path d="M90 140 Q80 130 90 120 Q100 110 110 120 Q120 130 110 140 Q100 150 90 140 Z" />
+              <path d="M100 120 Q90 110 100 100 Q110 90 120 100 Q130 110 120 120 Q110 130 100 120 Z" />
+              <path d="M110 100 Q100 90 110 80 Q120 70 130 80 Q140 90 130 100 Q120 110 110 100 Z" />
+              
+              {/* Right Hand */}
+              <path d="M320 160 Q310 150 320 140 Q330 130 340 140 Q350 150 340 160 Q330 170 320 160 Z" />
+              <path d="M310 140 Q300 130 310 120 Q320 110 330 120 Q340 130 330 140 Q320 150 310 140 Z" />
+              <path d="M300 120 Q290 110 300 100 Q310 90 320 100 Q330 110 320 120 Q310 130 300 120 Z" />
+              <path d="M290 100 Q280 90 290 80 Q300 70 310 80 Q320 90 310 100 Q300 110 290 100 Z" />
+            </svg>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
+            {/* Playing Cards Stack */}
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex">
+              {values.map((value, index) => (
                 <motion.div
                   key={value.letter}
-                  className="group relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative"
+                  initial={{ opacity: 0, y: 20, rotate: -5 }}
+                  whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   viewport={{ once: true }}
+                  style={{
+                    transform: `translateX(${index * 8}px) translateY(${index * 2}px) rotate(${index * 2}deg)`,
+                    zIndex: values.length - index
+                  }}
                 >
-                  {/* Card */}
-                  <div className={`
-                    relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-                    border-2 border-yellow-200 hover:border-yellow-300 p-6 sm:p-8 h-full
-                    group-hover:scale-105 group-hover:-translate-y-2
-                    ${value.bgColor}
-                  `}>
-                    {/* Card Letter */}
-                    <div className={`
-                      absolute -top-4 -left-4 w-14 h-14 rounded-full flex items-center justify-center
-                      text-2xl font-bold text-white shadow-lg border-2 border-white
-                      bg-gradient-to-r ${value.color}
-                    `}>
+                  {/* Playing Card */}
+                  <div className="w-20 h-28 bg-white rounded-lg shadow-lg border-2 border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    {/* Card Corner - Top Left */}
+                    <div className="absolute top-1 left-1 text-xs font-bold text-gray-800">
                       {value.letter}
                     </div>
-
-                    {/* Icon */}
-                    <div className="flex justify-center mb-6 sm:mb-8">
-                      <div className={`
-                        w-20 h-20 rounded-full flex items-center justify-center
-                        bg-gradient-to-r ${value.color} text-white shadow-lg border-2 border-white
-                        group-hover:scale-110 transition-transform duration-300
-                      `}>
-                        <IconComponent className="w-10 h-10 text-white" />
-                      </div>
+                    
+                    {/* Card Corner - Bottom Right */}
+                    <div className="absolute bottom-1 right-1 text-xs font-bold text-gray-800 transform rotate-180">
+                      {value.letter}
                     </div>
-
-                    {/* Content */}
-                    <div className="text-center">
-                      <h3 className={`
-                        text-2xl sm:text-3xl font-bold mb-4 sm:mb-6
-                        ${value.textColor}
-                      `}>
-                        {value.title}
-                      </h3>
-                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
-                        {value.description}
-                      </p>
+                    
+                    {/* Center Letter */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-gray-800">
+                      {value.letter}
                     </div>
-
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 right-4 opacity-20">
-                      <div className={`
-                        w-10 h-10 rounded-full
-                        bg-gradient-to-r ${value.color}
-                      `} />
+                    
+                    {/* Card Suit/Pattern */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-2 text-yellow-500 text-lg">
+                      ♠
                     </div>
                   </div>
                 </motion.div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
+        {/* Values Description Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {values.map((value, index) => (
+            <motion.div
+              key={value.letter}
+              className="group relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {/* Value Card */}
+              <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-200 hover:border-yellow-300 p-6 sm:p-8 h-full group-hover:scale-105 group-hover:-translate-y-2">
+                {/* Card Letter Badge */}
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-white shadow-lg border-2 border-white bg-gradient-to-r from-yellow-500 to-yellow-600">
+                  {value.letter}
+                </div>
+
+                {/* Content */}
+                <div className="text-center pt-4">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
