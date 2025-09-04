@@ -46,10 +46,10 @@ export function CardioValues() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 border-none">
             Our <span style={{ color: '#fede00' }}>CARDIO</span> Values
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto border-none">
             The core principles that drive everything we do at JetLearn
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export function CardioValues() {
               {/* Value Card with Brand Colors */}
               <div className="relative bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-300 hover:border-yellow-400 p-6 sm:p-8 h-full group-hover:scale-105 group-hover:-translate-y-2">
                 {/* Card Letter Badge */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-white shadow-lg border-2 border-white bg-gradient-to-r from-yellow-500 to-yellow-600">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-white shadow-lg border-2 border-yellow-300 bg-gradient-to-r from-yellow-500 to-yellow-600">
                   {value.letter}
                 </div>
 
