@@ -119,13 +119,8 @@ export function CardioValues() {
             >
               {/* Value Card with Brand Colors */}
               <div className="relative bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-300 hover:border-yellow-400 p-6 sm:p-8 h-full group-hover:scale-105 group-hover:-translate-y-2">
-                {/* Card Letter Badge */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold text-white shadow-lg border-2 border-yellow-300 bg-gradient-to-r from-yellow-500 to-yellow-600">
-                  {value.letter}
-                </div>
-
                 {/* Content */}
-                <div className="text-center pt-4">
+                <div className="text-center">
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">
                     {value.title}
                   </h3>
