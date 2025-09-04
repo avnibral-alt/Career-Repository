@@ -6,7 +6,7 @@ export function CardioValues() {
   const values = [
     {
       letter: 'C',
-      title: 'Collaboration',
+      title: 'Collaborate',
       description: 'We believe in the power of working together to achieve extraordinary results.',
       icon: Users,
       color: 'from-yellow-500 to-yellow-600',
@@ -15,8 +15,8 @@ export function CardioValues() {
     },
     {
       letter: 'A',
-      title: 'Adaptability',
-      description: 'Embracing change and innovation to stay ahead in the dynamic world of education.',
+      title: 'Bias for Action',
+      description: 'Taking initiative and moving quickly to turn ideas into reality.',
       icon: Zap,
       color: 'from-yellow-600 to-yellow-700',
       bgColor: 'bg-yellow-100',
@@ -24,26 +24,26 @@ export function CardioValues() {
     },
     {
       letter: 'R',
-      title: 'Resilience',
-      description: 'Building strength and determination to overcome challenges and grow stronger.',
-      icon: Heart,
+      title: 'Own and Deliver Results',
+      description: 'Taking full ownership of outcomes and consistently delivering on commitments.',
+      icon: Target,
       color: 'from-yellow-700 to-yellow-800',
       bgColor: 'bg-yellow-50',
       textColor: 'text-gray-900'
     },
     {
       letter: 'D',
-      title: 'Dedication',
-      description: 'Committed to excellence and passionate about making a meaningful impact.',
-      icon: Target,
+      title: 'Be Data Driven',
+      description: 'Making informed decisions based on data, metrics, and evidence.',
+      icon: Heart,
       color: 'from-yellow-500 to-yellow-600',
       bgColor: 'bg-yellow-100',
       textColor: 'text-gray-900'
     },
     {
       letter: 'I',
-      title: 'Innovation',
-      description: 'Pioneering new approaches and creative solutions in education technology.',
+      title: 'Iterate and Learn',
+      description: 'Continuously improving through rapid experimentation and learning from feedback.',
       icon: Lightbulb,
       color: 'from-yellow-600 to-yellow-700',
       bgColor: 'bg-yellow-50',
@@ -51,8 +51,8 @@ export function CardioValues() {
     },
     {
       letter: 'O',
-      title: 'Opportunity',
-      description: 'Creating pathways for growth and success for students and educators worldwide.',
+      title: 'Learner Obsession',
+      description: 'Putting learners at the center of everything we do, always striving to improve their experience.',
       icon: Globe,
       color: 'from-yellow-700 to-yellow-800',
       bgColor: 'bg-yellow-100',
