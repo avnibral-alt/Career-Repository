@@ -5,6 +5,7 @@ import { WhyWorkWithUs } from './components/WhyWorkWithUs';
 import { Departments } from './components/Departments';
 import { JobListings } from './components/JobListings';
 import { ApplicationForm } from './components/ApplicationForm';
+import { CardioValues } from './components/CardioValues';
 import { Footer } from './components/Footer';
 import { Toaster } from './components/ui/sonner';
 
@@ -152,6 +153,8 @@ export default function App() {
         )}
         
         <ApplicationForm selectedJob={selectedJob} />
+        
+        <CardioValues />
       </main>
       
       <Footer />
