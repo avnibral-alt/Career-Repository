@@ -47,8 +47,9 @@ export function CardioValues() {
     <section 
       id="cardio-values" 
       className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      style={{ perspective: '1000px' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ transformStyle: 'preserve-3d' }}>
         {/* Section Header */}
         <motion.div 
           className="text-center mb-8 sm:mb-10"
@@ -58,7 +59,43 @@ export function CardioValues() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            Our <span className="text-yellow-500 dark:text-yellow-400">CARDIO</span> Values
+            Our <span className="text-yellow-500 dark:text-yellow-400 inline-block">
+              {['C', 'A', 'R', 'D', 'I', 'O'].map((letter, index) => (
+                <motion.span
+                  key={letter}
+                  className="inline-block"
+                  initial={{ 
+                    opacity: 0, 
+                    rotateX: -90, 
+                    translateZ: -50 
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    rotateX: 0, 
+                    translateZ: 0 
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    rotateY: 15,
+                    scale: 1.1,
+                    textShadow: "0 0 20px rgba(251, 191, 36, 0.5)"
+                  }}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    display: 'inline-block',
+                    marginRight: '2px'
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </span> Values
           </h2>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
             The principles that drive everything we do.
@@ -73,39 +110,79 @@ export function CardioValues() {
               <motion.div
                 key={value.letter}
                 className="flex-1 max-w-[16%] min-w-0"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 20, rotateX: -15, translateZ: -100 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
                 viewport={{ once: true }}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                <div 
-                  className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer transform hover:-translate-y-2"
+                <motion.div 
+                  className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer"
                   style={{
-                    transform: hoveredCard === index ? 'translateY(-8px)' : 'translateY(0)',
+                    transformStyle: 'preserve-3d',
+                    transform: hoveredCard === index 
+                      ? 'translateY(-12px) translateZ(20px) rotateX(-5deg) rotateY(5deg)' 
+                      : 'translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg)',
                     boxShadow: hoveredCard === index 
-                      ? '0 10px 25px rgba(0,0,0,0.15)' 
-                      : '0 4px 6px rgba(0,0,0,0.1)'
+                      ? '0 20px 40px rgba(0,0,0,0.2), 0 0 30px rgba(251, 191, 36, 0.3)' 
+                      : '0 8px 16px rgba(0,0,0,0.1), 0 0 10px rgba(251, 191, 36, 0.1)'
+                  }}
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.2 }
                   }}
                 >
                   {/* Icon */}
-                  <div className="text-center mb-3">
-                    <span className="text-2xl" role="img" aria-label={value.title}>
+                  <motion.div 
+                    className="text-center mb-3"
+                    whileHover={{
+                      rotateY: 360,
+                      scale: 1.2,
+                      transition: { duration: 0.6, ease: "easeInOut" }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <motion.span 
+                      className="text-2xl inline-block" 
+                      role="img" 
+                      aria-label={value.title}
+                      animate={{
+                        rotateY: [0, 5, -5, 0],
+                        translateZ: [0, 5, 0]
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
                       {value.icon}
-                    </span>
-                  </div>
+                    </motion.span>
+                  </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight">
+                  <motion.h3 
+                    className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight"
+                    whileHover={{
+                      scale: 1.05,
+                      textShadow: "0 0 10px rgba(0,0,0,0.3)"
+                    }}
+                  >
                     {value.title}
-                  </h3>
+                  </motion.h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-700 text-center leading-relaxed">
+                  <motion.p 
+                    className="text-sm text-gray-700 text-center leading-relaxed"
+                    whileHover={{
+                      scale: 1.02
+                    }}
+                  >
                     {value.description}
-                  </p>
-                </div>
+                  </motion.p>
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -116,39 +193,79 @@ export function CardioValues() {
               {values.map((value, index) => (
                 <motion.div
                   key={value.letter}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20, rotateX: -15, translateZ: -100 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
+                  style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div 
-                    className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer transform hover:-translate-y-2"
+                  <motion.div 
+                    className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer"
                     style={{
-                      transform: hoveredCard === index ? 'translateY(-8px)' : 'translateY(0)',
+                      transformStyle: 'preserve-3d',
+                      transform: hoveredCard === index 
+                        ? 'translateY(-12px) translateZ(20px) rotateX(-5deg) rotateY(5deg)' 
+                        : 'translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg)',
                       boxShadow: hoveredCard === index 
-                        ? '0 10px 25px rgba(0,0,0,0.15)' 
-                        : '0 4px 6px rgba(0,0,0,0.1)'
+                        ? '0 20px 40px rgba(0,0,0,0.2), 0 0 30px rgba(251, 191, 36, 0.3)' 
+                        : '0 8px 16px rgba(0,0,0,0.1), 0 0 10px rgba(251, 191, 36, 0.1)'
+                    }}
+                    whileHover={{
+                      scale: 1.02,
+                      transition: { duration: 0.2 }
                     }}
                   >
                     {/* Icon */}
-                    <div className="text-center mb-3">
-                      <span className="text-2xl" role="img" aria-label={value.title}>
+                    <motion.div 
+                      className="text-center mb-3"
+                      whileHover={{
+                        rotateY: 360,
+                        scale: 1.2,
+                        transition: { duration: 0.6, ease: "easeInOut" }
+                      }}
+                      style={{ transformStyle: 'preserve-3d' }}
+                    >
+                      <motion.span 
+                        className="text-2xl inline-block" 
+                        role="img" 
+                        aria-label={value.title}
+                        animate={{
+                          rotateY: [0, 5, -5, 0],
+                          translateZ: [0, 5, 0]
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
                         {value.icon}
-                      </span>
-                    </div>
+                      </motion.span>
+                    </motion.div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight">
+                    <motion.h3 
+                      className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight"
+                      whileHover={{
+                        scale: 1.05,
+                        textShadow: "0 0 10px rgba(0,0,0,0.3)"
+                      }}
+                    >
                       {value.title}
-                    </h3>
+                    </motion.h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-700 text-center leading-relaxed">
+                    <motion.p 
+                      className="text-sm text-gray-700 text-center leading-relaxed"
+                      whileHover={{
+                        scale: 1.02
+                      }}
+                    >
                       {value.description}
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -161,40 +278,79 @@ export function CardioValues() {
                 <motion.div
                   key={value.letter}
                   className="flex-shrink-0 w-72"
-                  style={{ scrollSnapAlign: 'start' }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  style={{ scrollSnapAlign: 'start', transformStyle: 'preserve-3d' }}
+                  initial={{ opacity: 0, y: 20, rotateX: -15, translateZ: -100 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <div 
-                    className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer transform hover:-translate-y-2"
+                  <motion.div 
+                    className="bg-[#f7e2a0] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 h-full cursor-pointer"
                     style={{
-                      transform: hoveredCard === index ? 'translateY(-8px)' : 'translateY(0)',
+                      transformStyle: 'preserve-3d',
+                      transform: hoveredCard === index 
+                        ? 'translateY(-12px) translateZ(20px) rotateX(-5deg) rotateY(5deg)' 
+                        : 'translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg)',
                       boxShadow: hoveredCard === index 
-                        ? '0 10px 25px rgba(0,0,0,0.15)' 
-                        : '0 4px 6px rgba(0,0,0,0.1)'
+                        ? '0 20px 40px rgba(0,0,0,0.2), 0 0 30px rgba(251, 191, 36, 0.3)' 
+                        : '0 8px 16px rgba(0,0,0,0.1), 0 0 10px rgba(251, 191, 36, 0.1)'
+                    }}
+                    whileHover={{
+                      scale: 1.02,
+                      transition: { duration: 0.2 }
                     }}
                   >
                     {/* Icon */}
-                    <div className="text-center mb-3">
-                      <span className="text-2xl" role="img" aria-label={value.title}>
+                    <motion.div 
+                      className="text-center mb-3"
+                      whileHover={{
+                        rotateY: 360,
+                        scale: 1.2,
+                        transition: { duration: 0.6, ease: "easeInOut" }
+                      }}
+                      style={{ transformStyle: 'preserve-3d' }}
+                    >
+                      <motion.span 
+                        className="text-2xl inline-block" 
+                        role="img" 
+                        aria-label={value.title}
+                        animate={{
+                          rotateY: [0, 5, -5, 0],
+                          translateZ: [0, 5, 0]
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
                         {value.icon}
-                      </span>
-                    </div>
+                      </motion.span>
+                    </motion.div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight">
+                    <motion.h3 
+                      className="text-lg font-bold text-gray-900 text-center mb-2 leading-tight"
+                      whileHover={{
+                        scale: 1.05,
+                        textShadow: "0 0 10px rgba(0,0,0,0.3)"
+                      }}
+                    >
                       {value.title}
-                    </h3>
+                    </motion.h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-700 text-center leading-relaxed">
+                    <motion.p 
+                      className="text-sm text-gray-700 text-center leading-relaxed"
+                      whileHover={{
+                        scale: 1.02
+                      }}
+                    >
                       {value.description}
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
