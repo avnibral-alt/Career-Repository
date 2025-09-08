@@ -60,18 +60,17 @@ export function CardioValues() {
   return (
     <section 
       id="cardio-values" 
-      className="py-16 sm:py-20 relative overflow-hidden"
+      className="py-16 sm:py-20 relative overflow-hidden bg-gradient-to-r from-yellow-400 to-yellow-500"
       style={{ 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         perspective: '2000px',
         transformStyle: 'preserve-3d'
       }}
     >
       {/* Enhanced 3D Background Elements */}
-      <div className="absolute inset-0 opacity-15" style={{ transformStyle: 'preserve-3d' }}>
+      <div className="absolute inset-0 opacity-10" style={{ transformStyle: 'preserve-3d' }}>
         {/* Floating 3D orbs */}
         <motion.div 
-          className="absolute top-10 left-10 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-32 h-32 bg-orange-300 rounded-full blur-3xl"
           style={{
             transform: `translateZ(${mousePosition.x * 50}px) translateX(${mousePosition.x * 20}px) translateY(${mousePosition.y * 20}px)`,
             transformStyle: 'preserve-3d'
@@ -88,7 +87,7 @@ export function CardioValues() {
           }}
         />
         <motion.div 
-          className="absolute bottom-10 right-10 w-40 h-40 bg-orange-400 rounded-full blur-3xl"
+          className="absolute bottom-10 right-10 w-40 h-40 bg-amber-300 rounded-full blur-3xl"
           style={{
             transform: `translateZ(${mousePosition.y * 50}px) translateX(${-mousePosition.x * 20}px) translateY(${-mousePosition.y * 20}px)`,
             transformStyle: 'preserve-3d'
@@ -105,7 +104,7 @@ export function CardioValues() {
           }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-pink-400 rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"
           style={{
             transform: `translateZ(${(mousePosition.x + mousePosition.y) * 30}px) translateX(${mousePosition.x * 15}px) translateY(${mousePosition.y * 15}px)`,
             transformStyle: 'preserve-3d'
@@ -123,7 +122,7 @@ export function CardioValues() {
         
         {/* Additional 3D floating elements */}
         <motion.div 
-          className="absolute top-1/3 right-1/3 w-16 h-16 bg-cyan-400 rounded-full blur-xl"
+          className="absolute top-1/3 right-1/3 w-16 h-16 bg-orange-200 rounded-full blur-xl"
           style={{
             transform: `translateZ(${mousePosition.x * 40}px) translateX(${-mousePosition.x * 25}px) translateY(${mousePosition.y * 25}px)`,
             transformStyle: 'preserve-3d'
@@ -157,8 +156,8 @@ export function CardioValues() {
           viewport={{ once: true }}
           style={{ transformStyle: 'preserve-3d' }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-yellow-300 inline-block">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our <span className="text-orange-600 inline-block">
               {['C', 'A', 'R', 'D', 'I', 'O'].map((letter, index) => (
                 <motion.span
                   key={letter}
@@ -183,7 +182,7 @@ export function CardioValues() {
                   whileHover={{
                     rotateY: 15,
                     scale: 1.1,
-                    textShadow: "0 0 20px rgba(255, 255, 255, 0.8)"
+                    textShadow: "0 0 20px rgba(0, 0, 0, 0.3)"
                   }}
                   style={{
                     transformStyle: 'preserve-3d',
@@ -196,16 +195,16 @@ export function CardioValues() {
               ))}
             </span> Values
           </h2>
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-800 max-w-2xl mx-auto">
             The principles that drive everything we do.
           </p>
         </motion.div>
 
         {/* 3D Cards Row Display */}
         <div className="w-full">
-          {/* Desktop: Individual 3D Cards in a row */}
-          <div className="hidden lg:block">
-            <div className="flex items-center justify-center gap-6 px-4" style={{ transformStyle: 'preserve-3d' }}>
+          {/* All Screen Sizes: Individual 3D Cards in a single row */}
+          <div className="w-full">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 px-2 sm:px-4 overflow-x-auto" style={{ transformStyle: 'preserve-3d' }}>
               {values.map((value, index) => (
                 <motion.div
                   key={value.letter}
@@ -258,18 +257,18 @@ export function CardioValues() {
                 >
                   {/* 3D Card Container */}
                   <motion.div
-                    className="relative w-48 h-64"
+                    className="relative w-32 h-40 sm:w-36 sm:h-44 md:w-40 md:h-48 lg:w-44 lg:h-52 xl:w-48 xl:h-64 flex-shrink-0"
                     style={{ transformStyle: 'preserve-3d' }}
                   >
                     {/* Card Front */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-white/25 via-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 p-6 flex flex-col items-center justify-center text-center"
+                      className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl rounded-2xl border border-white/50 p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col items-center justify-center text-center"
                       style={{
                         transform: 'translateZ(20px)',
                         transformStyle: 'preserve-3d',
                         boxShadow: hoveredCard === index 
-                          ? '0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)' 
-                          : '0 15px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                          ? '0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.8)' 
+                          : '0 15px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
                       }}
                       animate={{
                         rotateY: hoveredCard === index ? [0, 1, -1, 0] : 0,
@@ -279,7 +278,7 @@ export function CardioValues() {
                     >
                       {/* Letter Badge */}
                       <motion.div
-                        className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                        className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-lg lg:text-xl shadow-lg"
                         style={{ transform: 'translateZ(30px)' }}
                         animate={{
                           rotateY: [0, 360],
@@ -295,7 +294,7 @@ export function CardioValues() {
 
                       {/* Icon */}
                       <motion.div 
-                        className="mb-4 relative"
+                        className="mb-2 sm:mb-3 lg:mb-4 relative"
                         whileHover={{
                           rotateY: 360,
                           rotateX: 180,
@@ -305,7 +304,7 @@ export function CardioValues() {
                         style={{ transformStyle: 'preserve-3d' }}
                       >
                         <motion.span 
-                          className="text-5xl inline-block relative" 
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl inline-block relative" 
                           role="img" 
                           aria-label={value.title}
                           style={{ transformStyle: 'preserve-3d' }}
@@ -326,7 +325,7 @@ export function CardioValues() {
                         
                         {/* Icon glow effect */}
                         <motion.div
-                          className="absolute inset-0 text-5xl opacity-0 blur-md"
+                          className="absolute inset-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl opacity-0 blur-md"
                           animate={{
                             opacity: hoveredCard === index ? [0, 0.8, 0] : 0,
                             scale: hoveredCard === index ? [1, 1.3, 1] : 1
@@ -339,17 +338,17 @@ export function CardioValues() {
 
                       {/* Title */}
                       <motion.h3 
-                        className="text-lg font-bold text-white mb-3 leading-tight"
+                        className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-900 mb-1 sm:mb-2 lg:mb-3 leading-tight"
                         style={{ transformStyle: 'preserve-3d' }}
                         whileHover={{
                           scale: 1.05,
                           translateZ: 8,
-                          textShadow: "0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.5)"
+                          textShadow: "0 0 15px rgba(0, 0, 0, 0.3)"
                         }}
                         animate={{
                           textShadow: hoveredCard === index 
-                            ? ["0 0 15px rgba(255, 255, 255, 0.4)", "0 0 25px rgba(255, 255, 255, 0.7)", "0 0 15px rgba(255, 255, 255, 0.4)"]
-                            : "0 0 8px rgba(255, 255, 255, 0.3)"
+                            ? ["0 0 8px rgba(0, 0, 0, 0.2)", "0 0 15px rgba(0, 0, 0, 0.4)", "0 0 8px rgba(0, 0, 0, 0.2)"]
+                            : "0 0 4px rgba(0, 0, 0, 0.1)"
                         }}
                         transition={{ duration: 2.5, repeat: hoveredCard === index ? Infinity : 0 }}
                       >
@@ -358,14 +357,14 @@ export function CardioValues() {
 
                       {/* Description */}
                       <motion.p 
-                        className="text-sm text-white/90 leading-relaxed"
+                        className="text-xs sm:text-xs md:text-sm text-gray-700 leading-relaxed"
                         style={{ transformStyle: 'preserve-3d' }}
                         whileHover={{
                           scale: 1.03,
                           translateZ: 5
                         }}
                         animate={{
-                          opacity: hoveredCard === index ? [0.9, 1, 0.9] : 0.9
+                          opacity: hoveredCard === index ? [0.8, 1, 0.8] : 0.8
                         }}
                         transition={{ duration: 2, repeat: hoveredCard === index ? Infinity : 0 }}
                       >
