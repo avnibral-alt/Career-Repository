@@ -201,321 +201,574 @@ export function CardioValues() {
           </p>
         </motion.div>
 
-        {/* Single Row Values Display */}
+        {/* 3D Cards Row Display */}
         <div className="w-full">
-          {/* Desktop: Single integrated row */}
+          {/* Desktop: Individual 3D Cards in a row */}
           <div className="hidden lg:block">
-            <motion.div 
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl"
-              initial={{ opacity: 0, y: 30, rotateX: -20, translateZ: -200 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-              viewport={{ once: true }}
-              style={{ 
-                transformStyle: 'preserve-3d',
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-              }}
-              whileHover={{
-                rotateX: 5,
-                rotateY: 5,
-                translateZ: 20,
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-            >
-              <div className="flex items-center justify-between">
-                {values.map((value, index) => (
+            <div className="flex items-center justify-center gap-6 px-4" style={{ transformStyle: 'preserve-3d' }}>
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.letter}
+                  className="relative group cursor-pointer"
+                  initial={{ 
+                    opacity: 0, 
+                    y: 50, 
+                    rotateX: -60, 
+                    translateZ: -200,
+                    scale: 0.8
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateX: 0, 
+                    translateZ: 0,
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.15, 
+                    type: "spring", 
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    transform: `translateZ(${hoveredCard === index ? 50 : 0}px) rotateX(${hoveredCard === index ? 15 : 0}deg) rotateY(${hoveredCard === index ? 10 : 0}deg) scale(${hoveredCard === index ? 1.1 : 1})`
+                  }}
+                  whileHover={{
+                    scale: 1.15,
+                    rotateX: 15,
+                    rotateY: 10,
+                    translateZ: 50,
+                    transition: { duration: 0.4, type: "spring", stiffness: 300 }
+                  }}
+                  animate={{
+                    rotateY: [0, 2, -2, 0],
+                    translateZ: [0, 5, 0],
+                    transition: {
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.5
+                    }
+                  }}
+                >
+                  {/* 3D Card Container */}
                   <motion.div
-                    key={value.letter}
-                    className="flex-1 text-center group cursor-pointer relative"
-                    initial={{ opacity: 0, y: 20, rotateX: -30, translateZ: -150 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                    viewport={{ once: true }}
-                    onMouseEnter={() => setHoveredCard(index)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    style={{ 
-                      transformStyle: 'preserve-3d',
-                      transform: `translateZ(${hoveredCard === index ? 30 : 0}px) rotateX(${hoveredCard === index ? 10 : 0}deg) rotateY(${hoveredCard === index ? 5 : 0}deg)`
-                    }}
-                    whileHover={{
-                      scale: 1.08,
-                      rotateX: 10,
-                      rotateY: 5,
-                      translateZ: 30,
-                      transition: { duration: 0.3, type: "spring", stiffness: 200 }
-                    }}
+                    className="relative w-48 h-64"
+                    style={{ transformStyle: 'preserve-3d' }}
                   >
-                    {/* 3D Card Background */}
+                    {/* Card Front */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-2xl border border-white/30"
+                      className="absolute inset-0 bg-gradient-to-br from-white/25 via-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 p-6 flex flex-col items-center justify-center text-center"
                       style={{
-                        transform: 'translateZ(-10px)',
+                        transform: 'translateZ(20px)',
                         transformStyle: 'preserve-3d',
                         boxShadow: hoveredCard === index 
-                          ? '0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)' 
-                          : '0 10px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                          ? '0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)' 
+                          : '0 15px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                       }}
                       animate={{
-                        rotateY: hoveredCard === index ? [0, 2, -2, 0] : 0,
+                        rotateY: hoveredCard === index ? [0, 1, -1, 0] : 0,
                         scale: hoveredCard === index ? [1, 1.02, 1] : 1
+                      }}
+                      transition={{ duration: 3, repeat: hoveredCard === index ? Infinity : 0 }}
+                    >
+                      {/* Letter Badge */}
+                      <motion.div
+                        className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                        style={{ transform: 'translateZ(30px)' }}
+                        animate={{
+                          rotateY: [0, 360],
+                          scale: hoveredCard === index ? [1, 1.2, 1] : [1, 1.05, 1]
+                        }}
+                        transition={{
+                          rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
+                          scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                      >
+                        {value.letter}
+                      </motion.div>
+
+                      {/* Icon */}
+                      <motion.div 
+                        className="mb-4 relative"
+                        whileHover={{
+                          rotateY: 360,
+                          rotateX: 180,
+                          scale: 1.5,
+                          transition: { duration: 1, ease: "easeInOut" }
+                        }}
+                        style={{ transformStyle: 'preserve-3d' }}
+                      >
+                        <motion.span 
+                          className="text-5xl inline-block relative" 
+                          role="img" 
+                          aria-label={value.title}
+                          style={{ transformStyle: 'preserve-3d' }}
+                          animate={{
+                            rotateY: [0, 15, -15, 0],
+                            rotateX: [0, 8, -8, 0],
+                            translateZ: [0, 15, 0],
+                            scale: hoveredCard === index ? [1, 1.15, 1] : [1, 1.08, 1]
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          {value.icon}
+                        </motion.span>
+                        
+                        {/* Icon glow effect */}
+                        <motion.div
+                          className="absolute inset-0 text-5xl opacity-0 blur-md"
+                          animate={{
+                            opacity: hoveredCard === index ? [0, 0.8, 0] : 0,
+                            scale: hoveredCard === index ? [1, 1.3, 1] : 1
+                          }}
+                          transition={{ duration: 2, repeat: hoveredCard === index ? Infinity : 0 }}
+                        >
+                          {value.icon}
+                        </motion.div>
+                      </motion.div>
+
+                      {/* Title */}
+                      <motion.h3 
+                        className="text-lg font-bold text-white mb-3 leading-tight"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.05,
+                          translateZ: 8,
+                          textShadow: "0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.5)"
+                        }}
+                        animate={{
+                          textShadow: hoveredCard === index 
+                            ? ["0 0 15px rgba(255, 255, 255, 0.4)", "0 0 25px rgba(255, 255, 255, 0.7)", "0 0 15px rgba(255, 255, 255, 0.4)"]
+                            : "0 0 8px rgba(255, 255, 255, 0.3)"
+                        }}
+                        transition={{ duration: 2.5, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.title}
+                      </motion.h3>
+
+                      {/* Description */}
+                      <motion.p 
+                        className="text-sm text-white/90 leading-relaxed"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.03,
+                          translateZ: 5
+                        }}
+                        animate={{
+                          opacity: hoveredCard === index ? [0.9, 1, 0.9] : 0.9
+                        }}
+                        transition={{ duration: 2, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.description}
+                      </motion.p>
+                    </motion.div>
+
+                    {/* Card Back/Shadow */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10 rounded-2xl"
+                      style={{
+                        transform: 'translateZ(-10px) translateY(8px)',
+                        transformStyle: 'preserve-3d',
+                        filter: 'blur(8px)'
+                      }}
+                      animate={{
+                        scale: hoveredCard === index ? [1, 1.05, 1] : 1,
+                        opacity: hoveredCard === index ? [0.3, 0.5, 0.3] : 0.3
                       }}
                       transition={{ duration: 2, repeat: hoveredCard === index ? Infinity : 0 }}
                     />
-                    {/* Icon */}
-                    <motion.div 
-                      className="mb-4 relative z-10"
-                      whileHover={{
-                        rotateY: 360,
-                        rotateX: 180,
-                        scale: 1.4,
-                        transition: { duration: 0.8, ease: "easeInOut" }
-                      }}
-                      style={{ transformStyle: 'preserve-3d' }}
-                    >
-                      <motion.span 
-                        className="text-4xl inline-block relative" 
-                        role="img" 
-                        aria-label={value.title}
-                        style={{ transformStyle: 'preserve-3d' }}
-                        animate={{
-                          rotateY: [0, 10, -10, 0],
-                          rotateX: [0, 5, -5, 0],
-                          translateZ: [0, 10, 0],
-                          scale: hoveredCard === index ? [1, 1.1, 1] : [1, 1.05, 1]
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        {value.icon}
-                      </motion.span>
-                      
-                      {/* Icon glow effect */}
-                      <motion.div
-                        className="absolute inset-0 text-4xl opacity-0 blur-sm"
-                        animate={{
-                          opacity: hoveredCard === index ? [0, 0.6, 0] : 0,
-                          scale: hoveredCard === index ? [1, 1.2, 1] : 1
-                        }}
-                        transition={{ duration: 1.5, repeat: hoveredCard === index ? Infinity : 0 }}
-                      >
-                        {value.icon}
-                      </motion.div>
-                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-                    {/* Title */}
-                    <motion.h3 
-                      className="text-lg font-bold text-white mb-2 leading-tight relative z-10"
-                      style={{ transformStyle: 'preserve-3d' }}
-                      whileHover={{
-                        scale: 1.05,
-                        translateZ: 5,
-                        textShadow: "0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4)"
+          {/* Tablet: 3D Cards in 2 columns */}
+          <div className="hidden md:block lg:hidden">
+            <div className="grid grid-cols-2 gap-6 px-4" style={{ transformStyle: 'preserve-3d' }}>
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.letter}
+                  className="relative group cursor-pointer"
+                  initial={{ 
+                    opacity: 0, 
+                    y: 40, 
+                    rotateX: -45, 
+                    translateZ: -150,
+                    scale: 0.9
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateX: 0, 
+                    translateZ: 0,
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 0.7, 
+                    delay: index * 0.1, 
+                    type: "spring", 
+                    stiffness: 120
+                  }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    transform: `translateZ(${hoveredCard === index ? 40 : 0}px) rotateX(${hoveredCard === index ? 12 : 0}deg) rotateY(${hoveredCard === index ? 8 : 0}deg) scale(${hoveredCard === index ? 1.08 : 1})`
+                  }}
+                  whileHover={{
+                    scale: 1.12,
+                    rotateX: 12,
+                    rotateY: 8,
+                    translateZ: 40,
+                    transition: { duration: 0.3, type: "spring", stiffness: 250 }
+                  }}
+                  animate={{
+                    rotateY: [0, 1.5, -1.5, 0],
+                    translateZ: [0, 3, 0],
+                    transition: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.3
+                    }
+                  }}
+                >
+                  {/* 3D Card Container */}
+                  <motion.div
+                    className="relative w-full h-56"
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    {/* Card Front */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-white/25 via-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 p-5 flex flex-col items-center justify-center text-center"
+                      style={{
+                        transform: 'translateZ(15px)',
+                        transformStyle: 'preserve-3d',
+                        boxShadow: hoveredCard === index 
+                          ? '0 25px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25)' 
+                          : '0 12px 25px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                       }}
                       animate={{
-                        textShadow: hoveredCard === index 
-                          ? ["0 0 10px rgba(255, 255, 255, 0.3)", "0 0 20px rgba(255, 255, 255, 0.6)", "0 0 10px rgba(255, 255, 255, 0.3)"]
-                          : "0 0 5px rgba(255, 255, 255, 0.2)"
+                        rotateY: hoveredCard === index ? [0, 0.8, -0.8, 0] : 0,
+                        scale: hoveredCard === index ? [1, 1.015, 1] : 1
+                      }}
+                      transition={{ duration: 2.5, repeat: hoveredCard === index ? Infinity : 0 }}
+                    >
+                      {/* Letter Badge */}
+                      <motion.div
+                        className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+                        style={{ transform: 'translateZ(25px)' }}
+                        animate={{
+                          rotateY: [0, 360],
+                          scale: hoveredCard === index ? [1, 1.15, 1] : [1, 1.03, 1]
+                        }}
+                        transition={{
+                          rotateY: { duration: 6, repeat: Infinity, ease: "linear" },
+                          scale: { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                      >
+                        {value.letter}
+                      </motion.div>
+
+                      {/* Icon */}
+                      <motion.div 
+                        className="mb-3 relative"
+                        whileHover={{
+                          rotateY: 360,
+                          rotateX: 180,
+                          scale: 1.4,
+                          transition: { duration: 0.8, ease: "easeInOut" }
+                        }}
+                        style={{ transformStyle: 'preserve-3d' }}
+                      >
+                        <motion.span 
+                          className="text-4xl inline-block relative" 
+                          role="img" 
+                          aria-label={value.title}
+                          style={{ transformStyle: 'preserve-3d' }}
+                          animate={{
+                            rotateY: [0, 12, -12, 0],
+                            rotateX: [0, 6, -6, 0],
+                            translateZ: [0, 12, 0],
+                            scale: hoveredCard === index ? [1, 1.12, 1] : [1, 1.06, 1]
+                          }}
+                          transition={{
+                            duration: 3.5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          {value.icon}
+                        </motion.span>
+                        
+                        {/* Icon glow effect */}
+                        <motion.div
+                          className="absolute inset-0 text-4xl opacity-0 blur-sm"
+                          animate={{
+                            opacity: hoveredCard === index ? [0, 0.7, 0] : 0,
+                            scale: hoveredCard === index ? [1, 1.25, 1] : 1
+                          }}
+                          transition={{ duration: 1.8, repeat: hoveredCard === index ? Infinity : 0 }}
+                        >
+                          {value.icon}
+                        </motion.div>
+                      </motion.div>
+
+                      {/* Title */}
+                      <motion.h3 
+                        className="text-base font-bold text-white mb-2 leading-tight"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.04,
+                          translateZ: 6,
+                          textShadow: "0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4)"
+                        }}
+                        animate={{
+                          textShadow: hoveredCard === index 
+                            ? ["0 0 12px rgba(255, 255, 255, 0.35)", "0 0 20px rgba(255, 255, 255, 0.6)", "0 0 12px rgba(255, 255, 255, 0.35)"]
+                            : "0 0 6px rgba(255, 255, 255, 0.25)"
+                        }}
+                        transition={{ duration: 2.2, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.title}
+                      </motion.h3>
+
+                      {/* Description */}
+                      <motion.p 
+                        className="text-xs text-white/90 leading-relaxed"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.02,
+                          translateZ: 4
+                        }}
+                        animate={{
+                          opacity: hoveredCard === index ? [0.9, 1, 0.9] : 0.9
+                        }}
+                        transition={{ duration: 1.8, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.description}
+                      </motion.p>
+                    </motion.div>
+
+                    {/* Card Back/Shadow */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10 rounded-2xl"
+                      style={{
+                        transform: 'translateZ(-8px) translateY(6px)',
+                        transformStyle: 'preserve-3d',
+                        filter: 'blur(6px)'
+                      }}
+                      animate={{
+                        scale: hoveredCard === index ? [1, 1.04, 1] : 1,
+                        opacity: hoveredCard === index ? [0.3, 0.45, 0.3] : 0.3
+                      }}
+                      transition={{ duration: 1.8, repeat: hoveredCard === index ? Infinity : 0 }}
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: 3D Cards in vertical stack */}
+          <div className="md:hidden">
+            <div className="space-y-6 px-4" style={{ transformStyle: 'preserve-3d' }}>
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.letter}
+                  className="relative group cursor-pointer"
+                  initial={{ 
+                    opacity: 0, 
+                    y: 30, 
+                    rotateX: -30, 
+                    translateZ: -100,
+                    scale: 0.95
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    rotateX: 0, 
+                    translateZ: 0,
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.08, 
+                    type: "spring", 
+                    stiffness: 140
+                  }}
+                  viewport={{ once: true }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    transform: `translateZ(${hoveredCard === index ? 30 : 0}px) rotateX(${hoveredCard === index ? 8 : 0}deg) rotateY(${hoveredCard === index ? 5 : 0}deg) scale(${hoveredCard === index ? 1.05 : 1})`
+                  }}
+                  whileHover={{
+                    scale: 1.08,
+                    rotateX: 8,
+                    rotateY: 5,
+                    translateZ: 30,
+                    transition: { duration: 0.25, type: "spring", stiffness: 300 }
+                  }}
+                  animate={{
+                    rotateY: [0, 1, -1, 0],
+                    translateZ: [0, 2, 0],
+                    transition: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.2
+                    }
+                  }}
+                >
+                  {/* 3D Card Container */}
+                  <motion.div
+                    className="relative w-full h-48"
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    {/* Card Front */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-white/25 via-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/30 p-4 flex flex-col items-center justify-center text-center"
+                      style={{
+                        transform: 'translateZ(12px)',
+                        transformStyle: 'preserve-3d',
+                        boxShadow: hoveredCard === index 
+                          ? '0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)' 
+                          : '0 10px 20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                      }}
+                      animate={{
+                        rotateY: hoveredCard === index ? [0, 0.5, -0.5, 0] : 0,
+                        scale: hoveredCard === index ? [1, 1.01, 1] : 1
                       }}
                       transition={{ duration: 2, repeat: hoveredCard === index ? Infinity : 0 }}
                     >
-                      {value.title}
-                    </motion.h3>
+                      {/* Letter Badge */}
+                      <motion.div
+                        className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg"
+                        style={{ transform: 'translateZ(20px)' }}
+                        animate={{
+                          rotateY: [0, 360],
+                          scale: hoveredCard === index ? [1, 1.1, 1] : [1, 1.02, 1]
+                        }}
+                        transition={{
+                          rotateY: { duration: 4, repeat: Infinity, ease: "linear" },
+                          scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                      >
+                        {value.letter}
+                      </motion.div>
 
-                    {/* Description */}
-                    <motion.p 
-                      className="text-sm text-white/80 leading-relaxed px-2 relative z-10"
-                      style={{ transformStyle: 'preserve-3d' }}
-                      whileHover={{
-                        scale: 1.02,
-                        translateZ: 3
+                      {/* Icon */}
+                      <motion.div 
+                        className="mb-3 relative"
+                        whileHover={{
+                          rotateY: 360,
+                          rotateX: 180,
+                          scale: 1.3,
+                          transition: { duration: 0.6, ease: "easeInOut" }
+                        }}
+                        style={{ transformStyle: 'preserve-3d' }}
+                      >
+                        <motion.span 
+                          className="text-3xl inline-block relative" 
+                          role="img" 
+                          aria-label={value.title}
+                          style={{ transformStyle: 'preserve-3d' }}
+                          animate={{
+                            rotateY: [0, 8, -8, 0],
+                            rotateX: [0, 4, -4, 0],
+                            translateZ: [0, 8, 0],
+                            scale: hoveredCard === index ? [1, 1.08, 1] : [1, 1.04, 1]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          {value.icon}
+                        </motion.span>
+                        
+                        {/* Icon glow effect */}
+                        <motion.div
+                          className="absolute inset-0 text-3xl opacity-0 blur-sm"
+                          animate={{
+                            opacity: hoveredCard === index ? [0, 0.6, 0] : 0,
+                            scale: hoveredCard === index ? [1, 1.2, 1] : 1
+                          }}
+                          transition={{ duration: 1.5, repeat: hoveredCard === index ? Infinity : 0 }}
+                        >
+                          {value.icon}
+                        </motion.div>
+                      </motion.div>
+
+                      {/* Title */}
+                      <motion.h3 
+                        className="text-base font-bold text-white mb-2 leading-tight"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.03,
+                          translateZ: 4,
+                          textShadow: "0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.3)"
+                        }}
+                        animate={{
+                          textShadow: hoveredCard === index 
+                            ? ["0 0 8px rgba(255, 255, 255, 0.3)", "0 0 15px rgba(255, 255, 255, 0.5)", "0 0 8px rgba(255, 255, 255, 0.3)"]
+                            : "0 0 4px rgba(255, 255, 255, 0.2)"
+                        }}
+                        transition={{ duration: 1.8, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.title}
+                      </motion.h3>
+
+                      {/* Description */}
+                      <motion.p 
+                        className="text-xs text-white/90 leading-relaxed"
+                        style={{ transformStyle: 'preserve-3d' }}
+                        whileHover={{
+                          scale: 1.01,
+                          translateZ: 3
+                        }}
+                        animate={{
+                          opacity: hoveredCard === index ? [0.9, 1, 0.9] : 0.9
+                        }}
+                        transition={{ duration: 1.5, repeat: hoveredCard === index ? Infinity : 0 }}
+                      >
+                        {value.description}
+                      </motion.p>
+                    </motion.div>
+
+                    {/* Card Back/Shadow */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10 rounded-2xl"
+                      style={{
+                        transform: 'translateZ(-6px) translateY(4px)',
+                        transformStyle: 'preserve-3d',
+                        filter: 'blur(4px)'
                       }}
                       animate={{
-                        opacity: hoveredCard === index ? [0.8, 1, 0.8] : 0.8
+                        scale: hoveredCard === index ? [1, 1.03, 1] : 1,
+                        opacity: hoveredCard === index ? [0.3, 0.4, 0.3] : 0.3
                       }}
                       transition={{ duration: 1.5, repeat: hoveredCard === index ? Infinity : 0 }}
-                    >
-                      {value.description}
-                    </motion.p>
-
-                    {/* Separator line (except for last item) */}
-                    {index < values.length - 1 && (
-                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-px h-16 bg-white/20"></div>
-                    )}
+                    />
                   </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Tablet: 2 columns */}
-          <div className="hidden md:block lg:hidden">
-            <motion.div 
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20"
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-              viewport={{ once: true }}
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <div className="grid grid-cols-2 gap-8">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={value.letter}
-                    className="text-center group cursor-pointer"
-                    initial={{ opacity: 0, y: 20, rotateX: -15, translateZ: -100 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                    viewport={{ once: true }}
-                    onMouseEnter={() => setHoveredCard(index)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    style={{ transformStyle: 'preserve-3d' }}
-                    whileHover={{
-                      scale: 1.05,
-                      transition: { duration: 0.2 }
-                    }}
-                  >
-                    {/* Icon */}
-                    <motion.div 
-                      className="mb-4"
-                      whileHover={{
-                        rotateY: 360,
-                        scale: 1.3,
-                        transition: { duration: 0.6, ease: "easeInOut" }
-                      }}
-                      style={{ transformStyle: 'preserve-3d' }}
-                    >
-                      <motion.span 
-                        className="text-3xl inline-block" 
-                        role="img" 
-                        aria-label={value.title}
-                        animate={{
-                          rotateY: [0, 5, -5, 0],
-                          translateZ: [0, 5, 0]
-                        }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        {value.icon}
-                      </motion.span>
-                    </motion.div>
-
-                    {/* Title */}
-                    <motion.h3 
-                      className="text-lg font-bold text-white mb-2 leading-tight"
-                      whileHover={{
-                        scale: 1.05,
-                        textShadow: "0 0 15px rgba(255, 255, 255, 0.5)"
-                      }}
-                    >
-                      {value.title}
-                    </motion.h3>
-
-                    {/* Description */}
-                    <motion.p 
-                      className="text-sm text-white/80 leading-relaxed"
-                      whileHover={{
-                        scale: 1.02
-                      }}
-                    >
-                      {value.description}
-                    </motion.p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Mobile: Vertical stack */}
-          <div className="md:hidden">
-            <motion.div 
-              className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20"
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-              viewport={{ once: true }}
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <div className="space-y-8">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={value.letter}
-                    className="text-center group cursor-pointer"
-                    initial={{ opacity: 0, y: 20, rotateX: -15, translateZ: -100 }}
-                    whileInView={{ opacity: 1, y: 0, rotateX: 0, translateZ: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                    viewport={{ once: true }}
-                    onMouseEnter={() => setHoveredCard(index)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    style={{ transformStyle: 'preserve-3d' }}
-                    whileHover={{
-                      scale: 1.05,
-                      transition: { duration: 0.2 }
-                    }}
-                  >
-                    {/* Icon */}
-                    <motion.div 
-                      className="mb-4"
-                      whileHover={{
-                        rotateY: 360,
-                        scale: 1.3,
-                        transition: { duration: 0.6, ease: "easeInOut" }
-                      }}
-                      style={{ transformStyle: 'preserve-3d' }}
-                    >
-                      <motion.span 
-                        className="text-3xl inline-block" 
-                        role="img" 
-                        aria-label={value.title}
-                        animate={{
-                          rotateY: [0, 5, -5, 0],
-                          translateZ: [0, 5, 0]
-                        }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        {value.icon}
-                      </motion.span>
-                    </motion.div>
-
-                    {/* Title */}
-                    <motion.h3 
-                      className="text-lg font-bold text-white mb-2 leading-tight"
-                      whileHover={{
-                        scale: 1.05,
-                        textShadow: "0 0 15px rgba(255, 255, 255, 0.5)"
-                      }}
-                    >
-                      {value.title}
-                    </motion.h3>
-
-                    {/* Description */}
-                    <motion.p 
-                      className="text-sm text-white/80 leading-relaxed"
-                      whileHover={{
-                        scale: 1.02
-                      }}
-                    >
-                      {value.description}
-                    </motion.p>
-
-                    {/* Separator line (except for last item) */}
-                    {index < values.length - 1 && (
-                      <div className="mt-8 w-full h-px bg-white/20"></div>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
